@@ -156,19 +156,100 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Java中的数组（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java的基础排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/22/Java中的数组（三）/">Java中的数组（三）</a>
+      <a class="article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
     </h1>
   
 
         
-        <a href="/2018/05/22/Java中的数组（三）/" class="archive-article-date">
+        <a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
+  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-冒泡排序"><a href="#一-冒泡排序" class="headerlink" title="(一)冒泡排序"></a>(一)冒泡排序</h2><p><strong>基本思想</strong>：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。</p>
+<p><strong>冒泡排序算法的运作如下</strong>：</p>
+<p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<p>// 实例：</p>
+<blockquote>
+<p>初始状态：66, 36, 50, 89, 20, 55, 99, 100<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;66, 36, 50, 89, 20, 55, 99, 100&#125;;</span><br><span class="line">        int temp = 0;</span><br><span class="line">        for (int i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; arr.length - 1 - i; j++) &#123;</span><br><span class="line">                if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">                    temp = arr[j];</span><br><span class="line">                    arr[j] = arr[j + 1];</span><br><span class="line">                    arr[j + 1] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            (System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>以上实例输出结果为：<br> <code>20 , 36 , 50 , 55 , 66 , 89 , 99 , 100</code></p>
+<p><code>(System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</code> 中使用了三目运算符.</p>
+<blockquote>
+<p>三目运算符的要求： 条件? 成立值 : 不成立值。</p>
+</blockquote>
+<blockquote>
+<p>初始状态:123, 55, 20, 66, 30, 120, 145, 60<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;123,55,20,66,30,120,145,60&#125;;</span><br><span class="line">            int temp = 0;</span><br><span class="line">            for (int i =  arr.length - 1;i &gt; 0; i--) &#123;</span><br><span class="line">                for (int j = 0 ; j &lt; i ; j++) &#123;</span><br><span class="line">                    if (arr[j] &lt; arr[j + 1]) &#123;</span><br><span class="line">                        temp = arr[j];</span><br><span class="line">                        arr[j] = arr[j + 1];</span><br><span class="line">                        arr[j + 1] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>以上实例输出结果为：<br><code>145 , 123 , 120 , 66 , 60 , 55 , 30 , 20</code></p>
+<p><strong>给出一个测试代码</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    int[] arr = &#123;1,1,2,0,9,3,12,7,8,3,4,65,22&#125;;</span><br><span class="line"></span><br><span class="line">    BubbleSort.bubbleSort1(arr, arr.length);</span><br><span class="line"></span><br><span class="line">    for(int i:arr)&#123;</span><br><span class="line">        System.out.print(i+&quot;,&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>运行结果</strong>:<br><code>0,1,1,2,3,3,4,7,8,9,12,22,65,</code></p>
+<p><strong>冒泡排序</strong><br>内循环：<br>-1：是为了避免角标越界。<br>-j;为了让外循环增加一次，内循环参数与比较的元素个数递减。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/23/Java的基础排序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java中的数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/Java中的数组/">Java中的数组</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/22/Java中的数组/" class="archive-article-date">
   	<time datetime="2018-05-21T16:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
 </a>
         
@@ -223,7 +304,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/22/Java中的数组（三）/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/22/Java中的数组/">展开全文 >></a>
         </p>
       
 
@@ -253,19 +334,19 @@
 
 
   
-    <article id="post-Java基本数据类型-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java基本数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/20/Java基本数据类型-二/">Java基本数据类型(二)</a>
+      <a class="article-title" href="/2018/05/20/Java基本数据类型/">Java基本数据类型</a>
     </h1>
   
 
         
-        <a href="/2018/05/20/Java基本数据类型-二/" class="archive-article-date">
+        <a href="/2018/05/20/Java基本数据类型/" class="archive-article-date">
   	<time datetime="2018-05-20T12:28:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
 </a>
         
@@ -311,7 +392,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/20/Java基本数据类型-二/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/20/Java基本数据类型/">展开全文 >></a>
         </p>
       
 
@@ -341,19 +422,19 @@
 
 
   
-    <article id="post-Java基础学习-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java基础学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/Java基础学习-一/">Java基础学习(一)</a>
+      <a class="article-title" href="/2018/05/19/Java基础学习/">Java基础学习</a>
     </h1>
   
 
         
-        <a href="/2018/05/19/Java基础学习-一/" class="archive-article-date">
+        <a href="/2018/05/19/Java基础学习/" class="archive-article-date">
   	<time datetime="2018-05-19T13:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
 </a>
         
@@ -377,7 +458,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/19/Java基础学习-一/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/19/Java基础学习/">展开全文 >></a>
         </p>
       
 

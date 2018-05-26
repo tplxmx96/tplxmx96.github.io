@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java基础学习(一) | talxmx96</title>
+  <title>Java的基础排序 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java的历史自己了解的心得 Java简介Java是一种计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级Web应用开发和移动应用开发。 下面是我对Java历史了解的简化版:J2SE1.0 a2(Java 2plat form)                      1995年 05 月 23 日.J2SE1.2">
+  <meta name="description" content="(一)冒泡排序基本思想：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。 冒泡排序算法的运作如下： 比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础学习(一)">
-<meta property="og:url" content="http://yoursite.com/2018/05/19/Java基础学习-一/index.html">
+<meta property="og:title" content="Java的基础排序">
+<meta property="og:url" content="http://yoursite.com/2018/05/23/Java的基础排序/index.html">
 <meta property="og:site_name" content="talxmx96">
-<meta property="og:description" content="Java的历史自己了解的心得 Java简介Java是一种计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级Web应用开发和移动应用开发。 下面是我对Java历史了解的简化版:J2SE1.0 a2(Java 2plat form)                      1995年 05 月 23 日.J2SE1.2">
+<meta property="og:description" content="(一)冒泡排序基本思想：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。 冒泡排序算法的运作如下： 比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-20T12:14:19.000Z">
+<meta property="og:updated_time" content="2018-05-24T16:43:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础学习(一)">
-<meta name="twitter:description" content="Java的历史自己了解的心得 Java简介Java是一种计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级Web应用开发和移动应用开发。 下面是我对Java历史了解的简化版:J2SE1.0 a2(Java 2plat form)                      1995年 05 月 23 日.J2SE1.2">
+<meta name="twitter:title" content="Java的基础排序">
+<meta name="twitter:description" content="(一)冒泡排序基本思想：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。 冒泡排序算法的运作如下： 比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -158,30 +158,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java基础学习-一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java的基础排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础学习(一)
+      Java的基础排序
     </h1>
   
 
         
-        <a href="/2018/05/19/Java基础学习-一/" class="archive-article-date">
-  	<time datetime="2018-05-19T13:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
+        <a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
+  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Java的历史"><a href="#Java的历史" class="headerlink" title="Java的历史"></a>Java的历史</h2><p>自己了解的心得</p>
-<h2 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h2><p>Java是一种计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级Web应用开发和移动应用开发。</p>
-<h2 id="下面是我对Java历史了解的"><a href="#下面是我对Java历史了解的" class="headerlink" title="下面是我对Java历史了解的"></a>下面是我对Java历史了解的</h2><p><strong>简化版</strong>:<br>J2SE1.0 a2(Java 2plat form)                      1995年 05 月 23 日.<br>J2SE1.2                                              1998年 12 月 04 日.<br>J2SE1.3                                           2000年 05 月 08 日.<br>J2SE1.4                                           2002年 02 月 13 日.<br>J2SE5.0                                           2004年 09 月 29 日.<br>Java SE 6.0(Java plst form stand ard Edit ion6)  2006年 12 月 11 日.<br>Java SE 7.0                                      2011年 07 月 28 日.<br>Java SE 8.O                                      2014年 03 月 18 日.</p>
-<p><strong>详细化</strong>:<br>1991年1月：一个名为“Green Project”的项目启动。该项旨在为家用电器提供支持，使这些电器智能化并且能够彼此交互。而且这些家电可以由远程客户端控制。Bill Joy、James Gosling、Mike Sheradin和Patrick Naughton是该项目的核心成员。<br>1991年2月：James Gosling是该计划的软件负责人和架构师。他最初的目标是为“绿色计划”找到一个适合的语言来运行。他选择了C++，并对有需要的地方进行了扩展。但是这些功能不能满足计划的需要，因此建立一门新的语言成为当务之急。他开始夜以继日地忙于新语言的开发，并将其命名为“Oak”，因为他办公室窗外有一棵橡树。<br>1991年4月：SPARC工作站10的架构师 Ed Fran k加入到绿色计划中，并领导硬件开发工作。该计划的目的是开发一个硬件原型，展示“绿色计划”的功能。该计划命名为star-seven(<em>7)。</em>7计划的成员有Craig Forrest、Al Frazier、Ed Frank、James Gosling、Patrick Naughton、Joe Parlang、JonPayn、 MikeSheridan和Chris Warth。<br>1991年6月：James Gosling开发了Oak的解释器。<br>1992年3月：由于Oak已被用作另一种已存在的编程语言名称，因此必须选一个新的名字——它就是Java，灵感来源于咖啡。<br>1992年9月：Star-seven(<em>7)带GUI的工作原型完成了，并向大家展示了其功能。与此同时绿计划也建立了一套新的语言、一个操作系统、一个硬件平台和一套接口。下面是如</em>7原型的PDA样机，并由James Gosling亲自演示它。我推荐你完整观看整个视频，感受这来自1991-1992年的神奇。<br>1992年11月：月“Green Project”计划被转化成了“FirstPerson有限公司”，并作为一个独立实体合并到Sun的子公司。<br>1993年2月：FirstPerson试图从时代华纳获得一个电视机顶盒交互系统的一揽子订单。在那时，由于绿色计划不是很成功，随即失去了时代华纳的订单。于是开发的重心从家庭消费电子产品转到了电视盒机顶盒的相关平台上。<br>1993年9月：Arthur Van Hoff加入了开发组，他的工作是交互平台上的应用开发。<br>1994年6月：实际上电视交互市场并没有给FirstPerson公司带来收益，最终它倒闭了。员工都合并到Sun公司。Liveoak计划启动了，它的目标是使用Oak语言设计出一个操作系统。<br>1994年7月：Patrick Naughton设计了一个Web浏览器，该浏览器内部使用Java。Liveoak计划进行了调整，使得Oak语言支持互联网。<br>1994年9月：Naughton和Jonatha Payne开始从事名为HotJava的以Java语言为基础的网页浏览器项目，该项目获得了管理层的广泛认可。<br>1994年10月：由Van Hoff编写的Java编译器用于Java语言，之前的编译器由James Gosling使用C语言编写。<br>1995年5月：在SunWorld大会，Sun公司正式介绍了Java和HotJava。<br>1995年6月：一次重大突破——Netscape在它的浏览器中支持Java。<br>1995年9月：由Sun组织的第一次Java开发者大会在纽约召开。<br>1995年10月：Oracle在其将发布的WWW网页系统中包含了一个兼容的Java浏览器。<br>1995年12月：更广泛行业接受的信号，Microsoft在其IE浏览器中支持Java。<br>1996年1月：JDK1.O版本发布。<br>1997年2月：JDK1.1版本发布。主要特点是JDBC、RMI、内部类。<br>1998年12月：JDK1.2版本发布。<br>代号Playground。该版本通常被称为Java2版本，是见证重大转变的最流行版本。主要特点是集合框架、JIT编译器、策略工具、Java基础类、Java二维类库和JDBC改进。<br>2000年5月：JDK1.3版本发布，代号Kestrel。<br>2002年2月：J2SE1.4版本发布，代号Merlin。主要特点是XML处理、Java打印、支持日志、JDBC 3.0、断言和正则表达式处理。<br>2004年9月：J2SE5.0发布，代号Tiger。主要特点是支持泛型、自动装箱、注释处理、Instrumentation。<br>2006年11月：Java宣布将会公开源码，引起了广泛争议。由于设计的证书违背了通常的源码开放条款。或许我们可以称其为半公开。<br>2006年12月：Java SE 6版本发布，代号Mustang。主要特点是支持脚本语言、JDBC4.0、Java编译API并整合了Web服务。<br>2010年1月：Oracle收购Sun公司及其产品。现在Java由Oracle控制。<br>2010年10月：Steve Jobs声称，苹果将来不再支持Java。<br>2011年7月：Java SE 7.0版本发布，代号Dolphin。这个版本距上次发布有5年之久，并且只有这个版本花费了这么久。主要特点是支持动态语言、Java nio包、多重异常处理、try with resourece功能和诸多小的增强。</p>
+        <h2 id="一-冒泡排序"><a href="#一-冒泡排序" class="headerlink" title="(一)冒泡排序"></a>(一)冒泡排序</h2><p><strong>基本思想</strong>：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。</p>
+<p><strong>冒泡排序算法的运作如下</strong>：</p>
+<p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<p>// 实例：</p>
+<blockquote>
+<p>初始状态：66, 36, 50, 89, 20, 55, 99, 100<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;66, 36, 50, 89, 20, 55, 99, 100&#125;;</span><br><span class="line">        int temp = 0;</span><br><span class="line">        for (int i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; arr.length - 1 - i; j++) &#123;</span><br><span class="line">                if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">                    temp = arr[j];</span><br><span class="line">                    arr[j] = arr[j + 1];</span><br><span class="line">                    arr[j + 1] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            (System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>以上实例输出结果为：<br> <code>20 , 36 , 50 , 55 , 66 , 89 , 99 , 100</code></p>
+<p><code>(System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</code> 中使用了三目运算符.</p>
+<blockquote>
+<p>三目运算符的要求： 条件? 成立值 : 不成立值。</p>
+</blockquote>
+<blockquote>
+<p>初始状态:123, 55, 20, 66, 30, 120, 145, 60<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;123,55,20,66,30,120,145,60&#125;;</span><br><span class="line">            int temp = 0;</span><br><span class="line">            for (int i =  arr.length - 1;i &gt; 0; i--) &#123;</span><br><span class="line">                for (int j = 0 ; j &lt; i ; j++) &#123;</span><br><span class="line">                    if (arr[j] &lt; arr[j + 1]) &#123;</span><br><span class="line">                        temp = arr[j];</span><br><span class="line">                        arr[j] = arr[j + 1];</span><br><span class="line">                        arr[j + 1] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>以上实例输出结果为：<br><code>145 , 123 , 120 , 66 , 60 , 55 , 30 , 20</code></p>
+<p><strong>给出一个测试代码</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    int[] arr = &#123;1,1,2,0,9,3,12,7,8,3,4,65,22&#125;;</span><br><span class="line"></span><br><span class="line">    BubbleSort.bubbleSort1(arr, arr.length);</span><br><span class="line"></span><br><span class="line">    for(int i:arr)&#123;</span><br><span class="line">        System.out.print(i+&quot;,&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>运行结果</strong>:<br><code>0,1,1,2,3,3,4,7,8,9,12,22,65,</code></p>
+<p><strong>冒泡排序</strong><br>内循环：<br>-1：是为了避免角标越界。<br>-j;为了让外循环增加一次，内循环参数与比较的元素个数递减。</p>
 
       
 
@@ -261,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/19/Java基础学习-一/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/23/Java的基础排序/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/20/Java基本数据类型-二/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java基本数据类型(二)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2018/05/22/Java中的数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的数组</div>
       <i class="icon-circle-right"></i>
     </a>
   
