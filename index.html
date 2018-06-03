@@ -156,6 +156,171 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中的List" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/31/Java中的List/" class="archive-article-date">
+  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p><strong>什么是List？</strong><br>(1)List 是一个接口，它继承于Collection的接口。它代表着有序的队列。<br>(2)AbstractList 是一个抽象类，它继承于AbstractCollection。AbstractList实现List接口中除size()、get(int location)之外的函数。<br>(3)AbstractSequentialList 是一个抽象类，它继承于AbstractList。AbstractSequentialList 实现了“链表中，根据index索引值操作链表的全部函数”。<br>(4) ArrayList, LinkedList, Vector, Stack是List的4个实现类。<br>ArrayList 是一个数组队列，相当于动态数组。它由数组实现，随机访问效率高，随机插入、随机删除效率低。<br>　　LinkedList 是一个双向链表。它也可以被当作堆栈、队列或双端队列进行操作。LinkedList随机访问效率低，但随机插入、随机删除效率低。<br>　　Vector 是矢量队列，和ArrayList一样，它也是一个动态数组，由数组实现。但是ArrayList是非线程安全的，而Vector是线程安全的。<br>　　Stack 是栈，它继承于Vector。它的特性是：先进后出(FILO, First In Last Out)。<br>如果涉及到“栈”、“队列”、“链表”等操作，应该考虑用List，具体的选择哪个List，根据下面的标准来取舍。<br>(1) 对于需要快速插入，删除元素，应该使用LinkedList。<br>(2) 对于需要快速随机访问元素，应该使用ArrayList。<br>(3) 对于“单线程环境” 或者 “多线程环境，但List仅仅只会被单个线程操作”，此时应该使用非同步的类(如ArrayList)。<br>       对于“多线程环境，且List可能同时被多个线程操作”，此时，应该使用同步的类(如Vector)。</p>
+<p><strong>实例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class ListTest &#123;</span><br><span class="line">    private static List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;String&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        list.add(&quot;AAA&quot;);</span><br><span class="line">        list.add(&quot;WWW&quot;);</span><br><span class="line">        list.add(&quot;DNF&quot;);</span><br><span class="line">        list.add(&quot;DDD&quot;);</span><br><span class="line">        list.add(&quot;FFF&quot;);</span><br><span class="line">        for (String s : list) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; list.size(); i++) &#123;</span><br><span class="line">            System.out.println(list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上两种for循环方式得出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">AAA</span><br><span class="line">WWW</span><br><span class="line">DNF</span><br><span class="line">DDD</span><br><span class="line">FFF</span><br><span class="line">--------------</span><br><span class="line">AAA</span><br><span class="line">WWW</span><br><span class="line">DNF</span><br><span class="line">DDD</span><br><span class="line">FFF</span><br></pre></td></tr></table></figure></p>
+<p>Java中可变数组的原理就是不断的创建新的数组，将原数组加到新的数组中,下文对Java List用法做了详解。</p>
+<blockquote>
+<p>List:元素是有序的(怎么存的就怎么取出来，顺序不会乱)，元素可以重复（角标1上有个3，角标2上也可以有个3）因为该集合体系有索引。<br>ArrayList：底层的数据结构使用的是数组结构（数组长度是可变的百分之五十延长）（特点是查询很快，但增删较慢）线程不同步。<br>LinkedList：底层的数据结构是链表结构（特点是查询较慢，增删较快）。<br>Vector：底层是数组数据结构 线程同步（数组长度是可变的百分之百延长）（无论查询还是增删都很慢，被ArrayList替代了）。</p>
+</blockquote>
+<p><strong>建议</strong>:<br>如果遍历List集合元素，对于ArrayList、Vector集合，应该使用随机访问的方法(get)来遍历集合元素，这样性能更好；<br>对于LinkedList集合，则应该使用迭代器Iterator来遍历集合元素。<br>如果要经常执行插入、删除操作来改变包含大量数据的List集合的大小，可考虑使用Linkedlist集合</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/31/Java中的List/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java中的HashSet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
+  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java中的HashSet"><a href="#Java中的HashSet" class="headerlink" title="Java中的HashSet"></a>Java中的HashSet</h2><p><strong>什么是HashSet</strong></p>
+<p>HashSet 是一个没有重复元素的集合。<br>它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。<br>HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用 Collections.synchronizedSet 方法来“包装” set。<br>集合.也叫容器类，它的功能就相当于容器。<br>Java的集合（容器），它就是用来“装对象的”。<br>容器.应该有哪些方法供你使用？</p>
+<ul>
+<li>把对象丢进容器中.</li>
+<li>把指定的东西”读取”出来，该东西依然在容器里面.</li>
+<li>把指定的”东西”从容器中删除.</li>
+<li>“挨个”把每个东西数一次.（遍历）</li>
+<li>把容器”倒空”.</li>
+<li>把A容器中东西，全部倒入B容器中.<blockquote>
+<p>集合 + 集合</p>
+</blockquote>
+</li>
+<li>拿A容器包含的东西，减去B容器中包含的东西.<blockquote>
+<p>集合 - 集合</p>
+</blockquote>
+</li>
+</ul>
+<p>Set集合，就是Collection。它们的行为完全相似<br>遍历Set集合，有两种办法：</p>
+<blockquote>
+<ol>
+<li>用迭代器</li>
+<li>用foreach循环</li>
+</ol>
+</blockquote>
+<p><strong>HashSet的存储机制</strong><br>底层用一个数字存元素–而且这个数组的长度永远是2的N次方。<br>HashSet的构造器:HashSet（int底层数组的长度，float loadFactor）。</p>
+<ul>
+<li>如果传入数组长度不是2的N次方，HashSet会自动将它扩展到2的N次方。<br>HashSet int initialapacity。</li>
+<li>initialapacity.控制底层数组的长度，默认为16.</li>
+<li>loadFactor.默认为0.75。<br>当HashSet感觉到底层快满的时候，再创建一个底层数组是原来的2倍。<br>再次创建一个长度为原有的数组长度2倍的数组，原有的数组就变成了垃圾–并且要把原有数组的元素复制到新的数组中。–专业说法叫”rehash（重hash）。”<br>当load ctor为0.75时，70%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为0.1时，10%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为1时，100%的桶已经满时，HashSet会分配新的数组。</li>
+</ul>
+<p>loadFactory越小，越耗内存;loadFactory越大，性能越低。<br>loadFactor越大，代表当数组很满时才去”重Hash”</p>
+<p><strong>存储机制机制</strong>:<br>(1)当元素加进来时，HashSet会调用该对象的hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果要加入的位置是空的，直接放入即可。<br>(4)如果要加入的位置已经有元素，此处就会形成”链表”</p>
+<p>**HashSet取元素的机制：<br>(1)当要取一个元素时，HashSet会调用该对象的Hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果该位置恰好是要找到元素，直接取出即可。<br>(4)然后该位置有链表，HashSet要;”挨个”搜索链表里的元素。<br>最理想的情况下，HashSet的性能几乎可以数组匹敌存取的性能非常高。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/29/Java中的HashSet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java的HashMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java的HashMap | talxmx96</title>
+  <title>Java中的HashSet | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java中Hash什么是Hash?它是将一个任意长度的二进制值通过一个映射关系转换成一个固定长度的二进制值。1.任意长度的二进制。2.映射关系（哈希算放 - 就相当于一个大学里面的学号的一个映射规则）。3.固定的二进制值（哈希值 - 相当于我们的大学里面的学号）。 映射规则（哈希算法）：任意长度=进制值value======&amp;gt;固定长度=进制值key。学号映射规则：2013年入学计算机学院代号">
+  <meta name="description" content="Java中的HashSet什么是HashSet HashSet 是一个没有重复元素的集合。它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java的HashMap">
-<meta property="og:url" content="http://yoursite.com/2018/05/29/Java的HashMap/index.html">
+<meta property="og:title" content="Java中的HashSet">
+<meta property="og:url" content="http://yoursite.com/2018/05/29/Java中的HashSet/index.html">
 <meta property="og:site_name" content="talxmx96">
-<meta property="og:description" content="Java中Hash什么是Hash?它是将一个任意长度的二进制值通过一个映射关系转换成一个固定长度的二进制值。1.任意长度的二进制。2.映射关系（哈希算放 - 就相当于一个大学里面的学号的一个映射规则）。3.固定的二进制值（哈希值 - 相当于我们的大学里面的学号）。 映射规则（哈希算法）：任意长度=进制值value======&amp;gt;固定长度=进制值key。学号映射规则：2013年入学计算机学院代号">
+<meta property="og:description" content="Java中的HashSet什么是HashSet HashSet 是一个没有重复元素的集合。它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-29T15:40:57.000Z">
+<meta property="og:updated_time" content="2018-05-30T07:37:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java的HashMap">
-<meta name="twitter:description" content="Java中Hash什么是Hash?它是将一个任意长度的二进制值通过一个映射关系转换成一个固定长度的二进制值。1.任意长度的二进制。2.映射关系（哈希算放 - 就相当于一个大学里面的学号的一个映射规则）。3.固定的二进制值（哈希值 - 相当于我们的大学里面的学号）。 映射规则（哈希算法）：任意长度=进制值value======&amp;gt;固定长度=进制值key。学号映射规则：2013年入学计算机学院代号">
+<meta name="twitter:title" content="Java中的HashSet">
+<meta name="twitter:description" content="Java中的HashSet什么是HashSet HashSet 是一个没有重复元素的集合。它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -158,33 +158,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java的HashMap" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中的HashSet" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java的HashMap
+      Java中的HashSet
     </h1>
   
 
         
-        <a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
+        <a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
+  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Java中Hash"><a href="#Java中Hash" class="headerlink" title="Java中Hash"></a>Java中Hash</h2><p><strong>什么是Hash</strong>?<br>它是将一个任意长度的二进制值通过一个映射关系转换成一个固定长度的二进制值。<br>1.任意长度的二进制。<br>2.映射关系（哈希算放 - 就相当于一个大学里面的学号的一个映射规则）。<br>3.固定的二进制值（哈希值 - 相当于我们的大学里面的学号）。</p>
-<p><strong>映射规则（哈希算法）</strong>：<br>任意长度=进制值value======&gt;固定长度=进制值key。<br>学号映射规则：2013年入学计算机学院代号38，第87个入学的。<br>张三-2013-20-计算机学院-男-172======&gt;20133887。<br>学号映射规则：2014年材料学院代号45，第23个入学材料学院。<br>李四-2014-19-材料学院-女-162======&gt;20144520。<br>哈希映射技术是一种就元素映射到数组的非常简单的技术。由于哈希映射采用的是数组结果，那么必然存在一中用于确定任意键访问数组的索引机制，该机制能够提供一个小于数组大小的整数，我们将该机制称之为哈希函数。在 Java 中我们不必为寻找这样的整数而大伤脑筋，因为每个对象都必定存在一个返回整数值的 hashCode 方法，而我们需要做的就是将其转换为整数，然后再将该值除以数组大小取余即可。</p>
-<p>Hash:通过一个key一个输出，通过一个哈希函数，来找到数组中与这个key唯一映射的value。</p>
-<p>Map以按键/数值对的形式存储数据，这里要特别说明（ Map.Entry，是Map的内部类，它用来描述Map中的键/值对）。 Map是一个接口，我们平时多用它的实现类HashMap。<br>HashMap 是一个散列表，它存储的内容是键值对(key-value)映射。<br>HashMap里面实现一个静态内部类Entry，其重要的属性有 key , value, next，从属性key,value我们就能很明显的看出来Entry就是HashMap键值对实现的一个基础bean，我们上面说到HashMap的基础就是一个线性数组，这个数组就是Entry[]，Map里面的内容都保存在Entry[]里面。<br>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。<br>HashMap是通过”拉链法”实现的哈希表。它包括几个重要的成员变量：table, size, threshold, loadFactor, modCount。<br>HashMap 的实例有两个参数影响其性能：“初始容量” 和 “加载因子”。容量 是哈希表中桶的数量，初始容量 只是哈希表在创建时的容量。加载因子 是哈希表在其容量自动增加之前可以达到多满的一种尺度。当哈希表中的条目数超出了加载因子与当前容量的乘积时，则要对该哈希表进行 rehash 操作（即重建内部数据结构），从而哈希表将具有大约两倍的桶数。size是HashMap的大小，它是HashMap保存的键值对的数量。<br>threshold是HashMap的阈值，用于判断是否需要调整HashMap的容量。<br>threshold的值=”容量*加载因子”，当HashMap中存储数据的数量达到threshold时，就需要将HashMap的容量加倍，loadFactor就是加载因子，modCount是用来实现fail-fast机制的。</p>
-<p><strong>用例如下</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public class HashMap &#123;</span><br><span class="line">      public static void main(String[] args)&#123;</span><br><span class="line">          Map&lt;String,String&gt; house = new HashMap&lt;String,String&gt;();</span><br><span class="line">          house.put(&quot;1&quot;,&quot;柜子&quot;);</span><br><span class="line">          house.put(&quot;2&quot;,&quot;床&quot;);</span><br><span class="line">          house.put(&quot;3&quot;,&quot;箱子&quot;);</span><br><span class="line">          house.put(&quot;4&quot;,&quot;鞋子&quot;);</span><br><span class="line">          house.put(&quot;5&quot;,&quot;电脑&quot;);</span><br><span class="line">          house.put(&quot;6&quot;,&quot;桌子&quot;);</span><br><span class="line">          house.put(&quot;7&quot;,&quot;灯&quot;);</span><br><span class="line">          house.put(&quot;8&quot;,&quot;被子&quot;);</span><br><span class="line"></span><br><span class="line">          //第一种：普遍使用，二次取值</span><br><span class="line">          System.out.println(&quot;通过Map.KeySet遍历key和value：&quot;);</span><br><span class="line">          for (String key : house.keySet())&#123;</span><br><span class="line">              System.out.println(&quot;key=&quot; + key + &quot; znd value=&quot; + house.get(key));</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          //第二种</span><br><span class="line">          System.out.println(&quot;通过Map.entrySet使用iterator遍历key和value：&quot;);  </span><br><span class="line">  		  Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = map.entrySet().iterator();  </span><br><span class="line">  		  while (it.hasNext()) &#123;  </span><br><span class="line">   				Map.Entry&lt;String, String&gt; entry = it.next();  </span><br><span class="line">      			System.out.println(&quot;key= &quot; + entry.getKey() + &quot; and value= &quot; + entry.getValue());  </span><br><span class="line">      		&#125;</span><br><span class="line">      	  //第三种：推荐，尤其是容量大时  </span><br><span class="line">  		  System.out.println(&quot;通过Map.entrySet遍历key和value&quot;);  </span><br><span class="line">  	      for (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;  </span><br><span class="line">      			System.out.println(&quot;key= &quot; + entry.getKey() + &quot; and value= &quot; + entry.getValue());  </span><br><span class="line">      		&#125; </span><br><span class="line">      	  //第四种  </span><br><span class="line">  	  	  System.out.println(&quot;通过Map.values()遍历所有的value，但不能遍历key&quot;);  </span><br><span class="line">  		  for (String v : map.values()) &#123;  </span><br><span class="line">   		  System.out.println(&quot;value= &quot; + v);  </span><br><span class="line">   		&#125;  </span><br><span class="line">   	&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>以上第一、二、三种得出的是</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">通过Map.KeySet遍历key和value：</span><br><span class="line">//&quot;通过Map.entrySet使用iterator遍历key和value：&quot;</span><br><span class="line">//&quot;通过Map.entrySet遍历key和value&quot;</span><br><span class="line">key=1 znd value=柜子</span><br><span class="line">key=2 znd value=床</span><br><span class="line">key=3 znd value=箱子</span><br><span class="line">key=4 znd value=鞋子</span><br><span class="line">key=5 znd value=电脑</span><br><span class="line">key=6 znd value=桌子</span><br><span class="line">key=7 znd value=灯</span><br><span class="line">key=8 znd value=被子</span><br></pre></td></tr></table></figure></p>
-<p><strong>第四种得出的是</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">通过Map.values()遍历所有的value，但不能遍历key</span><br><span class="line">value=柜子</span><br><span class="line">value=床</span><br><span class="line">value=箱子</span><br><span class="line">value=鞋子</span><br><span class="line">value=电脑</span><br><span class="line">value=桌子</span><br><span class="line">value=灯</span><br><span class="line">value=被子</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Java中的HashSet"><a href="#Java中的HashSet" class="headerlink" title="Java中的HashSet"></a>Java中的HashSet</h2><p><strong>什么是HashSet</strong></p>
+<p>HashSet 是一个没有重复元素的集合。<br>它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。<br>HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用 Collections.synchronizedSet 方法来“包装” set。<br>集合.也叫容器类，它的功能就相当于容器。<br>Java的集合（容器），它就是用来“装对象的”。<br>容器.应该有哪些方法供你使用？</p>
+<ul>
+<li>把对象丢进容器中.</li>
+<li>把指定的东西”读取”出来，该东西依然在容器里面.</li>
+<li>把指定的”东西”从容器中删除.</li>
+<li>“挨个”把每个东西数一次.（遍历）</li>
+<li>把容器”倒空”.</li>
+<li>把A容器中东西，全部倒入B容器中.<blockquote>
+<p>集合 + 集合</p>
+</blockquote>
+</li>
+<li>拿A容器包含的东西，减去B容器中包含的东西.<blockquote>
+<p>集合 - 集合</p>
+</blockquote>
+</li>
+</ul>
+<p>Set集合，就是Collection。它们的行为完全相似<br>遍历Set集合，有两种办法：</p>
+<blockquote>
+<ol>
+<li>用迭代器</li>
+<li>用foreach循环</li>
+</ol>
+</blockquote>
+<p><strong>HashSet的存储机制</strong><br>底层用一个数字存元素–而且这个数组的长度永远是2的N次方。<br>HashSet的构造器:HashSet（int底层数组的长度，float loadFactor）。</p>
+<ul>
+<li>如果传入数组长度不是2的N次方，HashSet会自动将它扩展到2的N次方。<br>HashSet int initialapacity。</li>
+<li>initialapacity.控制底层数组的长度，默认为16.</li>
+<li>loadFactor.默认为0.75。<br>当HashSet感觉到底层快满的时候，再创建一个底层数组是原来的2倍。<br>再次创建一个长度为原有的数组长度2倍的数组，原有的数组就变成了垃圾–并且要把原有数组的元素复制到新的数组中。–专业说法叫”rehash（重hash）。”<br>当load ctor为0.75时，70%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为0.1时，10%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为1时，100%的桶已经满时，HashSet会分配新的数组。</li>
+</ul>
+<p>loadFactory越小，越耗内存;loadFactory越大，性能越低。<br>loadFactor越大，代表当数组很满时才去”重Hash”</p>
+<p><strong>存储机制机制</strong>:<br>(1)当元素加进来时，HashSet会调用该对象的hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果要加入的位置是空的，直接放入即可。<br>(4)如果要加入的位置已经有元素，此处就会形成”链表”</p>
+<p>**HashSet取元素的机制：<br>(1)当要取一个元素时，HashSet会调用该对象的Hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果该位置恰好是要找到元素，直接取出即可。<br>(4)然后该位置有链表，HashSet要;”挨个”搜索链表里的元素。<br>最理想的情况下，HashSet的性能几乎可以数组匹敌存取的性能非常高。</p>
 
       
 
@@ -264,7 +290,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/29/Java的HashMap/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/29/Java中的HashSet/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +304,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/29/Java中的HashSet/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/31/Java中的List/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java中的HashSet
+          Java中的List
         
       </div>
     </a>
   
   
-    <a href="/2018/05/23/Java的基础排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java的基础排序</div>
+    <a href="/2018/05/29/Java的HashMap/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java的HashMap</div>
       <i class="icon-circle-right"></i>
     </a>
   
