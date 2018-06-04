@@ -156,6 +156,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/03/Java的方法/">Java的方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/03/Java的方法/" class="archive-article-date">
+  	<time datetime="2018-06-03T15:49:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java的方法"><a href="#Java的方法" class="headerlink" title="Java的方法"></a>Java的方法</h2><p><strong>方法</strong>:<br>方法是为了一个操作而组合在一起的语句组。<br>使用方法的好处：<br>可以省去编写重复代码的苦闷.<br>提高代码可读性.<br>方法语法格式的详细说明如下：<br>1、修饰符：修饰符可以省略，也可以是public、protected、private、static、final、abstract、其中public、protected、private三个最多只能出现其中之一；abstract和final最多只能出现其中之一，它们可以与static组合起来修饰方法。<br>2、方法返回值类型：返回值类型可以是Java语言允许的任何数据类型，包括基本类型和引用类型；如果声明了方法返回值类型，则方法体内必须有一个有效的return语句，该语句返回一个变量或一个表达式，这个变量或者表达式的类型必须与此处声明的类型匹配。除此之外，如果一个方法没有返回值，则必须使用void来声明没有返回值。<br>3、方法名：方法名命名规则与属性命名规则基本相同，但通常建议方法名以英文中的动词开头。<br>4、形参列表：形参列表用于定义该方法可以接受的参数，形参列表由零组到多组“参数类型形参名”组合而成，多组参数之间以英文逗号(,)隔开，形参类型和形参名之间以英文空格隔开。一旦在定义方法时指定了形参列表，则调用该方法时必须传入对应他的参数值——谁调用方法，谁负责为形参赋值。<br>注意：<br>1、static修饰的方法一般被称为静态方法。<br>2、方便在没有创建对象的时候调用方法。<br><strong>方法</strong><br>取整方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.ceil(X)/Math.floor(X)向上/下取整X最接近的整数，ceil相当于天花板，floor相当于地板。</span><br><span class="line">Math.ceil(45.1)===&gt;46(进一).</span><br><span class="line">Math.floor(55.6)===&gt;55(去尾).</span><br><span class="line">Math.ceil(-45.1)===&gt;-45(去尾).</span><br><span class="line">Math.floor(-55.6)===&gt;-56(进一).</span><br></pre></td></tr></table></figure></p>
+<p><strong>定义方法</strong><br>由方法名、参数、返回值类型以及方法体组成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符.返回值类型.方法名([参数列表])&#123;</span><br><span class="line">	//方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如下实例：<br>num1 80.num2 90是形式参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static int fetSum(int num1,int num2)&#123;</span><br><span class="line">	int resalt = num1 + num2;</span><br><span class="line">	return result;</span><br><span class="line">&#125;</span><br><span class="line">调用方法:</span><br><span class="line">int num1 = 80；</span><br><span class="line">int num2 = 90;</span><br><span class="line">int result = getSun(num1,num2);</span><br><span class="line">System.out.println(&quot;和为&quot; = Sum);</span><br></pre></td></tr></table></figure></p>
+<p>不定长度的参数<br>调用方法时，方法的参数个数无法确定。<br>如下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">	double sum = 0;</span><br><span class="line">	for(int i = 0;i &lt; score.length;i++)&#123;</span><br><span class="line">	sum += score[i];</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(&quot;平均分：&quot; + sum/score.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法的重载<br>方法名称相同，参数列表不同.<br>编译器根据方法签名决定调用哪方法。<br>如下实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">	//整型的最大值</span><br><span class="line">	int max1 = max(5,8)；</span><br><span class="line">	//浮点型最大值</span><br><span class="line">	doblic max2 = max(66.9，12.4)</span><br><span class="line">	//字符串最大值</span><br><span class="line">	String max3 = max(&quot;trump&quot;,&quot;obama&quot;)</span><br><span class="line">&#125;</span><br><span class="line">//返回最大值</span><br><span class="line">int max(int num1,int num2)&#123;</span><br><span class="line">	return num1 &gt; num2 ？num1 ：num2</span><br><span class="line">&#125;</span><br><span class="line">double max(double num1,double num2)&#123;</span><br><span class="line">	return num1 &gt; num2 ？num1 ：num2</span><br><span class="line">&#125;</span><br><span class="line">String max(String str1,String str)&#123;</span><br><span class="line">	if(str1.compareTo(str2)) &gt; 0&#123;</span><br><span class="line">	return str1;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	return str2;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果是？</span><br><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">	System.out.println(max(5,10))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意</strong><br>1、有时调用方法会有两个或更多可能的匹配，编译器无法判断哪个更为精准，这称为歧义调用(ambiguous invocation)。<br>2、被重载的方法，必须具有不同的参数列表，不能基于不同修饰符或返回值类型来重载方法。<br><code>public int max(int num1,int num2){...}</code><br><code>private static double max(int n1,int n2){...}</code></p>
+<p>方法变量的作用域<br>指变量可以在程序中引用的范围<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">	for(int i = 0;i &lt; num1;i++)&#123;</span><br><span class="line">	for(int j = 0;j &lt; num2;j++)	;</span><br><span class="line">	System.out.println(&quot;*&quot;)；</span><br><span class="line">&#125;</span><br><span class="line">System.out.println()；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>i的作用域从for循环i到结尾。<br>j的作用域从for循环j到打印”*”。<br>变量num1，num2的作用域从开头到结尾。</p>
+<p><strong>总结</strong>：<br>掌握Java类库中提供的常用方法。<br>了解自定义方法的基本概念和用法。<br>理解形式参数和实际参数。<br>理解参数的值传递。<br>理解变量的作用域范围。<br>掌握方法的重载。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/03/Java的方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java中的List" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
