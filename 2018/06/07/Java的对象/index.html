@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | talxmx96</title>
+  <title>Java的对象 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="什么是对象对象是程序运行时的实体它的状态存储在 fields (也就是变量)行为是通过方法 (method) 实现的方法上操作对象的内部的状态方法是对象对对象的通信的主要手段创建对象对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：  声明：声明一个对象，包括对象名称和对象类型。实例化：使用关键字new来创建一个对象。初始化：使用new创建对象时，会调用构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java的对象">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/Java的对象/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="什么是对象对象是程序运行时的实体它的状态存储在 fields (也就是变量)行为是通过方法 (method) 实现的方法上操作对象的内部的状态方法是对象对对象的通信的主要手段创建对象对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：  声明：声明一个对象，包括对象名称和对象类型。实例化：使用关键字new来创建一个对象。初始化：使用new创建对象时，会调用构">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-07T16:31:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Java的对象">
+<meta name="twitter:description" content="什么是对象对象是程序运行时的实体它的状态存储在 fields (也就是变量)行为是通过方法 (method) 实现的方法上操作对象的内部的状态方法是对象对对象的通信的主要手段创建对象对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：  声明：声明一个对象，包括对象名称和对象类型。实例化：使用关键字new来创建一个对象。初始化：使用new创建对象时，会调用构">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,295 +158,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java的对象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java的对象
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/07/Java的对象/" class="archive-article-date">
+
+        
+        <a href="/2018/06/07/Java的对象/" class="archive-article-date">
   	<time datetime="2018-06-07T13:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/07/Java的对象/">Java的对象</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h2><p>对象是程序运行时的实体<br>它的状态存储在 fields (也就是变量)<br>行为是通过方法 (method) 实现的<br>方法上操作对象的内部的状态<br>方法是对象对对象的通信的主要手段<br><strong>创建对象</strong><br>对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：</p>
+<blockquote>
+<p>声明：声明一个对象，包括对象名称和对象类型。<br>实例化：使用关键字new来创建一个对象。<br>初始化：使用new创建对象时，会调用构造方法初始化对象。</p>
+</blockquote>
+<p><strong>为方便说明，定义了以下一个简单的类</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> public class Vehicle &#123;</span><br><span class="line"></span><br><span class="line">    public int passengers;      </span><br><span class="line"></span><br><span class="line">    public int fuelcap;</span><br><span class="line"></span><br><span class="line">    public int mpg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>有了这个模板，就可以用它来创建对象：<br><code>Vehicle veh1 = new Vehicle();</code><br>通常把这条语句的动作称之为创建一个对象，其实，它包含了四个动作。<br>(1）右边的“new Vehicle”，是以Vehicle类为模板，在堆空间里创建一个Vehicle类对象（也简称为Vehicle对象）。<br>(2）末尾的()意味着，在对象创建后，立即调用Vehicle类的构造函数，对刚生成的对象进行初始化。构造函数是肯定有的。如果你没写，Java会给你补上一个默认的构造函数。<br>(3）左边的“Vehicle veh 1”创建了一个Vehicle类引用变量。所谓Vehicle类引用，就是以后可以用来指向Vehicle对象的对象引用。<br>(4）“=”操作符使对象引用指向刚创建的那个Vehicle对象。</p>
+<p><strong>类和对象之间的关系</strong><br>类是抽象的概念，仅仅是模板，比如说”演员”、”总统”。<br>对象是一个看得见，摸得着的具体实体。<br>一个类可以包含以下类型变量：<br>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。<br>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。<br>类变量：类变量也声明在类中，方法体之外，但必须声明为static类型。</p>
+<p><strong>对象的基本设计步骤</strong><br>1、发现类<br>人类/科学家类/演员类/逗逼类.<br>2、找出属性(名词)<br>姓名、性别、职业、年龄.<br>3、找出行为(动词)<br>吃饭、说话、表演、么么哒</p>
+<p><strong>构造方法</strong><br>每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。<br>在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。<br>下面是一个构造方法示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Vehicle&#123;</span><br><span class="line">    public Vehicle()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public Vehicle(int passengers,int fuelcap,int mpg)&#123;</span><br><span class="line">        // 这个构造器里有三个参数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>关于构造方法<br>1.没有返回值类型<br>2.名称与类名一致<br>3.可以指定参数及实现重载<br>4.注意隐式构造和参数化构造不能共存</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/07/Java的对象/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/Git的基础命令/" class="archive-article-date">
-  	<time datetime="2018-06-06T12:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/06/Git的基础命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git的基础命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/Git的基础命令/">Git的基础命令</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/03/Java的方法/" class="archive-article-date">
-  	<time datetime="2018-06-03T15:49:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/03/Java的方法/">Java的方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
-  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/22/Java中的数组/" class="archive-article-date">
-  	<time datetime="2018-05-21T16:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/22/Java中的数组/">Java中的数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/20/Java基本数据类型/" class="archive-article-date">
-  	<time datetime="2018-05-20T12:28:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/20/Java基本数据类型/">Java基本数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/19/Java基础学习/" class="archive-article-date">
-  	<time datetime="2018-05-19T13:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/19/Java基础学习/">Java基础学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -466,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
