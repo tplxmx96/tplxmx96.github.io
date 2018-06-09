@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | talxmx96</title>
+  <title>Java中的抽象 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Java中的抽象在java中用abstract关键字声明的类称为抽象类。 它可以有抽象和非抽象方法(带主体的方法)。在学习java抽象类之前，先来了解java中的抽象。抽象是隐藏实现细节并仅向用户显示功能的过程。另一种方式，它只向用户显示重要的事情，并隐藏内部详细信息，例如：发送短信，只需输入文本并发送消息。您也不需要知道有关邮件传递的内部处理过程。抽象可以让你专注于对象做什么(实现的功能)，而不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的抽象">
+<meta property="og:url" content="http://yoursite.com/2018/06/09/Java中的抽象/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="Java中的抽象在java中用abstract关键字声明的类称为抽象类。 它可以有抽象和非抽象方法(带主体的方法)。在学习java抽象类之前，先来了解java中的抽象。抽象是隐藏实现细节并仅向用户显示功能的过程。另一种方式，它只向用户显示重要的事情，并隐藏内部详细信息，例如：发送短信，只需输入文本并发送消息。您也不需要知道有关邮件传递的内部处理过程。抽象可以让你专注于对象做什么(实现的功能)，而不">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-09T17:09:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Java中的抽象">
+<meta name="twitter:description" content="Java中的抽象在java中用abstract关键字声明的类称为抽象类。 它可以有抽象和非抽象方法(带主体的方法)。在学习java抽象类之前，先来了解java中的抽象。抽象是隐藏实现细节并仅向用户显示功能的过程。另一种方式，它只向用户显示重要的事情，并隐藏内部详细信息，例如：发送短信，只需输入文本并发送消息。您也不需要知道有关邮件传递的内部处理过程。抽象可以让你专注于对象做什么(实现的功能)，而不">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,295 +158,163 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java中的抽象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java中的抽象
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
+
+        
+        <a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
   	<time datetime="2018-06-09T13:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的抽象/">Java中的抽象</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Java中的抽象</strong><br>在java中用abstract关键字声明的类称为抽象类。 它可以有抽象和非抽象方法(带主体的方法)。<br>在学习java抽象类之前，先来了解java中的抽象。<br>抽象是隐藏实现细节并仅向用户显示功能的过程。<br>另一种方式，它只向用户显示重要的事情，并隐藏内部详细信息，例如：发送短信，只需输入文本并发送消息。您也不需要知道有关邮件传递的内部处理过程。<br>抽象可以让你专注于对象做什么(实现的功能)，而不是它如何做。<br><strong>抽象类的特点</strong>：<br>1、抽象方法一点在抽象类中。<br>2、抽象方法和抽象类都必须被abstract关键字修饰。<br>3、抽象类不可以用new创建对象，因为调用抽象方法没有意义。<br>4、抽象类中的方法要被使用，必须由子类复写起所有的抽象方法后，建立子类对象调用。<br>如果子类只覆盖了部分抽象方法，那么该子类还是一个抽象类<br><strong>在使用抽象类时需要注意几点</strong>：<br>1、抽象类不能被实例化，实例化的工作应该交由它的子类来完成，它只需要有一个引用即可。<br>2、抽象方法必须由子类来进行重写。<br>3、只要包含一个抽象方法的抽象类，该方法必须要定义成抽象类，不管是否还包含有其他方法。<br>4、抽象类中可以包含具体的方法，当然也可以不包含抽象方法。<br>5、子类中的抽象方法不能与父类的抽象方法同名。<br>6、abstract不能与final并列修饰同一个类。<br>7、abstract 不能与private、static、final或native并列修饰同一个方法。</p>
+<p><strong>Abstract类与abstract方法</strong><br>用关键字abstract修饰的类称为abstract类（抽象类）。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class A &#123;</span><br><span class="line"> …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用关键字abstract修饰的方法称为abstract方法（抽象方法），例如：<br><code>abstract int min(int x,int y);</code></p>
+<p>注意事项<br>1、和普通的类相比，abstract类可以有abstract方法，也可以有非abstract方法。<br>2、对于abstract类，我们只能声明，不能使用new运算符创建该类的对象。如果一个非抽象类是某个抽象类的子类，那么它必须重写父类的抽象的方法，给出方法体。<br>3、abstract类也可以没有abstract方法。<br>4、如果一个abstract类是abstract类的子类，它可以重写父类的abstract方法，也可以继承这个abstract方法。<br>5、对于abstract方法，只允许声明，不允许实现。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public abstract class A &#123;</span><br><span class="line">void eat()&#123;</span><br><span class="line">System.out.println(&quot;eat&quot;);    //非抽象类方法</span><br><span class="line">&#125;</span><br><span class="line">abstract int getMax();    //抽象类方法，没有方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>抽象类和抽象方法与多态紧密的结合</strong><br>定义一个父类Car<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Car &#123;</span><br><span class="line">     abstract void cautionSound();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>定义子类PoliceCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class PoliceCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>定义子类FireCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class FireCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;😆...🌺...😜&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>主类Demo25<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo25 &#123; </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Car car = new PoliceCar();</span><br><span class="line"> 		car.cautionSound();</span><br><span class="line">		car = new FireCar();</span><br><span class="line">		car.cautionSound();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>运行的结果</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~</span><br><span class="line">😆...🌺...😜</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/09/Java中的抽象/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的继承/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/09/Java中的继承/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的继承</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的继承/">Java中的继承</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/07/Java的对象/" class="archive-article-date">
-  	<time datetime="2018-06-07T13:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/07/Java的对象/">Java的对象</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/Git的基础命令/" class="archive-article-date">
-  	<time datetime="2018-06-06T12:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/Git的基础命令/">Git的基础命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/03/Java的方法/" class="archive-article-date">
-  	<time datetime="2018-06-03T15:49:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/03/Java的方法/">Java的方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
-  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/22/Java中的数组/" class="archive-article-date">
-  	<time datetime="2018-05-21T16:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/22/Java中的数组/">Java中的数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -466,8 +338,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | talxmx96</title>
+  <title>Java中的继承 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="继承为什么要继承说到面向对象的特点，就不得不提继承，他使代码拥有了其他非面向对象所没有的一种独特性—可复用性。Java不支持多继承，单继承使JAVA的继承关系很简单，一个类只能有一个父类，易于管理程序，同时一个类可以实现多个接口，从而克服单继承的缺点。当你先创建了一个类之后，再创建一个新类，即使他和你之前的类有相似的功能，你还是需要重新编写此类。然而通过继承，你也许可以不这么做。合成：在新类里创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的继承">
+<meta property="og:url" content="http://yoursite.com/2018/06/09/Java中的继承/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="继承为什么要继承说到面向对象的特点，就不得不提继承，他使代码拥有了其他非面向对象所没有的一种独特性—可复用性。Java不支持多继承，单继承使JAVA的继承关系很简单，一个类只能有一个父类，易于管理程序，同时一个类可以实现多个接口，从而克服单继承的缺点。当你先创建了一个类之后，再创建一个新类，即使他和你之前的类有相似的功能，你还是需要重新编写此类。然而通过继承，你也许可以不这么做。合成：在新类里创建">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-09T15:41:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Java中的继承">
+<meta name="twitter:description" content="继承为什么要继承说到面向对象的特点，就不得不提继承，他使代码拥有了其他非面向对象所没有的一种独特性—可复用性。Java不支持多继承，单继承使JAVA的继承关系很简单，一个类只能有一个父类，易于管理程序，同时一个类可以实现多个接口，从而克服单继承的缺点。当你先创建了一个类之后，再创建一个新类，即使他和你之前的类有相似的功能，你还是需要重新编写此类。然而通过继承，你也许可以不这么做。合成：在新类里创建">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,295 +158,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java中的继承" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的抽象/">Java中的抽象</a>
+    <h1 class="article-title" itemprop="name">
+      Java中的继承
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的继承/" class="archive-article-date">
+        
+        <a href="/2018/06/09/Java中的继承/" class="archive-article-date">
   	<time datetime="2018-06-09T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的继承/">Java中的继承</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>为什么要继承<br>说到面向对象的特点，就不得不提继承，他使代码拥有了其他非面向对象所没有的一种独特性—可复用性。<br>Java不支持多继承，单继承使JAVA的继承关系很简单，一个类只能有一个父类，易于管理程序，同时一个类可以实现多个接口，从而克服单继承的缺点。<br>当你先创建了一个类之后，再创建一个新类，即使他和你之前的类有相似的功能，你还是需要重新编写此类。然而通过继承，你也许可以不这么做。<br>合成：在新类里创建原有的对象称为合成。这种方式可以重复利用现有的代码而不更改它的形式。</p>
+<p>父类的编写<br>在父类里，填写的属性和方法应该都是泛化的，他不关心具体的子类有特殊性，他只关心只要是我这个类，这个大类可以做什么。比如交通工具定义一个父类类，他不关心具体的子类车有几个轮胎，飞机是怎么飞的，他只关心可以这个类可以移动，可以产生位移。<br>关于父类的权限，为了封装，一般将成员变量赋值为private，但是方法，一般修饰为public。这样做的目的是因为，假如一个与父类不在同一个包的类，想要继承父类，就会变得简单，当然这只是一般情况。<br>java的默认继承机制<br>无论你是否给一个类设计父类，实际上，即使你没有设计父类，他都会有一个父类，那就是Object，想一想在你创建一个类的时候，是不是有这一栏。<br>这就是java的单根继承结构。在java里每个类都只能有一个父类，而且是必须有。而一个类可以被多个类继承。实际上这是利大于弊的。</p>
+<p>继承确定了一种关系<br>在继承关系里，被继承的类被称为父类，而继承的类就被称为子类。子类继承了父类所有的属性（尽管private成员被隐藏起来，并且不可访问）和方法，不仅如此，子类还可以根据自己的独特性，扩展属性和方法。<br>子类复制了父类的接口，所以所有可以发送给父类对象的消息同时也可以发送给子类对象。子类与父类具有相同的类型。<br>继承后的子类与父类<br>子类对象可以被当做父类对象来使用<br>子类对象不仅可以被子类的变量管理(指向内存)，还可以被父类变量管理。(多态)<br>继承的语法<br>关键字extends表明新类派生于一个已经存在的类。已存在的类称为父类或基类，新类称为子类或派生类。例如:<br><code>class SubA extends ParenA {}</code><br>类SubA继承了ParenA，ParenA类称为父类或基类，SubA类称为子类或派生类。<br>以下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class ParenA1 &#123;</span><br><span class="line">    public void tsetParentMethod1()&#123;</span><br><span class="line">        System.out.println(&quot;我是父类的方法&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class SubA1 extends ParenA&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        ParenA1 parenA1 = new ParenA();</span><br><span class="line">        parenA1.tsetParentMethod();</span><br><span class="line"></span><br><span class="line">        SubA1 subA1 = new SubA();</span><br><span class="line">        subA1.tsetParentMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>子类的执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是父类的方法</span><br><span class="line">我是父类的方法</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/09/Java中的继承/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/07/Java的对象/" class="archive-article-date">
-  	<time datetime="2018-06-07T13:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/06/09/Java中的抽象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java中的抽象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/07/Java的对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java的对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/07/Java的对象/">Java的对象</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/Git的基础命令/" class="archive-article-date">
-  	<time datetime="2018-06-06T12:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/Git的基础命令/">Git的基础命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/03/Java的方法/" class="archive-article-date">
-  	<time datetime="2018-06-03T15:49:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/03/Java的方法/">Java的方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
-  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/22/Java中的数组/" class="archive-article-date">
-  	<time datetime="2018-05-21T16:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/22/Java中的数组/">Java中的数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -466,8 +343,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
