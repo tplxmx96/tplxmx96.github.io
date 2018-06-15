@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | talxmx96</title>
+  <title>Java的多态 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="多态多态： 指允许不同类的对象对同一消息做出不同的行为，即同一消息可以根据对象类型的不同而采取多种不同的行为方式， 实现多态的技术被称为动态绑定，指的是在执行期间，判断所引用对象的实际类型，让该对象根据自己的 实际类型 调用其相应的方法， 多态的存在有三个前提:1.要有继承关系2.子类要重写父类的方法3.父类引用指向子类对, 多态的实现方式：第一： 接口实现第二： 对继承自父类的方法进行重写第三：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java的多态">
+<meta property="og:url" content="http://yoursite.com/2018/06/14/Java的多态/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="多态多态： 指允许不同类的对象对同一消息做出不同的行为，即同一消息可以根据对象类型的不同而采取多种不同的行为方式， 实现多态的技术被称为动态绑定，指的是在执行期间，判断所引用对象的实际类型，让该对象根据自己的 实际类型 调用其相应的方法， 多态的存在有三个前提:1.要有继承关系2.子类要重写父类的方法3.父类引用指向子类对, 多态的实现方式：第一： 接口实现第二： 对继承自父类的方法进行重写第三：">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-15T16:14:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Java的多态">
+<meta name="twitter:description" content="多态多态： 指允许不同类的对象对同一消息做出不同的行为，即同一消息可以根据对象类型的不同而采取多种不同的行为方式， 实现多态的技术被称为动态绑定，指的是在执行期间，判断所引用对象的实际类型，让该对象根据自己的 实际类型 调用其相应的方法， 多态的存在有三个前提:1.要有继承关系2.子类要重写父类的方法3.父类引用指向子类对, 多态的实现方式：第一： 接口实现第二： 对继承自父类的方法进行重写第三：">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,295 +158,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java的多态" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java的多态
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/14/Java的多态/" class="archive-article-date">
+
+        
+        <a href="/2018/06/14/Java的多态/" class="archive-article-date">
   	<time datetime="2018-06-14T15:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/14/Java的多态/">Java的多态</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p><strong>多态</strong>： 指允许不同类的对象对同一消息做出不同的行为，即同一消息可以根据对象类型的不同而采取多种不同的行为方式， 实现多态的技术被称为动态绑定，指的是在执行期间，判断所引用对象的实际类型，让该对象根据自己的 实际类型 调用其相应的方法，</p>
+<p><strong>多态的存在有三个前提</strong>:<br>1.要有继承关系<br>2.子类要重写父类的方法<br>3.父类引用指向子类对,</p>
+<p><strong>多态的实现方式</strong>：<br>第一： 接口实现<br>第二： 对继承自父类的方法进行重写<br>第三： 同一个类中的方法重载</p>
+<p><strong>java在使用多态时注意的几点</strong>：<br>对继承自父类的方法进行重写<br>Java的这种机制遵循一个原则：当父类对象引用子类对象时，被引用子类对象的类型而不是引用的父类类型决定了调用谁的成员方法，但是这个被调用的方法必须是在父类中定义过的，也就是说被子类覆盖的方法。<br>在同一个类中重载实现，这里要再强调一下重载和重写的区别。<br>重载：是在一个类中，两个方法的方法名相同，但是参数的个数和参数的类型不同，注意的是返回值的类型不作为是否重载的一个判断条件<br>重写：是子类重写了父类中定义的方法，两个方法的方法名一致，参数个数和类型一致，返回值类型一致，意味着完全一样。<br><strong>接口实现</strong><br>接口内只有方法声明，没有方法实现，接口不能被实例化，接口内的成员函数默认都是抽象成员函数，接口内的变量都为 Static final 类型的，<br>一旦一个类实现了这个接口，这个接口内的所有方法都必须要实现，即实现类中要重写该接口中的所定义的全部方法，否则程序报错，不被允许。<br>再介绍一下抽象类和接口的不同： 内部至少含有一个抽象方法的类，abstract修饰，其成员变量的类型没有限制，也可以存在非抽象方法，但是继承自抽象类的子类，其同样也必须实现其抽象方法。</p>
+<p><strong>以下实例</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 演员父类</span><br><span class="line"> */</span><br><span class="line">public abstract class Actor &#123;//当一个类是抽象类的时候，就不能使用new来实例化了！--抽象类是一个天生的父类</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public Actor()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    public Actor(String name)&#123;</span><br><span class="line">        setName(name);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 演员的表演方法</span><br><span class="line">     */</span><br><span class="line">    public void performs()&#123;</span><br><span class="line">        System.out.println(&quot;演员&quot; + name + &quot;正在表演精彩的节目&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 歌唱演员</span><br><span class="line"> */</span><br><span class="line">public class Singer extends Actor &#123;</span><br><span class="line">    public Singer() &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line">    public Singer(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void performs() &#123;</span><br><span class="line">        System.out.println(&quot;歌唱演员&quot; + getName() + &quot;正在表演歌唱节目《在这桃花盛开的地方》&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 舞蹈演员</span><br><span class="line"> */</span><br><span class="line">public class Dancer extends Actor &#123;</span><br><span class="line">    public Dancer() &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Dancer(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void performs() &#123;</span><br><span class="line">        System.out.println(&quot;舞蹈演员&quot; + getName() + &quot;正在展现她那婀娜多姿的舞蹈&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 导演类 -- 相当于我们项目中的核心业务类</span><br><span class="line"> * 主要功能：让演员就位，开始表演</span><br><span class="line"> */</span><br><span class="line">public class Director &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 导演的&quot;Action&quot;方法，让演员就位开始表演节目</span><br><span class="line">     * @param actor</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    public void action(Actor actor)&#123;</span><br><span class="line">        actor.performs();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class ChunWanTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Director 张艺谋 = new Director();</span><br><span class="line">        Singer 宋祖英 = new Singer(&quot;宋祖英&quot;);</span><br><span class="line">        Dancer 杨丽萍 = new Dancer(&quot;杨丽萍&quot;);</span><br><span class="line">        张艺谋.action(宋祖英);</span><br><span class="line">        张艺谋.action(杨丽萍);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到的结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">歌唱演员宋祖英正在表演歌唱节目《在这桃花盛开的地方》</span><br><span class="line">舞蹈演员杨丽萍正在展现她那婀娜多姿的舞蹈</span><br></pre></td></tr></table></figure></p>
+<p><strong>子类调用父类的方法</strong>：<br>使用super关键字.<br>可以调用父类的公有属性和方法⎜。<br>可以调用父类的protected属性和方法。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/14/Java的多态/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/13/Java的UML类图/" class="archive-article-date">
-  	<time datetime="2018-06-13T13:56:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/13/Java的UML类图/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java的UML类图</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/13/Java的UML类图/">Java的UML类图</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的抽象/">Java中的抽象</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的继承/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的继承/">Java中的继承</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/07/Java的对象/" class="archive-article-date">
-  	<time datetime="2018-06-07T13:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/07/Java的对象/">Java的对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/Git的基础命令/" class="archive-article-date">
-  	<time datetime="2018-06-06T12:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/Git的基础命令/">Git的基础命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/03/Java的方法/" class="archive-article-date">
-  	<time datetime="2018-06-03T15:49:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/03/Java的方法/">Java的方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -466,8 +340,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
