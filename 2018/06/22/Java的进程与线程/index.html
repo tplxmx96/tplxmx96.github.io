@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>talxmx96</title>
+  <title>Java的进程与线程 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="进程(Processes)与线程(Threads)Java是为数不多的多线程编程的支持语言，也就是说在同一个时间段内，Java可以启动更多的工作程序来完成同一功能操作，这样可以达到更高的处理性能。 进程：是一次完整的控制单元。例如：启动一个程序，那么一定要分配CPU资源，要向内存之中加载数据，而后再进行一系列的处理操作。而最早的DOS系统就是单进程的操作处理。但是在传统的DOS系统之中会出现一个问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java的进程与线程">
+<meta property="og:url" content="http://yoursite.com/2018/06/22/Java的进程与线程/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="进程(Processes)与线程(Threads)Java是为数不多的多线程编程的支持语言，也就是说在同一个时间段内，Java可以启动更多的工作程序来完成同一功能操作，这样可以达到更高的处理性能。 进程：是一次完整的控制单元。例如：启动一个程序，那么一定要分配CPU资源，要向内存之中加载数据，而后再进行一系列的处理操作。而最早的DOS系统就是单进程的操作处理。但是在传统的DOS系统之中会出现一个问">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-22T16:10:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Java的进程与线程">
+<meta name="twitter:description" content="进程(Processes)与线程(Threads)Java是为数不多的多线程编程的支持语言，也就是说在同一个时间段内，Java可以启动更多的工作程序来完成同一功能操作，这样可以达到更高的处理性能。 进程：是一次完整的控制单元。例如：启动一个程序，那么一定要分配CPU资源，要向内存之中加载数据，而后再进行一系列的处理操作。而最早的DOS系统就是单进程的操作处理。但是在传统的DOS系统之中会出现一个问">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,284 +158,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java中的List" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java的进程与线程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
+    <h1 class="article-title" itemprop="name">
+      Java的进程与线程
     </h1>
   
 
         
-        <a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
+        <a href="/2018/06/22/Java的进程与线程/" class="archive-article-date">
+  	<time datetime="2018-06-22T14:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p><strong>什么是List？</strong><br>(1)List 是一个接口，它继承于Collection的接口。它代表着有序的队列。<br>(2)AbstractList 是一个抽象类，它继承于AbstractCollection。AbstractList实现List接口中除size()、get(int location)之外的函数。<br>(3)AbstractSequentialList 是一个抽象类，它继承于AbstractList。AbstractSequentialList 实现了“链表中，根据index索引值操作链表的全部函数”。<br>(4) ArrayList, LinkedList, Vector, Stack是List的4个实现类。<br>ArrayList 是一个数组队列，相当于动态数组。它由数组实现，随机访问效率高，随机插入、随机删除效率低。<br>　　LinkedList 是一个双向链表。它也可以被当作堆栈、队列或双端队列进行操作。LinkedList随机访问效率低，但随机插入、随机删除效率低。<br>　　Vector 是矢量队列，和ArrayList一样，它也是一个动态数组，由数组实现。但是ArrayList是非线程安全的，而Vector是线程安全的。<br>　　Stack 是栈，它继承于Vector。它的特性是：先进后出(FILO, First In Last Out)。<br>如果涉及到“栈”、“队列”、“链表”等操作，应该考虑用List，具体的选择哪个List，根据下面的标准来取舍。<br>(1) 对于需要快速插入，删除元素，应该使用LinkedList。<br>(2) 对于需要快速随机访问元素，应该使用ArrayList。<br>(3) 对于“单线程环境” 或者 “多线程环境，但List仅仅只会被单个线程操作”，此时应该使用非同步的类(如ArrayList)。<br>       对于“多线程环境，且List可能同时被多个线程操作”，此时，应该使用同步的类(如Vector)。</p>
-<p><strong>实例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class ListTest &#123;</span><br><span class="line">    private static List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;String&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        list.add(&quot;AAA&quot;);</span><br><span class="line">        list.add(&quot;WWW&quot;);</span><br><span class="line">        list.add(&quot;DNF&quot;);</span><br><span class="line">        list.add(&quot;DDD&quot;);</span><br><span class="line">        list.add(&quot;FFF&quot;);</span><br><span class="line">        for (String s : list) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; list.size(); i++) &#123;</span><br><span class="line">            System.out.println(list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上两种for循环方式得出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">AAA</span><br><span class="line">WWW</span><br><span class="line">DNF</span><br><span class="line">DDD</span><br><span class="line">FFF</span><br><span class="line">--------------</span><br><span class="line">AAA</span><br><span class="line">WWW</span><br><span class="line">DNF</span><br><span class="line">DDD</span><br><span class="line">FFF</span><br></pre></td></tr></table></figure></p>
-<p>Java中可变数组的原理就是不断的创建新的数组，将原数组加到新的数组中,下文对Java List用法做了详解。</p>
+        <h2 id="进程-Processes-与线程-Threads"><a href="#进程-Processes-与线程-Threads" class="headerlink" title="进程(Processes)与线程(Threads)"></a>进程(Processes)与线程(Threads)</h2><p>Java是为数不多的多线程编程的支持语言，也就是说在同一个时间段内，Java可以启动更多的工作程序来完成同一功能操作，这样可以达到更高的处理性能。</p>
+<p><strong>进程</strong>：是一次完整的控制单元。例如：启动一个程序，那么一定要分配CPU资源，要向内存之中加载数据，而后再进行一系列的处理操作。而最早的DOS系统就是单进程的操作处理。<br>但是在传统的DOS系统之中会出现一个问题，一旦电脑出现病毒了就死机了，因为在单进程的操作系统之中，同一时间段内只允许一个进程执行，如果说现在病毒占用着此程序，那么其它的程序将无法执行。后来发展到了Winfows时代，电脑里面即使出现了病毒，那么也可以正常使用了，除了慢点。<br>但是最初的时候电脑的CPU只有一块，所以如果要运行多个程序，那么就需要对CPU进行轮流抢占。但是每一个进程的启动，必然要花费大量的资源，所以入门慢慢的发现，如果使用多进程的处理。并不能够带来更快的处理效果，而后人们继续在单个进程的基础上面又，继续划分了线程的概念。也就是说每一个进程里面还可以运行多个线程，进程执行时一定会牵扯到CPU或内存资源的分配，所以线程如果要运行在进程之中，那么就把空间的分配低速操作就可以屏蔽了，所以线程的处理要比进程要快，但是线程无法摆脱离进程存在。<br>操作系统是以进程为单位控制的，而且一个进程，为了表达更高的处理操作，所以划分为多个线程，同时工作。</p>
+<p><strong>线程</strong>：就是进程中的一个独立的控制单元。<br>线程在控制着进程的执行。<br>一个进程中至少执行一个线程。<br>Java JVM 启动的时候会有一个进程Java.tet。<br>该进程中至少有一个线程负责Java的程序的执行。而且这个线程运行的代码存在于main方法中，该线程称之为主线程。<br>扩展：其实更细节的说明JVM，JVM启动不止一个线程，还有负责垃圾回收机制的线程。</p>
+<p><strong>线程的串行</strong><br>一个线程中任务的执行是串行。<br>如果要在一个线程中执行多个任务，你们只能一个一个地按顺序执行这些任务。</p>
+<p><strong>进程和线程的比较</strong><br>1、线程是CPU调用(执行任务)的最小单位。<br>2、进程是CPU分配资源和调度的单位。<br>3、一个程序可以对应多个进程，一个进程中可以有多个线程，但至少要有一个线程。<br>4、同一个进程内的线程共享进程的资源。</p>
+<p>定义和启动一个线程<br>Java 中有两种方式创建 Thread 的实例：</p>
 <blockquote>
-<p>List:元素是有序的(怎么存的就怎么取出来，顺序不会乱)，元素可以重复（角标1上有个3，角标2上也可以有个3）因为该集合体系有索引。<br>ArrayList：底层的数据结构使用的是数组结构（数组长度是可变的百分之五十延长）（特点是查询很快，但增删较慢）线程不同步。<br>LinkedList：底层的数据结构是链表结构（特点是查询较慢，增删较快）。<br>Vector：底层是数组数据结构 线程同步（数组长度是可变的百分之百延长）（无论查询还是增删都很慢，被ArrayList替代了）。</p>
-</blockquote>
-<p><strong>建议</strong>:<br>如果遍历List集合元素，对于ArrayList、Vector集合，应该使用随机访问的方法(get)来遍历集合元素，这样性能更好；<br>对于LinkedList集合，则应该使用迭代器Iterator来遍历集合元素。<br>如果要经常执行插入、删除操作来改变包含大量数据的List集合的大小，可考虑使用Linkedlist集合</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/31/Java中的List/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的HashSet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java中的HashSet"><a href="#Java中的HashSet" class="headerlink" title="Java中的HashSet"></a>Java中的HashSet</h2><p><strong>什么是HashSet</strong></p>
-<p>HashSet 是一个没有重复元素的集合。<br>它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。<br>HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用 Collections.synchronizedSet 方法来“包装” set。<br>集合.也叫容器类，它的功能就相当于容器。<br>Java的集合（容器），它就是用来“装对象的”。<br>容器.应该有哪些方法供你使用？</p>
-<ul>
-<li>把对象丢进容器中.</li>
-<li>把指定的东西”读取”出来，该东西依然在容器里面.</li>
-<li>把指定的”东西”从容器中删除.</li>
-<li>“挨个”把每个东西数一次.（遍历）</li>
-<li>把容器”倒空”.</li>
-<li>把A容器中东西，全部倒入B容器中.<blockquote>
-<p>集合 + 集合</p>
-</blockquote>
-</li>
-<li>拿A容器包含的东西，减去B容器中包含的东西.<blockquote>
-<p>集合 - 集合</p>
-</blockquote>
-</li>
-</ul>
-<p>Set集合，就是Collection。它们的行为完全相似<br>遍历Set集合，有两种办法：</p>
-<blockquote>
-<ol>
-<li>用迭代器</li>
-<li>用foreach循环</li>
-</ol>
-</blockquote>
-<p><strong>HashSet的存储机制</strong><br>底层用一个数字存元素–而且这个数组的长度永远是2的N次方。<br>HashSet的构造器:HashSet（int底层数组的长度，float loadFactor）。</p>
-<ul>
-<li>如果传入数组长度不是2的N次方，HashSet会自动将它扩展到2的N次方。<br>HashSet int initialapacity。</li>
-<li>initialapacity.控制底层数组的长度，默认为16.</li>
-<li>loadFactor.默认为0.75。<br>当HashSet感觉到底层快满的时候，再创建一个底层数组是原来的2倍。<br>再次创建一个长度为原有的数组长度2倍的数组，原有的数组就变成了垃圾–并且要把原有数组的元素复制到新的数组中。–专业说法叫”rehash（重hash）。”<br>当load ctor为0.75时，70%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为0.1时，10%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为1时，100%的桶已经满时，HashSet会分配新的数组。</li>
-</ul>
-<p>loadFactory越小，越耗内存;loadFactory越大，性能越低。<br>loadFactor越大，代表当数组很满时才去”重Hash”</p>
-<p><strong>存储机制机制</strong>:<br>(1)当元素加进来时，HashSet会调用该对象的hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果要加入的位置是空的，直接放入即可。<br>(4)如果要加入的位置已经有元素，此处就会形成”链表”</p>
-<p>**HashSet取元素的机制：<br>(1)当要取一个元素时，HashSet会调用该对象的Hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果该位置恰好是要找到元素，直接取出即可。<br>(4)然后该位置有链表，HashSet要;”挨个”搜索链表里的元素。<br>最理想的情况下，HashSet的性能几乎可以数组匹敌存取的性能非常高。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/29/Java中的HashSet/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的HashMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java中Hash"><a href="#Java中Hash" class="headerlink" title="Java中Hash"></a>Java中Hash</h2><p><strong>什么是Hash</strong>?<br>它是将一个任意长度的二进制值通过一个映射关系转换成一个固定长度的二进制值。<br>1.任意长度的二进制。<br>2.映射关系（哈希算放 - 就相当于一个大学里面的学号的一个映射规则）。<br>3.固定的二进制值（哈希值 - 相当于我们的大学里面的学号）。</p>
-<p><strong>映射规则（哈希算法）</strong>：<br>任意长度=进制值value======&gt;固定长度=进制值key。<br>学号映射规则：2013年入学计算机学院代号38，第87个入学的。<br>张三-2013-20-计算机学院-男-172======&gt;20133887。<br>学号映射规则：2014年材料学院代号45，第23个入学材料学院。<br>李四-2014-19-材料学院-女-162======&gt;20144520。<br>哈希映射技术是一种就元素映射到数组的非常简单的技术。由于哈希映射采用的是数组结果，那么必然存在一中用于确定任意键访问数组的索引机制，该机制能够提供一个小于数组大小的整数，我们将该机制称之为哈希函数。在 Java 中我们不必为寻找这样的整数而大伤脑筋，因为每个对象都必定存在一个返回整数值的 hashCode 方法，而我们需要做的就是将其转换为整数，然后再将该值除以数组大小取余即可。</p>
-<p>Hash:通过一个key一个输出，通过一个哈希函数，来找到数组中与这个key唯一映射的value。</p>
-<p>Map以按键/数值对的形式存储数据，这里要特别说明（ Map.Entry，是Map的内部类，它用来描述Map中的键/值对）。 Map是一个接口，我们平时多用它的实现类HashMap。<br>HashMap 是一个散列表，它存储的内容是键值对(key-value)映射。<br>HashMap里面实现一个静态内部类Entry，其重要的属性有 key , value, next，从属性key,value我们就能很明显的看出来Entry就是HashMap键值对实现的一个基础bean，我们上面说到HashMap的基础就是一个线性数组，这个数组就是Entry[]，Map里面的内容都保存在Entry[]里面。<br>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。<br>HashMap是通过”拉链法”实现的哈希表。它包括几个重要的成员变量：table, size, threshold, loadFactor, modCount。<br>HashMap 的实例有两个参数影响其性能：“初始容量” 和 “加载因子”。容量 是哈希表中桶的数量，初始容量 只是哈希表在创建时的容量。加载因子 是哈希表在其容量自动增加之前可以达到多满的一种尺度。当哈希表中的条目数超出了加载因子与当前容量的乘积时，则要对该哈希表进行 rehash 操作（即重建内部数据结构），从而哈希表将具有大约两倍的桶数。size是HashMap的大小，它是HashMap保存的键值对的数量。<br>threshold是HashMap的阈值，用于判断是否需要调整HashMap的容量。<br>threshold的值=”容量*加载因子”，当HashMap中存储数据的数量达到threshold时，就需要将HashMap的容量加倍，loadFactor就是加载因子，modCount是用来实现fail-fast机制的。</p>
-<p><strong>用例如下</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public class HashMap &#123;</span><br><span class="line">      public static void main(String[] args)&#123;</span><br><span class="line">          Map&lt;String,String&gt; house = new HashMap&lt;String,String&gt;();</span><br><span class="line">          house.put(&quot;1&quot;,&quot;柜子&quot;);</span><br><span class="line">          house.put(&quot;2&quot;,&quot;床&quot;);</span><br><span class="line">          house.put(&quot;3&quot;,&quot;箱子&quot;);</span><br><span class="line">          house.put(&quot;4&quot;,&quot;鞋子&quot;);</span><br><span class="line">          house.put(&quot;5&quot;,&quot;电脑&quot;);</span><br><span class="line">          house.put(&quot;6&quot;,&quot;桌子&quot;);</span><br><span class="line">          house.put(&quot;7&quot;,&quot;灯&quot;);</span><br><span class="line">          house.put(&quot;8&quot;,&quot;被子&quot;);</span><br><span class="line"></span><br><span class="line">          //第一种：普遍使用，二次取值</span><br><span class="line">          System.out.println(&quot;通过Map.KeySet遍历key和value：&quot;);</span><br><span class="line">          for (String key : house.keySet())&#123;</span><br><span class="line">              System.out.println(&quot;key=&quot; + key + &quot; znd value=&quot; + house.get(key));</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          //第二种</span><br><span class="line">          System.out.println(&quot;通过Map.entrySet使用iterator遍历key和value：&quot;);  </span><br><span class="line">  		  Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = map.entrySet().iterator();  </span><br><span class="line">  		  while (it.hasNext()) &#123;  </span><br><span class="line">   				Map.Entry&lt;String, String&gt; entry = it.next();  </span><br><span class="line">      			System.out.println(&quot;key= &quot; + entry.getKey() + &quot; and value= &quot; + entry.getValue());  </span><br><span class="line">      		&#125;</span><br><span class="line">      	  //第三种：推荐，尤其是容量大时  </span><br><span class="line">  		  System.out.println(&quot;通过Map.entrySet遍历key和value&quot;);  </span><br><span class="line">  	      for (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;  </span><br><span class="line">      			System.out.println(&quot;key= &quot; + entry.getKey() + &quot; and value= &quot; + entry.getValue());  </span><br><span class="line">      		&#125; </span><br><span class="line">      	  //第四种  </span><br><span class="line">  	  	  System.out.println(&quot;通过Map.values()遍历所有的value，但不能遍历key&quot;);  </span><br><span class="line">  		  for (String v : map.values()) &#123;  </span><br><span class="line">   		  System.out.println(&quot;value= &quot; + v);  </span><br><span class="line">   		&#125;  </span><br><span class="line">   	&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>以上第一、二、三种得出的是</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">通过Map.KeySet遍历key和value：</span><br><span class="line">//&quot;通过Map.entrySet使用iterator遍历key和value：&quot;</span><br><span class="line">//&quot;通过Map.entrySet遍历key和value&quot;</span><br><span class="line">key=1 znd value=柜子</span><br><span class="line">key=2 znd value=床</span><br><span class="line">key=3 znd value=箱子</span><br><span class="line">key=4 znd value=鞋子</span><br><span class="line">key=5 znd value=电脑</span><br><span class="line">key=6 znd value=桌子</span><br><span class="line">key=7 znd value=灯</span><br><span class="line">key=8 znd value=被子</span><br></pre></td></tr></table></figure></p>
-<p><strong>第四种得出的是</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">通过Map.values()遍历所有的value，但不能遍历key</span><br><span class="line">value=柜子</span><br><span class="line">value=床</span><br><span class="line">value=箱子</span><br><span class="line">value=鞋子</span><br><span class="line">value=电脑</span><br><span class="line">value=桌子</span><br><span class="line">value=灯</span><br><span class="line">value=被子</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/29/Java的HashMap/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的基础排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
-  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-冒泡排序"><a href="#一-冒泡排序" class="headerlink" title="(一)冒泡排序"></a>(一)冒泡排序</h2><p><strong>基本思想</strong>：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。</p>
-<p><strong>冒泡排序算法的运作如下</strong>：</p>
-<p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<p>// 实例：</p>
-<blockquote>
-<p>初始状态：66, 36, 50, 89, 20, 55, 99, 100<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;66, 36, 50, 89, 20, 55, 99, 100&#125;;</span><br><span class="line">        int temp = 0;</span><br><span class="line">        for (int i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; arr.length - 1 - i; j++) &#123;</span><br><span class="line">                if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">                    temp = arr[j];</span><br><span class="line">                    arr[j] = arr[j + 1];</span><br><span class="line">                    arr[j + 1] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            (System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>以上实例输出结果为：<br> <code>20 , 36 , 50 , 55 , 66 , 89 , 99 , 100</code></p>
-<p><code>(System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</code> 中使用了三目运算符.</p>
-<blockquote>
-<p>三目运算符的要求： 条件? 成立值 : 不成立值。</p>
+<p>提供 Runnable 对象。Runnable 接口定义了一个方法 run ,用来包含线程要执行的代码。如 HelloRunnable 所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class HelloRunnable implements Runnable &#123;</span><br><span class="line">    /* (non-Javadoc)</span><br><span class="line">     * @see java.lang.Runnable#run()</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new Thread(new HelloRunnable())).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>初始状态:123, 55, 20, 66, 30, 120, 145, 60<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;123,55,20,66,30,120,145,60&#125;;</span><br><span class="line">            int temp = 0;</span><br><span class="line">            for (int i =  arr.length - 1;i &gt; 0; i--) &#123;</span><br><span class="line">                for (int j = 0 ; j &lt; i ; j++) &#123;</span><br><span class="line">                    if (arr[j] &lt; arr[j + 1]) &#123;</span><br><span class="line">                        temp = arr[j];</span><br><span class="line">                        arr[j] = arr[j + 1];</span><br><span class="line">                        arr[j + 1] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>继承 Thread。Thread 类本身是实现 Runnable，虽然它的 run 方法啥都没干。HelloThread 示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class HelloThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new HelloThread()).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p>以上实例输出结果为：<br><code>145 , 123 , 120 , 66 , 60 , 55 , 30 , 20</code></p>
-<p><strong>给出一个测试代码</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    int[] arr = &#123;1,1,2,0,9,3,12,7,8,3,4,65,22&#125;;</span><br><span class="line"></span><br><span class="line">    BubbleSort.bubbleSort1(arr, arr.length);</span><br><span class="line"></span><br><span class="line">    for(int i:arr)&#123;</span><br><span class="line">        System.out.print(i+&quot;,&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>运行结果</strong>:<br><code>0,1,1,2,3,3,4,7,8,9,12,22,65,</code></p>
-<p><strong>冒泡排序</strong><br>内循环：<br>-1：是为了避免角标越界。<br>-j;为了让外循环增加一次，内循环参数与比较的元素个数递减。</p>
+<p>请注意,这两个例子调用 start 来启动线程。<br>第一种方式,它使用 Runnable 对象,在实际应用中更普遍,因为 Runnable 对象可以继承 Thread 以外的类。第二种方式，在简单的应用程序更容易使用,但受限于你的任务类必须是一个 Thread 的后代。本书推荐使用第一种方法,将 Runnable 任务从 Thread 对象分离来执行任务。这不仅更灵活,而且它适用于高级线程管理 API。</p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -440,16 +223,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/23/Java的基础排序/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/22/Java的进程与线程/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/19/Java的异常/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java的异常</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -469,334 +311,14 @@
 
 
 
-
-  
-    <article id="post-Java中的数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/22/Java中的数组/">Java中的数组</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/22/Java中的数组/" class="archive-article-date">
-  	<time datetime="2018-05-21T16:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Java-数组"><a href="#Java-数组" class="headerlink" title="Java 数组"></a>Java 数组</h3><p>数组对于每一门编程语言来说都是重要的数据结构之一，当然不同语言对数组的实现及处理也不尽相同。<br>Java 语言中提供的数组是用来存储固定大小的同类型元素。<br>你可以声明一个数组变量，如 numbers[100] 来代替直接声明 100 个独立变量 number0，number1，….，number99。<br>本教程将为大家介绍 Java 数组的声明、创建和初始化，并给出其对应的代码。</p>
-<p><strong>声明数组变量</strong><br>首先必须声明数组变量，才能在程序中使用数组。下面是声明数组变量的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dataType[] arrayRefVar;   // 首选的方法</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">dataType arrayRefVar[];  // 效果相同，但不是首选方法</span><br></pre></td></tr></table></figure></p>
-<p>注意: 建议使用 dataType[] arrayRefVar 的声明风格声明数组变量。 dataType arrayRefVar[] 风格是来自 C/C++ 语言 ，在Java中采用是为了让 C/C++ 程序员能够快速理解java语言。</p>
-<p><strong>实例</strong><br>下面是这两种语法的代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">double[] myList;         // 首选的方法</span><br><span class="line"> </span><br><span class="line">或</span><br><span class="line"> </span><br><span class="line">double myList[];         //  效果相同，但不是首选方法</span><br></pre></td></tr></table></figure></p>
-<p>创建数组<br>Java语言使用new操作符来创建数组，语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayRefVar = new dataType[arraySize];</span><br></pre></td></tr></table></figure></p>
-<p>上面的语法语句做了两件事：</p>
-<p>一、使用 dataType[arraySize] 创建了一个数组。<br>二、把新创建的数组的引用赋值给变量 arrayRefVar。<br>数组变量的声明，和创建数组可以用一条语句完成，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dataType[] arrayRefVar = new dataType[arraySize];</span><br><span class="line">另外，你还可以使用如下的方式创建数组。</span><br><span class="line"></span><br><span class="line">dataType[] arrayRefVar = &#123;value0, value1, ..., valuek&#125;;</span><br><span class="line">数组的元素是通过索引访问的。数组索引从 0 开始，所以索引值从 0 到 arrayRefVar.length-1。</span><br></pre></td></tr></table></figure></p>
-<p><strong>实例</strong><br>下面的语句首先声明了一个数组变量 myList，接着创建了一个包含 10 个 double 类型元素的数组，并且把它的引用赋值给 myList 变量。</p>
-<p>TestArray.java 文件代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class TestArray &#123;</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      // 数组大小</span><br><span class="line">      int size = 10;</span><br><span class="line">      // 定义数组</span><br><span class="line">      double[] myList = new double[size];</span><br><span class="line">      myList[0] = 5.6;</span><br><span class="line">      myList[1] = 4.5;</span><br><span class="line">      myList[2] = 3.3;</span><br><span class="line">      myList[3] = 13.2;</span><br><span class="line">      myList[4] = 4.0;</span><br><span class="line">      myList[5] = 34.33;</span><br><span class="line">      myList[6] = 34.0;</span><br><span class="line">      myList[7] = 45.45;</span><br><span class="line">      myList[8] = 99.993;</span><br><span class="line">      myList[9] = 11123;</span><br><span class="line">      // 计算所有元素的总和</span><br><span class="line">      double total = 0;</span><br><span class="line">      for (int i = 0; i &lt; size; i++) &#123;</span><br><span class="line">         total += myList[i];</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(&quot;总和为： &quot; + total);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上实例输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">总和为： 11367.373</span><br></pre></td></tr></table></figure></p>
-<p>下面的图片描绘了数组 myList。这里 myList 数组里有 10 个 double 元素，它的下标从 0 到 9。</p>
-<p><strong>java数组结构说明</strong></p>
-<p>处理数组<br>数组的元素类型和数组的大小都是确定的，所以当处理数组元素时候，我们通常使用基本循环或者 foreach 循环。</p>
-<p>示例<br>该实例完整地展示了如何创建、初始化和操纵数组：</p>
-<p>TestArray.java 文件代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class TestArray &#123;</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      double[] myList = &#123;1.9, 2.9, 3.4, 3.5&#125;;</span><br><span class="line"> </span><br><span class="line">      // 打印所有数组元素</span><br><span class="line">      for (int i = 0; i &lt; myList.length; i++) &#123;</span><br><span class="line">         System.out.println(myList[i] + &quot; &quot;);</span><br><span class="line">      &#125;</span><br><span class="line">      // 计算所有元素的总和</span><br><span class="line">      double total = 0;</span><br><span class="line">      for (int i = 0; i &lt; myList.length; i++) &#123;</span><br><span class="line">         total += myList[i];</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(&quot;Total is &quot; + total);</span><br><span class="line">      // 查找最大元素</span><br><span class="line">      double max = myList[0];</span><br><span class="line">      for (int i = 1; i &lt; myList.length; i++) &#123;</span><br><span class="line">         if (myList[i] &gt; max) max = myList[i];</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(&quot;Max is &quot; + max);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上实例编译运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.9</span><br><span class="line">2.9</span><br><span class="line">3.4</span><br><span class="line">3.5</span><br><span class="line">Total is 11.7</span><br><span class="line">Max is 3.5</span><br><span class="line">foreach 循环</span><br><span class="line">JDK 1.5 引进了一种新的循环类型，被称为 foreach 循环或者加强型循环，它能在不使用下标的情况下遍历数组。</span><br></pre></td></tr></table></figure></p>
-<p>示例<br>该实例用来显示数组myList中的所有元素：</p>
-<p>TestArray.java 文件代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class TestArray &#123;</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      double[] myList = &#123;1.9, 2.9, 3.4, 3.5&#125;;</span><br><span class="line"> </span><br><span class="line">      // 打印所有数组元素</span><br><span class="line">      for (double element: myList) &#123;</span><br><span class="line">         System.out.println(element);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>实例编译运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.9</span><br><span class="line">2.9</span><br><span class="line">3.4</span><br><span class="line">3.5</span><br><span class="line">数组作为函数的参数</span><br><span class="line">数组可以作为参数传递给方法。</span><br></pre></td></tr></table></figure></p>
-<p>例如，下面的例子就是一个打印 int 数组中元素的方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void printArray(int[] array) &#123;</span><br><span class="line">  for (int i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">    System.out.print(array[i] + &quot; &quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>下面例子调用 printArray 方法打印出 3，1，2，6，4 和 2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">printArray(new int[]&#123;3, 1, 2, 6, 4, 2&#125;);</span><br><span class="line">数组作为函数的返回值</span><br><span class="line">public static int[] reverse(int[] list) &#123;</span><br><span class="line">  int[] result = new int[list.length];</span><br><span class="line"> </span><br><span class="line">  for (int i = 0, j = result.length - 1; i &lt; list.length; i++, j--) &#123;</span><br><span class="line">    result[j] = list[i];</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上实例中 result 数组作为函数的返回值。</p>
-<p>多维数组<br>多维数组可以看成是数组的数组，比如二维数组就是一个特殊的一维数组，其每一个元素都是一个一维数组，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String str[][] = new String[3][4];</span><br><span class="line">多维数组的动态初始化（以二维数组为例）</span><br><span class="line">1. 直接为每一维分配空间，格式如下：</span><br><span class="line"></span><br><span class="line">type arrayName = new type[arraylenght1][arraylenght2];</span><br><span class="line">type 可以为基本数据类型和复合数据类型，arraylenght1 和 arraylenght2 必须为正整数，arraylenght1 为行数，arraylenght2 为列数。</span><br></pre></td></tr></table></figure></p>
-<p>//例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a[][] = new int[2][3];</span><br></pre></td></tr></table></figure></p>
-<p>解析：</p>
-<p>二维数组 a 可以看成一个两行三列的数组。<br>2.初始化一维数组，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int years[6] = &#123;2012,2013,2014,2015,2016,2017&#125;；</span><br><span class="line">//错误：声明并初始化数组是不需要指定数组的大小</span><br><span class="line">int[12] months = &#123;1，3，5，7，8，10，12&#125;;</span><br><span class="line">//错误：声明并初始化数组是不需要指定数组的大小</span><br><span class="line">int days[] =&#123;1,15&#125;；</span><br><span class="line">//正确：元素个数为2（days.length == 2）</span><br><span class="line">int array[] = &#123;&#125;;</span><br><span class="line">//语法正确：但不能为数组元素赋值</span><br></pre></td></tr></table></figure></p>
-<ol start="3">
-<li>从最高维开始，分别为每一维分配空间，例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String s[][] = new String[2][];</span><br><span class="line">s[0] = new String[2];</span><br><span class="line">s[1] = new String[3];</span><br><span class="line">s[0][0] = new String(&quot;Good&quot;);</span><br><span class="line">s[0][1] = new String(&quot;Luck&quot;);</span><br><span class="line">s[1][0] = new String(&quot;to&quot;);</span><br><span class="line">s[1][1] = new String(&quot;you&quot;);</span><br><span class="line">s[1][2] = new String(&quot;!&quot;);</span><br><span class="line">解析：</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>`s[0]=new String[2] 和 s[1]=new String[3] 是为最高维分配引用空间，也就是为最高维限制其能保存数据的最长的长度，然后再为其每个数组元素单独分配空间 s0=new String(“Good”) 等操作。</p>
-<p>多维数组的引用（以二维数组为例）<br>对二维数组中的每个元素，引用方式为 arrayName[index1][index2]，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num[1][0];</span><br><span class="line">Arrays 类</span><br><span class="line">java.util.Arrays 类能方便地操作数组，它提供的所有方法都是静态的。</span><br></pre></td></tr></table></figure></p>
-<p>具有以下功能：</p>
-<p>给数组赋值：通过 fill 方法。<br>对数组排序：通过 sort 方法,按升序。<br>比较数组：通过 equals 方法比较数组中元素值是否相等。<br>查找数组元素：通过 binarySearch 方法能对排序好的数组进行二分查找法操作。<br>具体说明请查看下表：</p>
-<p><strong>序号    方法和说明</strong><br>1    public static int binarySearch(Object[] a, Object key)<br>用二分查找算法在给定数组中搜索给定值的对象(Byte,Int,double等)。数组在调用前必须排序好的。如果查找值包含在数组中，则返回搜索键的索引；否则返回 (-(插入点) - 1)。<br>2    public static boolean equals(long[] a, long[] a2)<br>如果两个指定的 long 型数组彼此相等，则返回 true。如果两个数组包含相同数量的元素，并且两个数组中的所有相应元素对都是相等的，则认为这两个数组是相等的。换句话说，如果两个数组以相同顺序包含相同的元素，则两个数组是相等的。同样的方法适用于所有的其他基本数据类型（Byte，short，Int等）。<br>3    public static void fill(int[] a, int val)<br>将指定的 int 值分配给指定 int 型数组指定范围中的每个元素。同样的方法适用于所有的其他基本数据类型（Byte，short，Int等）。<br>4    public static void sort(Object[] a)<br>对指定对象数组根据其元素的自然顺序进行升序排列。同样的方法适用于所有的其他基本数据类型（Byte，short，Int等）。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/22/Java中的数组/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java基本数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/20/Java基本数据类型/">Java基本数据类型</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/20/Java基本数据类型/" class="archive-article-date">
-  	<time datetime="2018-05-20T12:28:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Java-基本数据类型"><a href="#Java-基本数据类型" class="headerlink" title="Java 基本数据类型"></a>Java 基本数据类型</h3><p>变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间。</p>
-<p>内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。</p>
-<p><code>CODE：</code>MEMORY：<br>int x = 7;                X      Y<br>int y = 10;                7     10</p>
-<p>因此，通过定义不同类型的变量，可以在内存中储存整数、小数或者字符。</p>
-<p>Java 的两大数据类型:</p>
-<p>内置数据类型</p>
-<h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2><h3 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h3><p>Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。</p>
-<p><strong>byte</strong>：</p>
-<p>-byte 数据类型是8位、有符号的，以二进制补码表示的整数；<br>-最小值是 -128（-2^7）；<br>-最大值是 127（2^7-1）；<br>-默认值是 0；<br>-byte 类型用在大型数组中节约空间，主要代替整数，因为 byte 变量占用的空间只有 int 类型的四分之一；<br>-例子：byte a = 100，byte b = -50。</p>
-<p><strong>short</strong>：</p>
-<p>-short 数据类型是 16 位、有符号的以二进制补码表示的整数<br>-最小值是 -32768（-2^15）；<br>-最大值是 32767（2^15 - 1）；<br>-Short 数据类型也可以像 byte 那样节省空间。一个short变量是int型变量所占空间的二分之一；<br>-默认值是 0；<br>-例子：short s = 1000，short r = -20000。</p>
-<p><strong>int</strong>：</p>
-<p>-int 数据类型是32位、有符号的以二进制补码表示的整数；<br>-最小值是 -2,147,483,648（-2^31）；<br>-最大值是 2,147,483,647（2^31 - 1）；<br>-一般地整型变量默认为 int 类型；<br>-默认值是 0 ；<br>-例子：int a = 100000, int b = -200000。</p>
-<p><strong>long：</strong></p>
-<p>-long 数据类型是 64 位、有符号的以二进制补码表示的整数；<br>-最小值是 -9,223,372,036,854,775,808（-2^63）；<br>-最大值是 9,223,372,036,854,775,807（2^63 -1）；<br>-这种类型主要使用在需要比较大整数的系统上；<br>-默认值是 0L；<br>-例子： long a = 100000L，Long b = -200000L。<br>-“L”理论上不分大小写，但是若写成”l”容易与数字”1”混淆，不容易分辩。所以最好大写。</p>
-<p><strong>float</strong>：</p>
-<p>-float 数据类型是单精度、32位、符合IEEE 754标准的浮点数；<br>-float 在储存大型浮点数组的时候可节省内存空间；<br>-默认值是 0.0f；<br>-浮点数不能用来表示精确的值，如货币；<br>-例子：float f1 = 234.5f。</p>
-<p><strong>double</strong>：</p>
-<p>-double 数据类型是双精度、64 位、符合IEEE 754标准的浮点数；<br>-浮点数的默认类型为double类型；<br>-double类型同样不能表示精确的值，如货币；<br>-默认值是 0.0d；<br>-例子：double d1 = 123.4。</p>
-<p><strong>boolean</strong>：</p>
-<p>-boolean数据类型表示一位的信息；<br>-只有两个取值：true 和 false；<br>-这种类型只作为一种标志来记录 true/false 情况；<br>-默认值是 false；<br>-例子：boolean one = true。</p>
-<p><strong>char</strong>：</p>
-<p>-char类型是一个单一的 16 位 Unicode 字符；<br>-最小值是 \u0000（即为0）；<br>-最大值是 \uffff（即为65,535）；<br>-char 数据类型可以储存任何字符；<br>-例子：char letter = ‘A’;。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>对于数值类型的基本类型的取值范围，我们无需强制去记忆，因为它们的值都已经以常量的形式定义在对应的包装类中了。请看下面的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">//实例</span><br><span class="line">public class PrimitiveTypeTest &#123;  </span><br><span class="line">   public static void main(String[] args) &#123;  </span><br><span class="line">        // byte  </span><br><span class="line">        System.out.println(&quot;基本类型：byte 二进制位数：&quot; + Byte.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Byte&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Byte.MIN_VALUE=&quot; + Byte.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Byte.MAX_VALUE=&quot; + Byte.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // short  </span><br><span class="line">        System.out.println(&quot;基本类型：short 二进制位数：&quot; + Short.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Short&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Short.MIN_VALUE=&quot; + Short.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Short.MAX_VALUE=&quot; + Short.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // int  </span><br><span class="line">        System.out.println(&quot;基本类型：int 二进制位数：&quot; + Integer.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Integer&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Integer.MIN_VALUE=&quot; + Integer.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Integer.MAX_VALUE=&quot; + Integer.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // long  </span><br><span class="line">        System.out.println(&quot;基本类型：long 二进制位数：&quot; + Long.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Long&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Long.MIN_VALUE=&quot; + Long.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Long.MAX_VALUE=&quot; + Long.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // float  </span><br><span class="line">        System.out.println(&quot;基本类型：float 二进制位数：&quot; + Float.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Float&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Float.MIN_VALUE=&quot; + Float.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Float.MAX_VALUE=&quot; + Float.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // double  </span><br><span class="line">        System.out.println(&quot;基本类型：double 二进制位数：&quot; + Double.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Double&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Double.MIN_VALUE=&quot; + Double.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Double.MAX_VALUE=&quot; + Double.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // char  </span><br><span class="line">        System.out.println(&quot;基本类型：char 二进制位数：&quot; + Character.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Character&quot;);  </span><br><span class="line">        // 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台  </span><br><span class="line">        System.out.println(&quot;最小值：Character.MIN_VALUE=&quot;  </span><br><span class="line">                + (int) Character.MIN_VALUE);  </span><br><span class="line">        // 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台  </span><br><span class="line">        System.out.println(&quot;最大值：Character.MAX_VALUE=&quot;  </span><br><span class="line">                + (int) Character.MAX_VALUE);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>输出结果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">基本类型：byte 二进制位数：8</span><br><span class="line">包装类：java.lang.Byte</span><br><span class="line">最小值：Byte.MIN_VALUE=-128</span><br><span class="line">最大值：Byte.MAX_VALUE=127</span><br><span class="line"></span><br><span class="line">基本类型：short 二进制位数：16</span><br><span class="line">包装类：java.lang.Short</span><br><span class="line">最小值：Short.MIN_VALUE=-32768</span><br><span class="line">最大值：Short.MAX_VALUE=32767</span><br><span class="line"></span><br><span class="line">基本类型：int 二进制位数：32</span><br><span class="line">包装类：java.lang.Integer</span><br><span class="line">最小值：Integer.MIN_VALUE=-2147483648</span><br><span class="line">最大值：Integer.MAX_VALUE=2147483647</span><br><span class="line"></span><br><span class="line">基本类型：long 二进制位数：64</span><br><span class="line">包装类：java.lang.Long</span><br><span class="line">最小值：Long.MIN_VALUE=-9223372036854775808</span><br><span class="line">最大值：Long.MAX_VALUE=9223372036854775807</span><br><span class="line"></span><br><span class="line">基本类型：float 二进制位数：32</span><br><span class="line">包装类：java.lang.Float</span><br><span class="line">最小值：Float.MIN_VALUE=1.4E-45</span><br><span class="line">最大值：Float.MAX_VALUE=3.4028235E38</span><br><span class="line"></span><br><span class="line">基本类型：double 二进制位数：64</span><br><span class="line">包装类：java.lang.Double</span><br><span class="line">最小值：Double.MIN_VALUE=4.9E-324</span><br><span class="line">最大值：Double.MAX_VALUE=1.7976931348623157E308</span><br><span class="line"></span><br><span class="line">基本类型：char 二进制位数：16</span><br><span class="line">包装类：java.lang.Character</span><br><span class="line">最小值：Character.MIN_VALUE=0</span><br><span class="line">最大值：Character.MAX_VALUE=65535</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/20/Java基本数据类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java基础学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/Java基础学习/">Java基础学习</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/19/Java基础学习/" class="archive-article-date">
-  	<time datetime="2018-05-19T13:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java的历史"><a href="#Java的历史" class="headerlink" title="Java的历史"></a>Java的历史</h2><p>自己了解的心得</p>
-<h2 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h2><p>Java是一种计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级Web应用开发和移动应用开发。</p>
-<h2 id="下面是我对Java历史了解的"><a href="#下面是我对Java历史了解的" class="headerlink" title="下面是我对Java历史了解的"></a>下面是我对Java历史了解的</h2><p><strong>简化版</strong>:<br>J2SE1.0 a2(Java 2plat form)                      1995年 05 月 23 日.<br>J2SE1.2                                              1998年 12 月 04 日.<br>J2SE1.3                                           2000年 05 月 08 日.<br>J2SE1.4                                           2002年 02 月 13 日.<br>J2SE5.0                                           2004年 09 月 29 日.<br>Java SE 6.0(Java plst form stand ard Edit ion6)  2006年 12 月 11 日.<br>Java SE 7.0                                      2011年 07 月 28 日.<br>Java SE 8.O                                      2014年 03 月 18 日.</p>
-<p><strong>详细化</strong>:<br>1991年1月：一个名为“Green Project”的项目启动。该项旨在为家用电器提供支持，使这些电器智能化并且能够彼此交互。而且这些家电可以由远程客户端控制。Bill Joy、James Gosling、Mike Sheradin和Patrick Naughton是该项目的核心成员。<br>1991年2月：James Gosling是该计划的软件负责人和架构师。他最初的目标是为“绿色计划”找到一个适合的语言来运行。他选择了C++，并对有需要的地方进行了扩展。但是这些功能不能满足计划的需要，因此建立一门新的语言成为当务之急。他开始夜以继日地忙于新语言的开发，并将其命名为“Oak”，因为他办公室窗外有一棵橡树。<br>1991年4月：SPARC工作站10的架构师 Ed Fran k加入到绿色计划中，并领导硬件开发工作。该计划的目的是开发一个硬件原型，展示“绿色计划”的功能。该计划命名为star-seven(<em>7)。</em>7计划的成员有Craig Forrest、Al Frazier、Ed Frank、James Gosling、Patrick Naughton、Joe Parlang、JonPayn、 MikeSheridan和Chris Warth。<br>1991年6月：James Gosling开发了Oak的解释器。<br>1992年3月：由于Oak已被用作另一种已存在的编程语言名称，因此必须选一个新的名字——它就是Java，灵感来源于咖啡。<br>1992年9月：Star-seven(<em>7)带GUI的工作原型完成了，并向大家展示了其功能。与此同时绿计划也建立了一套新的语言、一个操作系统、一个硬件平台和一套接口。下面是如</em>7原型的PDA样机，并由James Gosling亲自演示它。我推荐你完整观看整个视频，感受这来自1991-1992年的神奇。<br>1992年11月：月“Green Project”计划被转化成了“FirstPerson有限公司”，并作为一个独立实体合并到Sun的子公司。<br>1993年2月：FirstPerson试图从时代华纳获得一个电视机顶盒交互系统的一揽子订单。在那时，由于绿色计划不是很成功，随即失去了时代华纳的订单。于是开发的重心从家庭消费电子产品转到了电视盒机顶盒的相关平台上。<br>1993年9月：Arthur Van Hoff加入了开发组，他的工作是交互平台上的应用开发。<br>1994年6月：实际上电视交互市场并没有给FirstPerson公司带来收益，最终它倒闭了。员工都合并到Sun公司。Liveoak计划启动了，它的目标是使用Oak语言设计出一个操作系统。<br>1994年7月：Patrick Naughton设计了一个Web浏览器，该浏览器内部使用Java。Liveoak计划进行了调整，使得Oak语言支持互联网。<br>1994年9月：Naughton和Jonatha Payne开始从事名为HotJava的以Java语言为基础的网页浏览器项目，该项目获得了管理层的广泛认可。<br>1994年10月：由Van Hoff编写的Java编译器用于Java语言，之前的编译器由James Gosling使用C语言编写。<br>1995年5月：在SunWorld大会，Sun公司正式介绍了Java和HotJava。<br>1995年6月：一次重大突破——Netscape在它的浏览器中支持Java。<br>1995年9月：由Sun组织的第一次Java开发者大会在纽约召开。<br>1995年10月：Oracle在其将发布的WWW网页系统中包含了一个兼容的Java浏览器。<br>1995年12月：更广泛行业接受的信号，Microsoft在其IE浏览器中支持Java。<br>1996年1月：JDK1.O版本发布。<br>1997年2月：JDK1.1版本发布。主要特点是JDBC、RMI、内部类。<br>1998年12月：JDK1.2版本发布。<br>代号Playground。该版本通常被称为Java2版本，是见证重大转变的最流行版本。主要特点是集合框架、JIT编译器、策略工具、Java基础类、Java二维类库和JDBC改进。<br>2000年5月：JDK1.3版本发布，代号Kestrel。<br>2002年2月：J2SE1.4版本发布，代号Merlin。主要特点是XML处理、Java打印、支持日志、JDBC 3.0、断言和正则表达式处理。<br>2004年9月：J2SE5.0发布，代号Tiger。主要特点是支持泛型、自动装箱、注释处理、Instrumentation。<br>2006年11月：Java宣布将会公开源码，引起了广泛争议。由于设计的证书违背了通常的源码开放条款。或许我们可以称其为半公开。<br>2006年12月：Java SE 6版本发布，代号Mustang。主要特点是支持脚本语言、JDBC4.0、Java编译API并整合了Web服务。<br>2010年1月：Oracle收购Sun公司及其产品。现在Java由Oracle控制。<br>2010年10月：Steve Jobs声称，苹果将来不再支持Java。<br>2011年7月：Java SE 7.0版本发布，代号Dolphin。这个版本距上次发布有5年之久，并且只有这个版本花费了这么久。主要特点是支持动态语言、Java nio包、多重异常处理、try with resourece功能和诸多小的增强。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/19/Java基础学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/19/hello-world/" class="archive-article-date">
-  	<time datetime="2018-05-19T11:53:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/19/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -819,8 +341,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
