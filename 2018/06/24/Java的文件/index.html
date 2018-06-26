@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | talxmx96</title>
+  <title>Java的文件 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="File类File(File, String). 创建一个 File 实例，表示指定路径指定名称的文件。  File(String). 创建一个 File 实例，表示路径名是指定路径参数的文件。File(String, String) 创建一个 File 实例，它的路径名是指定的路径名后跟分隔符字符和 name 参数。   可以用来出处理，文件目录问题。 |            方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java的文件">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/Java的文件/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="File类File(File, String). 创建一个 File 实例，表示指定路径指定名称的文件。  File(String). 创建一个 File 实例，表示路径名是指定路径参数的文件。File(String, String) 创建一个 File 实例，它的路径名是指定的路径名后跟分隔符字符和 name 参数。   可以用来出处理，文件目录问题。 |            方法">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-26T16:05:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Java的文件">
+<meta name="twitter:description" content="File类File(File, String). 创建一个 File 实例，表示指定路径指定名称的文件。  File(String). 创建一个 File 实例，表示路径名是指定路径参数的文件。File(String, String) 创建一个 File 实例，它的路径名是指定的路径名后跟分隔符字符和 name 参数。   可以用来出处理，文件目录问题。 |            方法">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,268 +158,176 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java的文件" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java的文件
+    </h1>
+  
+
+        
+        <a href="/2018/06/24/Java的文件/" class="archive-article-date">
+  	<time datetime="2018-06-24T13:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File(File, String). 创建一个 File 实例，表示指定路径指定名称的文件。  File(String). 创建一个 File 实例，表示路径名是指定路径参数的文件。<br>File(String, String) 创建一个 File 实例，它的路径名是指定的路径名后跟分隔符字符和 name 参数。  </p>
+<p>可以用来出处理，文件目录问题。<br> |            方法          |        描述                                       |<br> |:———————|:———————————————|<br> |File(String Pathname) |将给路径字符串创建一个表示对应文件的File的实例      |<br> |exists()                |判断此File的实例对应的文件是否存在                   |<br> |isFile()                |判断此File的实例是否是一个标准文件                   |<br> |isDirectory            |判断此File的实例是否是一个文件夹                   |<br> |getName()             |获取此File的实例对应的文件或文件夹的名称               |<br> |getAbsolutePath()        |获取此File的实例对应的文件或文件夹的绝对路径           |<br> |lastModified()        |返回此File的实例的最后修改时间                       |<br> |length()                |返回此File的实例的长度.单位字节                   |</p>
+<p><strong>创建方法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.boolean createNewFile() 不存在返回true 存在返回false</span><br><span class="line">2.boolean mkdir() 创建目录</span><br><span class="line">3.boolean mkdirs() 创建多级目录</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">**删除方法**</span><br><span class="line">1.boolean delete()</span><br><span class="line">2.boolean deleteOnExit() 文件使用完成后删除</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">**判断方法**</span><br><span class="line">1.boolean canExecute()判断文件是否可执行</span><br><span class="line">2.boolean canRead()判断文件是否可读</span><br><span class="line">3.boolean canWrite() 判断文件是否可写</span><br><span class="line">4.boolean exists() 判断文件是否存在</span><br><span class="line">5.boolean isDirectory() </span><br><span class="line">6.boolean isFile()</span><br><span class="line">7.boolean isHidden()</span><br><span class="line">8.boolean isAbsolute()判断是否是绝对路径 文件不存在也能判断</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">**获取方法**</span><br><span class="line">1.String getName()</span><br><span class="line">2.String getPath()</span><br><span class="line">3.String getAbsolutePath()</span><br><span class="line">4.String getParent()//如果没有父目录返回null</span><br><span class="line">5.long lastModified()//获取最后一次修改的时间</span><br><span class="line">6.long length()</span><br><span class="line">7.boolean renameTo(File f)</span><br><span class="line">8.File[] liseRoots()//获取机器盘符</span><br><span class="line">9.String[] list() </span><br><span class="line">10.String[] list(FilenameFilter filter)</span><br></pre></td></tr></table></figure>
+<p><strong>案例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public class FileDemo &#123;</span><br><span class="line">    /** 当前操作的文件路径常量 */</span><br><span class="line">    private static final String FilePane = &quot;src/io/github/tplxmx96/chapter13/test.dat&quot;;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        //当前工程所在的根目录new File(&quot;.&quot;)</span><br><span class="line">        File file = new File(FilePane);</span><br><span class="line">        System.out.println(&quot;文件/文件夹是否存在:&quot; + file.exists());</span><br><span class="line">        System.out.println(&quot;是否是一个文件:&quot; + file.isFile());</span><br><span class="line">        System.out.println(&quot;是否是一个文件夹:&quot; + file.isDirectory());</span><br><span class="line">        System.out.println(&quot;文件/目录名称:&quot; + file.getName());</span><br><span class="line">        System.out.println(&quot;文件/文件夹的绝对路径:&quot; + file.getAbsolutePath());</span><br><span class="line">        System.out.println(&quot;文件/文件夹的路径:&quot; + file.getPath());</span><br><span class="line">        System.out.println(&quot;文件/文件夹的最后修改时间:&quot; + new Date(file.lastModified()));</span><br><span class="line">        System.out.println(&quot;文件/文件夹所占空间大小(字节)&quot;  + file.length() / 1024 + &quot;KB&quot;);</span><br><span class="line">        System.out.println(&quot;是否可读:&quot; + file.canRead());</span><br><span class="line">        System.out.println(&quot;是否可写:&quot; + file.canWrite());</span><br><span class="line">        System.out.println(&quot;是否隐藏:&quot; + file.isHidden());</span><br><span class="line"></span><br><span class="line">        //使用File类创建文件</span><br><span class="line">        if (!file.exists())&#123;//如果文件/目录不存在，就创建</span><br><span class="line">&lt;!--             if (file.isFile())&#123;</span><br><span class="line">                file.createNewFile();</span><br><span class="line">                System.out.println(&quot;创建文件&quot;);</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                file.mkdir();//创建目录</span><br><span class="line">                System.out.println(&quot;创建目录&quot;);</span><br><span class="line">            &#125; --&gt;</span><br><span class="line">            if (file.createNewFile())</span><br><span class="line">                System.out.println(&quot;文件/文件夹创建成功！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        //删除</span><br><span class="line">        if (file.exists())&#123;</span><br><span class="line">            file.delete();//可以删除文件夹及文件</span><br><span class="line">            file.deleteOnExit(); //在程序结束的时候将文件删除</span><br><span class="line">            System.out.println(&quot;文件删除成功！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        if (file.createNewFile())&#123;</span><br><span class="line">            System.out.println(&quot;文件重新创建成功！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实例得出的结果是：</p>
+<pre><code>文件/文件夹是否存在:false
+是否是一个文件:false
+是否是一个文件夹:false
+文件/目录名称:test.dat
+文件/文件夹的绝对路径:/Users/yuweichen/IdeaProjects/TPJavaPractice/src/io/github/tplxmx96/chapter13/test.dat
+文件/文件夹的路径:src/io/github/tplxmx96/chapter13/test.dat
+文件/文件夹的最后修改时间:Thu Jan 01 08:00:00 CST 1970
+文件/文件夹所占空间大小(字节)0KB
+是否可读:false
+是否可写:false
+是否隐藏:false
+文件/文件夹创建成功！
+文件删除成功！
+文件重新创建成功！
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/03/Java的方法/" class="archive-article-date">
-  	<time datetime="2018-06-03T15:49:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/03/Java的方法/">Java的方法</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/24/Java的文件/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/22/Java的进程与线程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java的进程与线程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
-  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/22/Java中的数组/" class="archive-article-date">
-  	<time datetime="2018-05-21T16:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/22/Java中的数组/">Java中的数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/20/Java基本数据类型/" class="archive-article-date">
-  	<time datetime="2018-05-20T12:28:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/20/Java基本数据类型/">Java基本数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/19/Java基础学习/" class="archive-article-date">
-  	<time datetime="2018-05-19T13:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/19/Java基础学习/">Java基础学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/19/hello-world/" class="archive-article-date">
-  	<time datetime="2018-05-19T11:53:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -439,8 +351,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
