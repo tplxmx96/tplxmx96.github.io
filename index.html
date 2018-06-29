@@ -156,6 +156,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中IO的字节流字符流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/28/Java中IO的字节流字符流/">Java中IO的字节流字符流</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/28/Java中IO的字节流字符流/" class="archive-article-date">
+  	<time datetime="2018-06-28T14:39:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/28/Java中IO的字节流字符流/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java的文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -177,7 +239,49 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File(File, String). 创建一个 File 实例，表示指定路径指定名称的文件。  File(String). 创建一个 File 实例，表示路径名是指定路径参数的文件。<br>File(String, String) 创建一个 File 实例，它的路径名是指定的路径名后跟分隔符字符和 name 参数。  </p>
-<p>可以用来出处理，文件目录问题。<br> |            方法          |        描述                                       |<br> |:———————|:———————————————|<br> |File(String Pathname) |将给路径字符串创建一个表示对应文件的File的实例      |<br> |exists()                |判断此File的实例对应的文件是否存在                   |<br> |isFile()                |判断此File的实例是否是一个标准文件                   |<br> |isDirectory            |判断此File的实例是否是一个文件夹                   |<br> |getName()             |获取此File的实例对应的文件或文件夹的名称               |<br> |getAbsolutePath()        |获取此File的实例对应的文件或文件夹的绝对路径           |<br> |lastModified()        |返回此File的实例的最后修改时间                       |<br> |length()                |返回此File的实例的长度.单位字节                   |</p>
+<p>可以用来出处理，文件目录问题。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">File(String Pathname)</td>
+<td style="text-align:left">将给路径字符串创建一个表示对应文件的File的实例</td>
+</tr>
+<tr>
+<td style="text-align:left">exists()</td>
+<td style="text-align:left">判断此File的实例对应的文件是否存在</td>
+</tr>
+<tr>
+<td style="text-align:left">isFile()</td>
+<td style="text-align:left">判断此File的实例是否是一个标准文件</td>
+</tr>
+<tr>
+<td style="text-align:left">isDirectory()</td>
+<td style="text-align:left">判断此File的实例是否是一个文件夹</td>
+</tr>
+<tr>
+<td style="text-align:left">getName()</td>
+<td style="text-align:left">获取此File的实例对应的文件或文件夹的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">getAbsolutePath()</td>
+<td style="text-align:left">获取此File的实例对应的文件或文件夹的绝对路径</td>
+</tr>
+<tr>
+<td style="text-align:left">lastModified()</td>
+<td style="text-align:left">返回此File的实例的最后修改时间</td>
+</tr>
+<tr>
+<td style="text-align:left">length()</td>
+<td style="text-align:left">返回此File的实例的长度.单位字节</td>
+</tr>
+</tbody>
+</table>
 <p><strong>创建方法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.boolean createNewFile() 不存在返回true 存在返回false</span><br><span class="line">2.boolean mkdir() 创建目录</span><br><span class="line">3.boolean mkdirs() 创建多级目录</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">**删除方法**</span><br><span class="line">1.boolean delete()</span><br><span class="line">2.boolean deleteOnExit() 文件使用完成后删除</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">**判断方法**</span><br><span class="line">1.boolean canExecute()判断文件是否可执行</span><br><span class="line">2.boolean canRead()判断文件是否可读</span><br><span class="line">3.boolean canWrite() 判断文件是否可写</span><br><span class="line">4.boolean exists() 判断文件是否存在</span><br><span class="line">5.boolean isDirectory() </span><br><span class="line">6.boolean isFile()</span><br><span class="line">7.boolean isHidden()</span><br><span class="line">8.boolean isAbsolute()判断是否是绝对路径 文件不存在也能判断</span><br></pre></td></tr></table></figure>
@@ -791,74 +895,6 @@ method2()throwsExcrption{   //声明异常
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/07/Java的对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git的基础命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/Git的基础命令/">Git的基础命令</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/06/Git的基础命令/" class="archive-article-date">
-  	<time datetime="2018-06-06T12:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//初始化</span><br><span class="line"> git init</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//添加远程仓库地址</span><br><span class="line">git remote add URL</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//查看当前新增 删除 修改的状态</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//添加</span><br><span class="line">git add . </span><br><span class="line"></span><br><span class="line">git add --a</span><br><span class="line"></span><br><span class="line">git add /xxx/xxx/xxxxxx</span><br><span class="line"></span><br><span class="line">git commit -m &apos;xxxx&apos;</span><br><span class="line"></span><br><span class="line">git push origin xxxx</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//拉代码</span><br><span class="line">git pull origin xxxx</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch xxxx</span><br><span class="line"></span><br><span class="line">git checkout xxxx</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/06/Git的基础命令/">展开全文 >></a>
         </p>
       
 
