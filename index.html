@@ -156,6 +156,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中IO的字符流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/30/Java中IO的字符流/">Java中IO的字符流</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/30/Java中IO的字符流/" class="archive-article-date">
+  	<time datetime="2018-06-30T15:11:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><p>字符流是Java的io流的两大分支之一，被设计用来处理字符数据，弥补字节流对字符数据操作的短板。<br>Writer与Reader这两个抽象类是所有字符输出流与字符输入流的基类，研究字符流，先从他们开始。</p>
+<p><img src="http://paklkx8q7.bkt.clouddn.com/Reader.png" alt="git"></p>
+<p><img src="http://paklkx8q7.bkt.clouddn.com/Writer.png" alt="git"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Reader</th>
+<th style="text-align:left">用于读取字符流的抽象类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CharArrayReader</td>
+<td style="text-align:left">实现了字符缓冲区的字符输入流</td>
+</tr>
+<tr>
+<td style="text-align:left">InputStreamReader</td>
+<td style="text-align:left">从字节流到字符流的桥, 它读取字节, 并使用指定的Charset将其解码为字符</td>
+</tr>
+<tr>
+<td style="text-align:left">FileReader</td>
+<td style="text-align:left">用于读取字符流的抽象类</td>
+</tr>
+<tr>
+<td style="text-align:left">BufferedStreamReader</td>
+<td style="text-align:left">带缓冲的字符流读取器</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>使用字符流读写文件<br>读取文件<br><code>FileReader</code><br><code>BufferedReader</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FileReader reader = new FileReader(&quot;file.txt&quot;);</span><br><span class="line">BufferedReader bReader = new BufferedReader(reader);</span><br><span class="line">while((line = bReader.readLine())! = null)&#123;</span><br><span class="line">	content.append(line);</span><br><span class="line">	content.append(&quot;\r\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line">System.out.Println(content);</span><br><span class="line">bReader.close();</span><br><span class="line">reader.close();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>写人文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FileWriter writer = new FileWriter(&quot;file.txt,true&quot;);</span><br><span class="line">BufferedWriter bWriter = new BufferedWriter(writer);</span><br><span class="line">writer.writer(contrnt.toString());</span><br><span class="line">bwriter.flush();</span><br><span class="line">bwriter.close();</span><br><span class="line">writer.close();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>Scanner和RrintWriter</code><br><code>java.io.PrintWriter</code></p>
+<blockquote>
+<p>写入的同时对写入的数据进行格式化<br>注意：类中的方法不会抛出I/O异常</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try(RrintWriter out = new PrintWriter(new File(&quot;file.txt&quot;)))&#123;</span><br><span class="line">	out.printf(&quot;%s:%s\r\n&quot;,&quot;姓名&quot;,&quot;刘某某&quot;);</span><br><span class="line">	out.printf(&quot;%s:%d\r\n&quot;,&quot;芳龄&quot;,28);</span><br><span class="line">&#125;catch(FileNotFoundException e)&#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try(Scanner input = new Scanner(new File(&quot;file.txt&quot;)))&#123;</span><br><span class="line">	while(input.hasNext())&#123;</span><br><span class="line">		System.out.println(input.next());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;catch(FileNotFoundException e)&#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>:<br>1、一个try-with-resources 语句可以像普通的try语句那样有catch和finally块。<br>2、在try-with-resources 语句中，任意的catch或者finally块都是在声明的资源被关闭以后才运行。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/30/Java中IO的字符流/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java中IO的字节流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -946,81 +1050,9 @@ method2()throwsExcrption{   //声明异常
 
 
   
-    <article id="post-Java的对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/07/Java的对象/">Java的对象</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/07/Java的对象/" class="archive-article-date">
-  	<time datetime="2018-06-07T13:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h2><p>对象是程序运行时的实体<br>它的状态存储在 fields (也就是变量)<br>行为是通过方法 (method) 实现的<br>方法上操作对象的内部的状态<br>方法是对象对对象的通信的主要手段<br><strong>创建对象</strong><br>对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：</p>
-<blockquote>
-<p>声明：声明一个对象，包括对象名称和对象类型。<br>实例化：使用关键字new来创建一个对象。<br>初始化：使用new创建对象时，会调用构造方法初始化对象。</p>
-</blockquote>
-<p><strong>为方便说明，定义了以下一个简单的类</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> public class Vehicle &#123;</span><br><span class="line"></span><br><span class="line">    public int passengers;      </span><br><span class="line"></span><br><span class="line">    public int fuelcap;</span><br><span class="line"></span><br><span class="line">    public int mpg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>有了这个模板，就可以用它来创建对象：<br><code>Vehicle veh1 = new Vehicle();</code><br>通常把这条语句的动作称之为创建一个对象，其实，它包含了四个动作。<br>(1）右边的“new Vehicle”，是以Vehicle类为模板，在堆空间里创建一个Vehicle类对象（也简称为Vehicle对象）。<br>(2）末尾的()意味着，在对象创建后，立即调用Vehicle类的构造函数，对刚生成的对象进行初始化。构造函数是肯定有的。如果你没写，Java会给你补上一个默认的构造函数。<br>(3）左边的“Vehicle veh 1”创建了一个Vehicle类引用变量。所谓Vehicle类引用，就是以后可以用来指向Vehicle对象的对象引用。<br>(4）“=”操作符使对象引用指向刚创建的那个Vehicle对象。</p>
-<p><strong>类和对象之间的关系</strong><br>类是抽象的概念，仅仅是模板，比如说”演员”、”总统”。<br>对象是一个看得见，摸得着的具体实体。<br>一个类可以包含以下类型变量：<br>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。<br>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。<br>类变量：类变量也声明在类中，方法体之外，但必须声明为static类型。</p>
-<p><strong>对象的基本设计步骤</strong><br>1、发现类<br>人类/科学家类/演员类/逗逼类.<br>2、找出属性(名词)<br>姓名、性别、职业、年龄.<br>3、找出行为(动词)<br>吃饭、说话、表演、么么哒</p>
-<p><strong>构造方法</strong><br>每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。<br>在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。<br>下面是一个构造方法示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Vehicle&#123;</span><br><span class="line">    public Vehicle()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public Vehicle(int passengers,int fuelcap,int mpg)&#123;</span><br><span class="line">        // 这个构造器里有三个参数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>关于构造方法<br>1.没有返回值类型<br>2.名称与类名一致<br>3.可以指定参数及实现重载<br>4.注意隐式构造和参数化构造不能共存</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/07/Java的对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
