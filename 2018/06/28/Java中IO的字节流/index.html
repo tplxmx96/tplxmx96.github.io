@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>talxmx96</title>
+  <title>Java中IO的字节流 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="字节流在Java中，字节流一般适用于处理字节数据(诸如图片、视频),字符流适用于处理字符数据(诸如文本文件)，但二者并没有严格的功能划分，因为有转换流的存在，使得对于数据的处理变得更加灵活。InputStream和OutputStream分别是字节输入流与字节输出流的基类，它们的子类都是字节流，主要用在按字节来处理二进制数据。 java中提供了专用于输入输出功能的包Java.io,其中包括：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中IO的字节流">
+<meta property="og:url" content="http://yoursite.com/2018/06/28/Java中IO的字节流/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="字节流在Java中，字节流一般适用于处理字节数据(诸如图片、视频),字符流适用于处理字符数据(诸如文本文件)，但二者并没有严格的功能划分，因为有转换流的存在，使得对于数据的处理变得更加灵活。InputStream和OutputStream分别是字节输入流与字节输出流的基类，它们的子类都是字节流，主要用在按字节来处理二进制数据。 java中提供了专用于输入输出功能的包Java.io,其中包括：">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%20%282%29.png">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%20%282%29.png">
+<meta property="og:updated_time" content="2018-06-30T02:02:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Java中IO的字节流">
+<meta name="twitter:description" content="字节流在Java中，字节流一般适用于处理字节数据(诸如图片、视频),字符流适用于处理字符数据(诸如文本文件)，但二者并没有严格的功能划分，因为有转换流的存在，使得对于数据的处理变得更加灵活。InputStream和OutputStream分别是字节输入流与字节输出流的基类，它们的子类都是字节流，主要用在按字节来处理二进制数据。 java中提供了专用于输入输出功能的包Java.io,其中包括：">
+<meta name="twitter:image" content="http://paklkx8q7.bkt.clouddn.com/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%20%282%29.png">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,16 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java中IO的字节流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java中IO的字节流" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/28/Java中IO的字节流/">Java中IO的字节流</a>
+    <h1 class="article-title" itemprop="name">
+      Java中IO的字节流
     </h1>
   
 
@@ -274,6 +279,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -281,16 +307,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/28/Java中IO的字节流/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/28/Java中IO的字节流/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/24/Java的文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java的文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -310,718 +395,14 @@
 
 
 
-
-  
-    <article id="post-Java的文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/Java的文件/">Java的文件</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/24/Java的文件/" class="archive-article-date">
-  	<time datetime="2018-06-24T13:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File(File, String). 创建一个 File 实例，表示指定路径指定名称的文件。  File(String). 创建一个 File 实例，表示路径名是指定路径参数的文件。<br>File(String, String) 创建一个 File 实例，它的路径名是指定的路径名后跟分隔符字符和 name 参数。  </p>
-<p>可以用来出处理，文件目录问题。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">方法</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">File(String Pathname)</td>
-<td style="text-align:left">将给路径字符串创建一个表示对应文件的File的实例</td>
-</tr>
-<tr>
-<td style="text-align:left">exists()</td>
-<td style="text-align:left">判断此File的实例对应的文件是否存在</td>
-</tr>
-<tr>
-<td style="text-align:left">isFile()</td>
-<td style="text-align:left">判断此File的实例是否是一个标准文件</td>
-</tr>
-<tr>
-<td style="text-align:left">isDirectory()</td>
-<td style="text-align:left">判断此File的实例是否是一个文件夹</td>
-</tr>
-<tr>
-<td style="text-align:left">getName()</td>
-<td style="text-align:left">获取此File的实例对应的文件或文件夹的名称</td>
-</tr>
-<tr>
-<td style="text-align:left">getAbsolutePath()</td>
-<td style="text-align:left">获取此File的实例对应的文件或文件夹的绝对路径</td>
-</tr>
-<tr>
-<td style="text-align:left">lastModified()</td>
-<td style="text-align:left">返回此File的实例的最后修改时间</td>
-</tr>
-<tr>
-<td style="text-align:left">length()</td>
-<td style="text-align:left">返回此File的实例的长度.单位字节</td>
-</tr>
-</tbody>
-</table>
-<p><strong>创建方法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.boolean createNewFile() 不存在返回true 存在返回false</span><br><span class="line">2.boolean mkdir() 创建目录</span><br><span class="line">3.boolean mkdirs() 创建多级目录</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">**删除方法**</span><br><span class="line">1.boolean delete()</span><br><span class="line">2.boolean deleteOnExit() 文件使用完成后删除</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">**判断方法**</span><br><span class="line">1.boolean canExecute()判断文件是否可执行</span><br><span class="line">2.boolean canRead()判断文件是否可读</span><br><span class="line">3.boolean canWrite() 判断文件是否可写</span><br><span class="line">4.boolean exists() 判断文件是否存在</span><br><span class="line">5.boolean isDirectory() </span><br><span class="line">6.boolean isFile()</span><br><span class="line">7.boolean isHidden()</span><br><span class="line">8.boolean isAbsolute()判断是否是绝对路径 文件不存在也能判断</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">**获取方法**</span><br><span class="line">1.String getName()</span><br><span class="line">2.String getPath()</span><br><span class="line">3.String getAbsolutePath()</span><br><span class="line">4.String getParent()//如果没有父目录返回null</span><br><span class="line">5.long lastModified()//获取最后一次修改的时间</span><br><span class="line">6.long length()</span><br><span class="line">7.boolean renameTo(File f)</span><br><span class="line">8.File[] liseRoots()//获取机器盘符</span><br><span class="line">9.String[] list() </span><br><span class="line">10.String[] list(FilenameFilter filter)</span><br></pre></td></tr></table></figure>
-<p><strong>案例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public class FileDemo &#123;</span><br><span class="line">    /** 当前操作的文件路径常量 */</span><br><span class="line">    private static final String FilePane = &quot;src/io/github/tplxmx96/chapter13/test.dat&quot;;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        //当前工程所在的根目录new File(&quot;.&quot;)</span><br><span class="line">        File file = new File(FilePane);</span><br><span class="line">        System.out.println(&quot;文件/文件夹是否存在:&quot; + file.exists());</span><br><span class="line">        System.out.println(&quot;是否是一个文件:&quot; + file.isFile());</span><br><span class="line">        System.out.println(&quot;是否是一个文件夹:&quot; + file.isDirectory());</span><br><span class="line">        System.out.println(&quot;文件/目录名称:&quot; + file.getName());</span><br><span class="line">        System.out.println(&quot;文件/文件夹的绝对路径:&quot; + file.getAbsolutePath());</span><br><span class="line">        System.out.println(&quot;文件/文件夹的路径:&quot; + file.getPath());</span><br><span class="line">        System.out.println(&quot;文件/文件夹的最后修改时间:&quot; + new Date(file.lastModified()));</span><br><span class="line">        System.out.println(&quot;文件/文件夹所占空间大小(字节)&quot;  + file.length() / 1024 + &quot;KB&quot;);</span><br><span class="line">        System.out.println(&quot;是否可读:&quot; + file.canRead());</span><br><span class="line">        System.out.println(&quot;是否可写:&quot; + file.canWrite());</span><br><span class="line">        System.out.println(&quot;是否隐藏:&quot; + file.isHidden());</span><br><span class="line"></span><br><span class="line">        //使用File类创建文件</span><br><span class="line">        if (!file.exists())&#123;//如果文件/目录不存在，就创建</span><br><span class="line">&lt;!--             if (file.isFile())&#123;</span><br><span class="line">                file.createNewFile();</span><br><span class="line">                System.out.println(&quot;创建文件&quot;);</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                file.mkdir();//创建目录</span><br><span class="line">                System.out.println(&quot;创建目录&quot;);</span><br><span class="line">            &#125; --&gt;</span><br><span class="line">            if (file.createNewFile())</span><br><span class="line">                System.out.println(&quot;文件/文件夹创建成功！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        //删除</span><br><span class="line">        if (file.exists())&#123;</span><br><span class="line">            file.delete();//可以删除文件夹及文件</span><br><span class="line">            file.deleteOnExit(); //在程序结束的时候将文件删除</span><br><span class="line">            System.out.println(&quot;文件删除成功！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        if (file.createNewFile())&#123;</span><br><span class="line">            System.out.println(&quot;文件重新创建成功！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>实例得出的结果是：</p>
-<pre><code>文件/文件夹是否存在:false
-是否是一个文件:false
-是否是一个文件夹:false
-文件/目录名称:test.dat
-文件/文件夹的绝对路径:/Users/yuweichen/IdeaProjects/TPJavaPractice/src/io/github/tplxmx96/chapter13/test.dat
-文件/文件夹的路径:src/io/github/tplxmx96/chapter13/test.dat
-文件/文件夹的最后修改时间:Thu Jan 01 08:00:00 CST 1970
-文件/文件夹所占空间大小(字节)0KB
-是否可读:false
-是否可写:false
-是否隐藏:false
-文件/文件夹创建成功！
-文件删除成功！
-文件重新创建成功！
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/24/Java的文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的进程与线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/Java的进程与线程/">Java的进程与线程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/Java的进程与线程/" class="archive-article-date">
-  	<time datetime="2018-06-22T14:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="进程-Processes-与线程-Threads"><a href="#进程-Processes-与线程-Threads" class="headerlink" title="进程(Processes)与线程(Threads)"></a>进程(Processes)与线程(Threads)</h2><p>Java是为数不多的多线程编程的支持语言，也就是说在同一个时间段内，Java可以启动更多的工作程序来完成同一功能操作，这样可以达到更高的处理性能。</p>
-<p><strong>进程</strong>：是一次完整的控制单元。例如：启动一个程序，那么一定要分配CPU资源，要向内存之中加载数据，而后再进行一系列的处理操作。而最早的DOS系统就是单进程的操作处理。<br>但是在传统的DOS系统之中会出现一个问题，一旦电脑出现病毒了就死机了，因为在单进程的操作系统之中，同一时间段内只允许一个进程执行，如果说现在病毒占用着此程序，那么其它的程序将无法执行。后来发展到了Winfows时代，电脑里面即使出现了病毒，那么也可以正常使用了，除了慢点。<br>但是最初的时候电脑的CPU只有一块，所以如果要运行多个程序，那么就需要对CPU进行轮流抢占。但是每一个进程的启动，必然要花费大量的资源，所以入门慢慢的发现，如果使用多进程的处理。并不能够带来更快的处理效果，而后人们继续在单个进程的基础上面又，继续划分了线程的概念。也就是说每一个进程里面还可以运行多个线程，进程执行时一定会牵扯到CPU或内存资源的分配，所以线程如果要运行在进程之中，那么就把空间的分配低速操作就可以屏蔽了，所以线程的处理要比进程要快，但是线程无法摆脱离进程存在。<br>操作系统是以进程为单位控制的，而且一个进程，为了表达更高的处理操作，所以划分为多个线程，同时工作。</p>
-<p><strong>线程</strong>：就是进程中的一个独立的控制单元。<br>线程在控制着进程的执行。<br>一个进程中至少执行一个线程。<br>Java JVM 启动的时候会有一个进程Java.tet。<br>该进程中至少有一个线程负责Java的程序的执行。而且这个线程运行的代码存在于main方法中，该线程称之为主线程。<br>扩展：其实更细节的说明JVM，JVM启动不止一个线程，还有负责垃圾回收机制的线程。</p>
-<p><strong>线程的串行</strong><br>一个线程中任务的执行是串行。<br>如果要在一个线程中执行多个任务，你们只能一个一个地按顺序执行这些任务。</p>
-<p><strong>进程和线程的比较</strong><br>1、线程是CPU调用(执行任务)的最小单位。<br>2、进程是CPU分配资源和调度的单位。<br>3、一个程序可以对应多个进程，一个进程中可以有多个线程，但至少要有一个线程。<br>4、同一个进程内的线程共享进程的资源。</p>
-<p>定义和启动一个线程<br>Java 中有两种方式创建 Thread 的实例：</p>
-<blockquote>
-<p>提供 Runnable 对象。Runnable 接口定义了一个方法 run ,用来包含线程要执行的代码。如 HelloRunnable 所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class HelloRunnable implements Runnable &#123;</span><br><span class="line">    /* (non-Javadoc)</span><br><span class="line">     * @see java.lang.Runnable#run()</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new Thread(new HelloRunnable())).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>继承 Thread。Thread 类本身是实现 Runnable，虽然它的 run 方法啥都没干。HelloThread 示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class HelloThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new HelloThread()).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>请注意,这两个例子调用 start 来启动线程。<br>第一种方式,它使用 Runnable 对象,在实际应用中更普遍,因为 Runnable 对象可以继承 Thread 以外的类。第二种方式，在简单的应用程序更容易使用,但受限于你的任务类必须是一个 Thread 的后代。本书推荐使用第一种方法,将 Runnable 任务从 Thread 对象分离来执行任务。这不仅更灵活,而且它适用于高级线程管理 API。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/Java的进程与线程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/Java的异常/">Java的异常</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/19/Java的异常/" class="archive-article-date">
-  	<time datetime="2018-06-19T14:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 Java 中，所有的异常都有一个共同的祖先 Throwable（可抛出）。Throwable 指定代码中可用异常传播机制通过 Java 应用程序传输的任何问题的共性。<br>Throwable 有两个重要的子类：Exception（异常）和 Error（错误），二者都是 Java 异常处理的重要子类，各自都包含大量子类。<br>①.Exception（异常）是应用程序中可能的可预测、可恢复问题。一般大多数异常表示中度到轻度的问题。异常一般是在特定环境下产生的，通常出现在代码的特定方法和操作中。在 EchoInput 类中，当试图调用 readLine 方法时，可能出现 IOException 异常。<br>Exception 类有一个重要的子类 RuntimeException。RuntimeException 类及其子类表示“JVM 常用操作”引发的错误。例如，若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常（NullPointerException、ArithmeticException）和   ArrayIndexOutOfBoundException。<br>②.Error（错误）表示运行应用程序中较严重问题。大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。例如，当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。<br>Java中的异常分为两大类：<br>1.Checked Exception（非Runtime Exception）<br>2.Unchecked Exception（Runtime Exception）<br>运行时异常<br>RuntimeException类是Exception类的子类，它叫做运行时异常，Java中的所有运行时异常都会直接或者间接地继承自RuntimeException类。<br>Java中凡是继承自Exception，而不继承自RuntimeException类的异常都是非运行时异常。<br>一个try后面可以跟多个catch，但不管多少个，最多只会有一个catch块被执行。</p>
-<p>对于非运行时异常（checked exception），必须要对其进行处理，否则无法通过编译。<br>处理方式有两种：<br>1.使用try..catch..finally进行捕获；<br>2.在产生异常的方法声明后面写上throws 某一个Exception类型，如throws Exception，将异常抛出到外面一层去。<br>对于运行时异常（runtime exception），可以对其进行处理，也可以不处理。推荐不对运行时异常进行处理。</p>
-<p>在 Java 应用程序中，异常处理机制为：抛出异常，捕捉异常。<br>抛出异常：当一个方法出现错误引发异常时，方法创建异常对象并交付运行时系统，异常对象中包含了异常类型和异常出现时的程序状态等异常信息。运行时系统负责寻找处置异常的代码并执行。<br>捕获异常：在方法抛出异常之后，运行时系统将转为寻找合适的异常处理器（exception handler）。潜在的异常处理器是异常发生时依次存留在调用栈中的方法的集合。当异常处理器所能处理的异常类型与方法抛出的异常类型相符时，即为合适 的异常处理器。运行时系统从发生异常的方法开始，依次回查调用栈中的方法，直至找到含有合适异常处理器的方法并执行。当运行时系统遍历调用栈而未找到合适 的异常处理器，则运行时系统终止。同时，意味着Java程序的终止。</p>
-<p><code>try - catch - finally</code><br>确保无论是否发生异常，finally块中的代码总能被执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class ExceptionDemo&#123;</span><br><span class="line">   public static void dirision(int num1,int num2)&#123;</span><br><span class="line">      int result = lnteger.MIN_VALUE</span><br><span class="line">   try&#123;</span><br><span class="line">       System.out.println(&quot;进行除法计算&quot;);</span><br><span class="line">       result = num1 / num2;</span><br><span class="line">       System.out.println(&quot;result = &quot; + result);</span><br><span class="line">    &#125;catch(lnputMismathEception e)&#123;</span><br><span class="line">       e.printStackTeacel();</span><br><span class="line">    &#125;finally</span><br><span class="line">       System.out.println(&quot;除法计算结算&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>多重catch块<br>try块中的代码可能会引发多种类型的异常。<br>当引发异常时，会按catch的顺序进行匹配异常类型,并执行第一个匹配的catch语句。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static void division(String strName1, String strName2)&#123;</span><br><span class="line">	 int result = lngager.MIN_VALU;</span><br><span class="line">    try&#123;</span><br><span class="line">	nt num1 = lnteger.porselnt(ntlstr(StrName));</span><br><span class="line">    ..................</span><br><span class="line">    &#125;catch(InputMismatch(strName))&#123;</span><br><span class="line">	 e.printstackTrace();</span><br><span class="line">    &#125;catch(ArithmeticException e)&#123;</span><br><span class="line">	 e.printstackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JDk7后的简化写法(multi-catch fratue)</span><br><span class="line">catch(Exception1 | Exception2 | Exception3 | ...ex)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>声明、抛出、捕获异常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">method1()&#123; </span><br><span class="line">	try&#123;</span><br><span class="line">	调用method2()；</span><br><span class="line">   &#125;catch(Excrptio ex)&#123;</span><br><span class="line">   //异常处理</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<pre><code>注意
-异常处理的话就从方法的调用链的时候
-method2()throwsExcrption{   //声明异常
-    if(存在自定义错误){
-    throws new.Exception() //抛出异常
-   }
-} 
-</code></pre><p>声明异常<br>每个方法都必须声明它可能抛出的必检异常的类型，这称为声明异常。<br>不要求显示声明Error和RuntimeException(免检异常)，其他异常必须在方法显示声明。<br><code>method()throws Exception1,Exception2,Exception3...   //声明异常</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/19/Java的异常/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/Java的接口/">Java的接口</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/Java的接口/" class="archive-article-date">
-  	<time datetime="2018-06-16T12:22:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>Java不支持多继承性，即一个类只能有一个父类单继承使得Java简单，易于管理和维护。<br>为了克服Java单继承的缺点，Java使用了接口。<br>接口是一种与类相似的结构，只包含常量和抽象方法。<br>目的是指明相关或不相关类的多个对象的共同行为(功能)。</p>
-<p><strong>接口的声明</strong><br>使用关键字interface来定义一个接口，接口的定义和类的定义很相似，分为接口的声明和实现。<br>1、接口声明<br>   接口通过使用关键字interface来声明,格式： interface 接口的名字<br>2、接口体<br>   接口体中包含常量定义和方法定义两部分</p>
-<p>接口的使用<br>接口由类去实现以便使用接口中的方法。<br>一个类可以实现多个接口，类通过使用关键字 声明自己实现一个或多个接。如果实现多个接口，用逗号隔开接口名。</p>
-<p><strong>注意</strong><br>1、在Java中，接口被看做是一种特殊的类，与抽象类相似，不能使用new操作符直接创建接口的实例。<br>2、接口必须由其他类实现，实现类不能实现的方法，可以继续标识为abstract。<br>3、接口中所有的数据域都是public static final，所有方法都是public abstract，默认情况可以省略关键字。</p>
-<p><strong>接口与抽象类的比较</strong><br>类中可以定义成员变量，接口中不允许存在成员变量。<br>接口中所有方法都需要实现类去实现(Java8前)。<br>接口可以被多继承。<br>使设计和实现完全分离。<br>能够更自然的使用多态。<br>可以更容易搭建程序框架。<br>可以更容易更换实现</p>
-<p><strong>注意</strong><br>在jdk1.7以前都是抽象类中可以有抽象方法，接口是特殊的抽象类，因为接口中的所有方法都必须是抽象的，不能有方法实现，而到了Java8，我们发现在接口中也可以有方法的实现。</p>
-<p>以下来一个实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 打印机类 - 使用标准的墨盒和纸张进行打印</span><br><span class="line"> */</span><br><span class="line">public class Printer &#123;</span><br><span class="line">    private IInkBox inkbox = null;  //打印机中的墨盒</span><br><span class="line">    private IPaper paper = null;    //打印机的纸张</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 打印机的打印方法 - 使用墨盒和纸张</span><br><span class="line">     * @paper content 传递给打印机打印的字符串内容</span><br><span class="line">     */</span><br><span class="line">    public void print(String content)&#123;</span><br><span class="line">        if (null == inkbox || null == paper)&#123;</span><br><span class="line">            System.out.println(&quot;墨盒和纸张出现错误，请安装正确后重试！&quot;);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        //打印过程</span><br><span class="line">        String color = inkbox.getColor();</span><br><span class="line">        String type = paper.getSize();</span><br><span class="line">        System.out.println(&quot;以下文字是&quot; + color + &quot;颜色的！&quot;);</span><br><span class="line">        System.out.println(&quot;使用纸张：&quot; + type);</span><br><span class="line">        System.out.println(&quot;打印内容：&quot; + content);</span><br><span class="line">    &#125;</span><br><span class="line">    public IInkBox getInkbox() &#123;</span><br><span class="line">        return inkbox;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setInkbox(IInkBox inkbox) &#123;</span><br><span class="line">        this.inkbox = inkbox;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public IPaper getPaper() &#123;</span><br><span class="line">        return paper;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPaper(IPaper paper) &#123;</span><br><span class="line">        this.paper = paper;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 墨盒接口 - 定义一个通用方法 - 获得墨盒的颜色</span><br><span class="line"> */</span><br><span class="line">public interface IInkBox &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 获得墨盒的颜色</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public String getColor();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 纸张接口 - 定义获得纸张尺寸的标准方法</span><br><span class="line"> */</span><br><span class="line">public interface IPaper &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 获得纸张的尺寸</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    String getSize();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class ColorInkBoxImpl implements IInkBox &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String getColor() &#123;</span><br><span class="line">        return &quot;红色&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class A4PaperImpl implements IPaper &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String getSize() &#123;</span><br><span class="line">        return &quot;A4&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class B5PaperImpl implements IPaper &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String getSize() &#123;</span><br><span class="line">        return &quot;B5&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class PrinterTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Printer printer = new Printer();</span><br><span class="line">        //为打印机安装纸张和墨盒</span><br><span class="line">        printer.setInkbox(new ColorInkBoxImpl());</span><br><span class="line">        printer.setPaper(new B5PaperImpl());</span><br><span class="line">        printer.print(&quot;测试内容&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>得出的结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以下文字是红色颜色的！</span><br><span class="line">使用纸张：B5</span><br><span class="line">打印内容：测试内容</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/Java的接口/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/14/Java的多态/">Java的多态</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/14/Java的多态/" class="archive-article-date">
-  	<time datetime="2018-06-14T15:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p><strong>多态</strong>： 指允许不同类的对象对同一消息做出不同的行为，即同一消息可以根据对象类型的不同而采取多种不同的行为方式， 实现多态的技术被称为动态绑定，指的是在执行期间，判断所引用对象的实际类型，让该对象根据自己的 实际类型 调用其相应的方法，</p>
-<p><strong>多态的存在有三个前提</strong>:<br>1.要有继承关系<br>2.子类要重写父类的方法<br>3.父类引用指向子类对,</p>
-<p><strong>多态的实现方式</strong>：<br>第一： 接口实现<br>第二： 对继承自父类的方法进行重写<br>第三： 同一个类中的方法重载</p>
-<p><strong>java在使用多态时注意的几点</strong>：<br>对继承自父类的方法进行重写<br>Java的这种机制遵循一个原则：当父类对象引用子类对象时，被引用子类对象的类型而不是引用的父类类型决定了调用谁的成员方法，但是这个被调用的方法必须是在父类中定义过的，也就是说被子类覆盖的方法。<br>在同一个类中重载实现，这里要再强调一下重载和重写的区别。<br>重载：是在一个类中，两个方法的方法名相同，但是参数的个数和参数的类型不同，注意的是返回值的类型不作为是否重载的一个判断条件<br>重写：是子类重写了父类中定义的方法，两个方法的方法名一致，参数个数和类型一致，返回值类型一致，意味着完全一样。<br><strong>接口实现</strong><br>接口内只有方法声明，没有方法实现，接口不能被实例化，接口内的成员函数默认都是抽象成员函数，接口内的变量都为 Static final 类型的，<br>一旦一个类实现了这个接口，这个接口内的所有方法都必须要实现，即实现类中要重写该接口中的所定义的全部方法，否则程序报错，不被允许。<br>再介绍一下抽象类和接口的不同： 内部至少含有一个抽象方法的类，abstract修饰，其成员变量的类型没有限制，也可以存在非抽象方法，但是继承自抽象类的子类，其同样也必须实现其抽象方法。</p>
-<p><strong>以下实例</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 演员父类</span><br><span class="line"> */</span><br><span class="line">public abstract class Actor &#123;//当一个类是抽象类的时候，就不能使用new来实例化了！--抽象类是一个天生的父类</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public Actor()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    public Actor(String name)&#123;</span><br><span class="line">        setName(name);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 演员的表演方法</span><br><span class="line">     */</span><br><span class="line">    public void performs()&#123;</span><br><span class="line">        System.out.println(&quot;演员&quot; + name + &quot;正在表演精彩的节目&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 歌唱演员</span><br><span class="line"> */</span><br><span class="line">public class Singer extends Actor &#123;</span><br><span class="line">    public Singer() &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line">    public Singer(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void performs() &#123;</span><br><span class="line">        System.out.println(&quot;歌唱演员&quot; + getName() + &quot;正在表演歌唱节目《在这桃花盛开的地方》&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 舞蹈演员</span><br><span class="line"> */</span><br><span class="line">public class Dancer extends Actor &#123;</span><br><span class="line">    public Dancer() &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Dancer(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void performs() &#123;</span><br><span class="line">        System.out.println(&quot;舞蹈演员&quot; + getName() + &quot;正在展现她那婀娜多姿的舞蹈&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 导演类 -- 相当于我们项目中的核心业务类</span><br><span class="line"> * 主要功能：让演员就位，开始表演</span><br><span class="line"> */</span><br><span class="line">public class Director &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 导演的&quot;Action&quot;方法，让演员就位开始表演节目</span><br><span class="line">     * @param actor</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    public void action(Actor actor)&#123;</span><br><span class="line">        actor.performs();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class ChunWanTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Director 张艺谋 = new Director();</span><br><span class="line">        Singer 宋祖英 = new Singer(&quot;宋祖英&quot;);</span><br><span class="line">        Dancer 杨丽萍 = new Dancer(&quot;杨丽萍&quot;);</span><br><span class="line">        张艺谋.action(宋祖英);</span><br><span class="line">        张艺谋.action(杨丽萍);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>得到的结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">歌唱演员宋祖英正在表演歌唱节目《在这桃花盛开的地方》</span><br><span class="line">舞蹈演员杨丽萍正在展现她那婀娜多姿的舞蹈</span><br></pre></td></tr></table></figure></p>
-<p><strong>子类调用父类的方法</strong>：<br>使用super关键字.<br>可以调用父类的公有属性和方法⎜。<br>可以调用父类的protected属性和方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/14/Java的多态/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的UML类图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/Java的UML类图/">Java的UML类图</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/13/Java的UML类图/" class="archive-article-date">
-  	<time datetime="2018-06-13T13:56:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h2><p>UML（Unified Modeling Language）中文统一建模语言，是一种开放的方法，用于说明、可视化、构建和编写一个正在开发的、面向对象的、软件密集系统的制品的开放方法。UML展现了一系列最佳工程实践，这些最佳实践在对大规模，复杂系统进行建模方面，特别是在软件架构层次已经被验证有效。<br>在UML中有4种关系：<br>（1）依赖<br>（2）关联<br>（3）泛化<br>（4）实现<br>这些关系是UML的基本关系构造块，用他们可以写出结构良好的模型<br>第一，依赖（dependency）是两个模型元素间的语义关系，其中一个元素（独立元素）发生变化会影响到另一个元素（依赖元素）的语义。在图形上，把依赖画成一条可能有方向的虚线，偶尔在其上还带有一个标记。<br>第二，关联（association）是类之间的结构关系，它描述了一组链，链是对象（类的实例）之间的连接。聚合是一种特殊类型的关联，它描述了整体与部分之间的结构关系。在图形上，把关联画成一条实线，它可能有方向，偶尔在其上还带有一个标记，而且它还经常含有诸如多重性和端名这样的修饰。<br>第三，泛化（generalization）是一种特殊/一般关系，在其中特殊元素（子元素）基于一般元素（父元素）而建立。用这种方法，子元素共享了父元素的结构和行为。在图形上，把泛化关系画成一条带有空心箭头的实线，该实线指向父元素。<br>第四，实现（realization）是类目之间的语义关系，其中的一个类目指定了由另一个类目保证执行的合约。在两种地方会遇到实现关系：一种是在接口和实现它们的类或构件之间；另一种是在用况和实现它们的协作之间。在图形上， 把实现关系画成一条带有空心箭头的虚线，它是泛化和依赖关系两种图形的结合。</p>
-<p>类图作用<br>类图是软件工程的统一建模语言一种静态结构图，该图描述了系统的类集合，类的属性和类之间的关系。帮助人们简化对系统的理解，它是系统分析和设计阶段的重要产物，也是系统编码和测试的重要模型依据。学习好类图的绘制，是一位合格的软件工程师应有的技能。<br>在UML类图中，类使用包含类名，属性，方法名及其参数并且用分割线分隔的长方形表示。例如最简单的一个类Person 类有两个属性分别是name和age,并提供对应的get和set方法。<br><strong>实例</strong>：<br>public class Person {<br>   private String name;<br>   private int age;</p>
-<p>   public String getName() {<br>      return name;<br>   }<br>   public int getAge() {<br>      return age;<br>   }<br>   public void setName(String name) {<br>      this.name=name;<br>   }<br>   public void setAge(int age) {<br>      this.age=age;<br>   }</p>
-<p>}</p>
-<p>那么用类图表示如下，它很简单的表示出了类的所有信息。</p>
-<p><img src="http://paklkx8q7.bkt.clouddn.com/20180619.png" alt="uml"></p>
-<p>通过Person的类图，可以看出类图有三部分组成，类名，属性和操作方法</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/13/Java的UML类图/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的抽象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/Java中的抽象/">Java中的抽象</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Java中的抽象</strong><br>在java中用abstract关键字声明的类称为抽象类。 它可以有抽象和非抽象方法(带主体的方法)。<br>在学习java抽象类之前，先来了解java中的抽象。<br>抽象是隐藏实现细节并仅向用户显示功能的过程。<br>另一种方式，它只向用户显示重要的事情，并隐藏内部详细信息，例如：发送短信，只需输入文本并发送消息。您也不需要知道有关邮件传递的内部处理过程。<br>抽象可以让你专注于对象做什么(实现的功能)，而不是它如何做。<br><strong>抽象类的特点</strong>：<br>1、抽象方法一点在抽象类中。<br>2、抽象方法和抽象类都必须被abstract关键字修饰。<br>3、抽象类不可以用new创建对象，因为调用抽象方法没有意义。<br>4、抽象类中的方法要被使用，必须由子类复写起所有的抽象方法后，建立子类对象调用。<br>如果子类只覆盖了部分抽象方法，那么该子类还是一个抽象类<br><strong>在使用抽象类时需要注意几点</strong>：<br>1、抽象类不能被实例化，实例化的工作应该交由它的子类来完成，它只需要有一个引用即可。<br>2、抽象方法必须由子类来进行重写。<br>3、只要包含一个抽象方法的抽象类，该方法必须要定义成抽象类，不管是否还包含有其他方法。<br>4、抽象类中可以包含具体的方法，当然也可以不包含抽象方法。<br>5、子类中的抽象方法不能与父类的抽象方法同名。<br>6、abstract不能与final并列修饰同一个类。<br>7、abstract 不能与private、static、final或native并列修饰同一个方法。</p>
-<p><strong>Abstract类与abstract方法</strong><br>用关键字abstract修饰的类称为abstract类（抽象类）。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class A &#123;</span><br><span class="line"> …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用关键字abstract修饰的方法称为abstract方法（抽象方法），例如：<br><code>abstract int min(int x,int y);</code></p>
-<p>注意事项<br>1、和普通的类相比，abstract类可以有abstract方法，也可以有非abstract方法。<br>2、对于abstract类，我们只能声明，不能使用new运算符创建该类的对象。如果一个非抽象类是某个抽象类的子类，那么它必须重写父类的抽象的方法，给出方法体。<br>3、abstract类也可以没有abstract方法。<br>4、如果一个abstract类是abstract类的子类，它可以重写父类的abstract方法，也可以继承这个abstract方法。<br>5、对于abstract方法，只允许声明，不允许实现。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public abstract class A &#123;</span><br><span class="line">void eat()&#123;</span><br><span class="line">System.out.println(&quot;eat&quot;);    //非抽象类方法</span><br><span class="line">&#125;</span><br><span class="line">abstract int getMax();    //抽象类方法，没有方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>抽象类和抽象方法与多态紧密的结合</strong><br>定义一个父类Car<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Car &#123;</span><br><span class="line">     abstract void cautionSound();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>定义子类PoliceCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class PoliceCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>定义子类FireCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class FireCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;😆...🌺...😜&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>主类Demo25<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo25 &#123; </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Car car = new PoliceCar();</span><br><span class="line"> 		car.cautionSound();</span><br><span class="line">		car = new FireCar();</span><br><span class="line">		car.cautionSound();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>运行的结果</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~</span><br><span class="line">😆...🌺...😜</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/09/Java中的抽象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/Java中的继承/">Java中的继承</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/09/Java中的继承/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>为什么要继承<br>说到面向对象的特点，就不得不提继承，他使代码拥有了其他非面向对象所没有的一种独特性—可复用性。<br>Java不支持多继承，单继承使JAVA的继承关系很简单，一个类只能有一个父类，易于管理程序，同时一个类可以实现多个接口，从而克服单继承的缺点。<br>当你先创建了一个类之后，再创建一个新类，即使他和你之前的类有相似的功能，你还是需要重新编写此类。然而通过继承，你也许可以不这么做。<br>合成：在新类里创建原有的对象称为合成。这种方式可以重复利用现有的代码而不更改它的形式。</p>
-<p>父类的编写<br>在父类里，填写的属性和方法应该都是泛化的，他不关心具体的子类有特殊性，他只关心只要是我这个类，这个大类可以做什么。比如交通工具定义一个父类类，他不关心具体的子类车有几个轮胎，飞机是怎么飞的，他只关心可以这个类可以移动，可以产生位移。<br>关于父类的权限，为了封装，一般将成员变量赋值为private，但是方法，一般修饰为public。这样做的目的是因为，假如一个与父类不在同一个包的类，想要继承父类，就会变得简单，当然这只是一般情况。<br>java的默认继承机制<br>无论你是否给一个类设计父类，实际上，即使你没有设计父类，他都会有一个父类，那就是Object，想一想在你创建一个类的时候，是不是有这一栏。<br>这就是java的单根继承结构。在java里每个类都只能有一个父类，而且是必须有。而一个类可以被多个类继承。实际上这是利大于弊的。</p>
-<p>继承确定了一种关系<br>在继承关系里，被继承的类被称为父类，而继承的类就被称为子类。子类继承了父类所有的属性（尽管private成员被隐藏起来，并且不可访问）和方法，不仅如此，子类还可以根据自己的独特性，扩展属性和方法。<br>子类复制了父类的接口，所以所有可以发送给父类对象的消息同时也可以发送给子类对象。子类与父类具有相同的类型。<br>继承后的子类与父类<br>子类对象可以被当做父类对象来使用<br>子类对象不仅可以被子类的变量管理(指向内存)，还可以被父类变量管理。(多态)<br>继承的语法<br>关键字extends表明新类派生于一个已经存在的类。已存在的类称为父类或基类，新类称为子类或派生类。例如:<br><code>class SubA extends ParenA {}</code><br>类SubA继承了ParenA，ParenA类称为父类或基类，SubA类称为子类或派生类。<br>以下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class ParenA1 &#123;</span><br><span class="line">    public void tsetParentMethod1()&#123;</span><br><span class="line">        System.out.println(&quot;我是父类的方法&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class SubA1 extends ParenA&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        ParenA1 parenA1 = new ParenA();</span><br><span class="line">        parenA1.tsetParentMethod();</span><br><span class="line"></span><br><span class="line">        SubA1 subA1 = new SubA();</span><br><span class="line">        subA1.tsetParentMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>子类的执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是父类的方法</span><br><span class="line">我是父类的方法</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/09/Java中的继承/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/07/Java的对象/">Java的对象</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/07/Java的对象/" class="archive-article-date">
-  	<time datetime="2018-06-07T13:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h2><p>对象是程序运行时的实体<br>它的状态存储在 fields (也就是变量)<br>行为是通过方法 (method) 实现的<br>方法上操作对象的内部的状态<br>方法是对象对对象的通信的主要手段<br><strong>创建对象</strong><br>对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：</p>
-<blockquote>
-<p>声明：声明一个对象，包括对象名称和对象类型。<br>实例化：使用关键字new来创建一个对象。<br>初始化：使用new创建对象时，会调用构造方法初始化对象。</p>
-</blockquote>
-<p><strong>为方便说明，定义了以下一个简单的类</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> public class Vehicle &#123;</span><br><span class="line"></span><br><span class="line">    public int passengers;      </span><br><span class="line"></span><br><span class="line">    public int fuelcap;</span><br><span class="line"></span><br><span class="line">    public int mpg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>有了这个模板，就可以用它来创建对象：<br><code>Vehicle veh1 = new Vehicle();</code><br>通常把这条语句的动作称之为创建一个对象，其实，它包含了四个动作。<br>(1）右边的“new Vehicle”，是以Vehicle类为模板，在堆空间里创建一个Vehicle类对象（也简称为Vehicle对象）。<br>(2）末尾的()意味着，在对象创建后，立即调用Vehicle类的构造函数，对刚生成的对象进行初始化。构造函数是肯定有的。如果你没写，Java会给你补上一个默认的构造函数。<br>(3）左边的“Vehicle veh 1”创建了一个Vehicle类引用变量。所谓Vehicle类引用，就是以后可以用来指向Vehicle对象的对象引用。<br>(4）“=”操作符使对象引用指向刚创建的那个Vehicle对象。</p>
-<p><strong>类和对象之间的关系</strong><br>类是抽象的概念，仅仅是模板，比如说”演员”、”总统”。<br>对象是一个看得见，摸得着的具体实体。<br>一个类可以包含以下类型变量：<br>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。<br>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。<br>类变量：类变量也声明在类中，方法体之外，但必须声明为static类型。</p>
-<p><strong>对象的基本设计步骤</strong><br>1、发现类<br>人类/科学家类/演员类/逗逼类.<br>2、找出属性(名词)<br>姓名、性别、职业、年龄.<br>3、找出行为(动词)<br>吃饭、说话、表演、么么哒</p>
-<p><strong>构造方法</strong><br>每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。<br>在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。<br>下面是一个构造方法示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Vehicle&#123;</span><br><span class="line">    public Vehicle()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public Vehicle(int passengers,int fuelcap,int mpg)&#123;</span><br><span class="line">        // 这个构造器里有三个参数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>关于构造方法<br>1.没有返回值类型<br>2.名称与类名一致<br>3.可以指定参数及实现重载<br>4.注意隐式构造和参数化构造不能共存</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/07/Java的对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1044,8 +425,8 @@ method2()throwsExcrption{   //声明异常
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
