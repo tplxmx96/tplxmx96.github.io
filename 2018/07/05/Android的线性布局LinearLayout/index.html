@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | talxmx96</title>
+  <title>Android的线性布局LinearLayout | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="talxmx96">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="Android的布局Android中有六大布局,分别是: LinearLayout(线性布局)，RelativeLayout(相对布局)，TableLayout(表格布局) FrameLayout(帧布局)，AbsoluteLayout(绝对布局)，GridLayout(网格布局) 而今天我们要讲解的就是第一个布局，LinearLayout(线性布局)，我们屏幕适配的使用 用的比较多的就是Line">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android的线性布局LinearLayout">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/Android的线性布局LinearLayout/index.html">
 <meta property="og:site_name" content="talxmx96">
+<meta property="og:description" content="Android的布局Android中有六大布局,分别是: LinearLayout(线性布局)，RelativeLayout(相对布局)，TableLayout(表格布局) FrameLayout(帧布局)，AbsoluteLayout(绝对布局)，GridLayout(网格布局) 而今天我们要讲解的就是第一个布局，LinearLayout(线性布局)，我们屏幕适配的使用 用的比较多的就是Line">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/LinearLayout.png">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/WechatIMG1.jpeg">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/91165417.jpg">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/20682772.jpg">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/36880631.jpg">
+<meta property="og:updated_time" content="2018-07-05T16:24:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talxmx96">
+<meta name="twitter:title" content="Android的线性布局LinearLayout">
+<meta name="twitter:description" content="Android的布局Android中有六大布局,分别是: LinearLayout(线性布局)，RelativeLayout(相对布局)，TableLayout(表格布局) FrameLayout(帧布局)，AbsoluteLayout(绝对布局)，GridLayout(网格布局) 而今天我们要讲解的就是第一个布局，LinearLayout(线性布局)，我们屏幕适配的使用 用的比较多的就是Line">
+<meta name="twitter:image" content="http://paklkx8q7.bkt.clouddn.com/LinearLayout.png">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -154,295 +164,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android的线性布局LinearLayout" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android的线性布局LinearLayout
+    </h1>
+  
+
+        
+        <a href="/2018/07/05/Android的线性布局LinearLayout/" class="archive-article-date">
+  	<time datetime="2018-07-05T13:51:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android的布局"><a href="#Android的布局" class="headerlink" title="Android的布局"></a>Android的布局</h2><p>Android中有六大布局,分别是: LinearLayout(线性布局)，RelativeLayout(相对布局)，TableLayout(表格布局) FrameLayout(帧布局)，AbsoluteLayout(绝对布局)，GridLayout(网格布局) 而今天我们要讲解的就是第一个布局，LinearLayout(线性布局)，我们屏幕适配的使用 用的比较多的就是LinearLayout的weight(权重属性),在这一节里,我们会详细地解析 LinearLayout,包括一些基本的属性,Weight属性的使用。<br><strong>1.思维学习图</strong><br><img src="http://paklkx8q7.bkt.clouddn.com/LinearLayout.png" alt="github"></p>
+<p><strong>2.weight(权重)属性详解</strong>:<br>最简单用法：<br>如图：比例1:1:1<br><img src="http://paklkx8q7.bkt.clouddn.com/WechatIMG1.jpeg" alt="github"></p>
+<p><strong>实现代码</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;horizontal&quot;</span><br><span class="line">    &gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;0dp&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:text=&quot;@string/hello_word&quot;</span><br><span class="line">        android:background=&quot;#0000aa&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;0dp&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:text=&quot;@string/hello_word&quot;</span><br><span class="line">        android:background=&quot;#aa0000&quot;</span><br><span class="line">         /&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;0dp&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:text=&quot;@string/hello_word&quot;</span><br><span class="line">        android:background=&quot;#00aa00&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以上实现了1:1的效果,只需要分别把两个LinearLayout的weight改成1和1就可以了 用法归纳: 按比例划分水平方向:将涉及到的View的android:width属性设置为0dp,然后设置为android weight属性设置比例即可;类推,竖直方向,只需设android:height为0dp,然后设weight属性即可！<br>如果我们不适用上述那种设置为0dp的方式,直接用wrap_content和match_parent的话, 则要接着解析weight属性了,分为两种情况,wrap_content与match_parent！另外还要看 LinearLayout的orientation是水平还是竖直,这个决定哪个方向等比例划分。</p>
+<p><strong>3.为LinearLayout设置分割线</strong><br>很多界面开发中都会设置一些下划线,或者分割线,从而使得界面更加整洁美观,比如下面的酷狗 音乐的注册页面:<br><img src="http://paklkx8q7.bkt.clouddn.com/91165417.jpg" alt="github"></p>
+<p>对于这种线,我们通常的做法有两种 ①直接在布局中添加一个view,这个view的作用仅仅是显示出一条线,代码也很简单:</p>
+<p><code>&lt;View</code><br>    <code>android:layout_width=&quot;match_parent&quot;</code><br>    <code>android:layout_height=&quot;1px&quot;</code><br>    <code>android:background=&quot;#000000&quot; /&gt;</code></p>
+<p>这个是水平方向上的黑线,当然你也可以改成其他颜色,或者使用图片<br><img src="http://paklkx8q7.bkt.clouddn.com/20682772.jpg" alt="github"></p>
+<p>②第二种则是使用LinearLayout的一个divider属性,直接为LinearLayout设置分割线 这里就需要你自己准备一张线的图片了 1)android:divider设置作为分割线的图片 2)android:showDividers设置分割线的位置,none(无),beginning(开始),end(结束),middle(每两个组件间) 3)dividerPadding设置分割线的Padding</p>
+<p><strong>使用示例</strong>:<br><img src="http://paklkx8q7.bkt.clouddn.com/36880631.jpg" alt="github"></p>
+<p><strong>使用示例</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;   </span><br><span class="line">    android:id=&quot;@+id/LinearLayout1&quot;  </span><br><span class="line">    android:layout_width=&quot;match_parent&quot;  </span><br><span class="line">    android:layout_height=&quot;match_parent&quot;  </span><br><span class="line">    android:divider=&quot;@drawable/ktv_line_div&quot;  </span><br><span class="line">    android:orientation=&quot;vertical&quot;  </span><br><span class="line">    android:showDividers=&quot;middle&quot;  </span><br><span class="line">    android:dividerPadding=&quot;10dp&quot;  </span><br><span class="line">    tools:context=&quot;com.jay.example.linearlayoutdemo.MainActivity&quot; &gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;Button  </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;  </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;  </span><br><span class="line">        android:text=&quot;按钮1&quot; /&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;Button  </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;  </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;  </span><br><span class="line">        android:text=&quot;按钮2&quot; /&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;Button  </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;  </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;  </span><br><span class="line">        android:text=&quot;按钮3&quot; /&gt;  </span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>布局还是建议使用 RelativeLayout!</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的抽象/">Java中的抽象</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/05/Android的线性布局LinearLayout/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/09/Java中的继承/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/09/Android的相对布局RelativeLayout/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android的相对布局RelativeLayout
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/30/Java中IO的字符流/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中IO的字符流</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/Java中的继承/">Java中的继承</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/07/Java的对象/" class="archive-article-date">
-  	<time datetime="2018-06-07T13:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/07/Java的对象/">Java的对象</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/Git的基础命令/" class="archive-article-date">
-  	<time datetime="2018-06-06T12:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/Git的基础命令/">Git的基础命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/03/Java的方法/" class="archive-article-date">
-  	<time datetime="2018-06-03T15:49:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/03/Java的方法/">Java的方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
-  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/22/Java中的数组/" class="archive-article-date">
-  	<time datetime="2018-05-21T16:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/22/Java中的数组/">Java中的数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -466,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

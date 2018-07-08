@@ -156,6 +156,145 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android的相对布局RelativeLayout" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/09/Android的相对布局RelativeLayout/">Android的相对布局RelativeLayout</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/09/Android的相对布局RelativeLayout/" class="archive-article-date">
+  	<time datetime="2018-07-08T16:03:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/09/Android的相对布局RelativeLayout/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android的线性布局LinearLayout" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/Android的线性布局LinearLayout/">Android的线性布局LinearLayout</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/05/Android的线性布局LinearLayout/" class="archive-article-date">
+  	<time datetime="2018-07-05T13:51:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android的布局"><a href="#Android的布局" class="headerlink" title="Android的布局"></a>Android的布局</h2><p>Android中有六大布局,分别是: LinearLayout(线性布局)，RelativeLayout(相对布局)，TableLayout(表格布局) FrameLayout(帧布局)，AbsoluteLayout(绝对布局)，GridLayout(网格布局) 而今天我们要讲解的就是第一个布局，LinearLayout(线性布局)，我们屏幕适配的使用 用的比较多的就是LinearLayout的weight(权重属性),在这一节里,我们会详细地解析 LinearLayout,包括一些基本的属性,Weight属性的使用。<br><strong>1.思维学习图</strong><br><img src="http://paklkx8q7.bkt.clouddn.com/LinearLayout.png" alt="github"></p>
+<p><strong>2.weight(权重)属性详解</strong>:<br>最简单用法：<br>如图：比例1:1:1<br><img src="http://paklkx8q7.bkt.clouddn.com/WechatIMG1.jpeg" alt="github"></p>
+<p><strong>实现代码</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;horizontal&quot;</span><br><span class="line">    &gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;0dp&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:text=&quot;@string/hello_word&quot;</span><br><span class="line">        android:background=&quot;#0000aa&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;0dp&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:text=&quot;@string/hello_word&quot;</span><br><span class="line">        android:background=&quot;#aa0000&quot;</span><br><span class="line">         /&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;0dp&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:text=&quot;@string/hello_word&quot;</span><br><span class="line">        android:background=&quot;#00aa00&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以上实现了1:1的效果,只需要分别把两个LinearLayout的weight改成1和1就可以了 用法归纳: 按比例划分水平方向:将涉及到的View的android:width属性设置为0dp,然后设置为android weight属性设置比例即可;类推,竖直方向,只需设android:height为0dp,然后设weight属性即可！<br>如果我们不适用上述那种设置为0dp的方式,直接用wrap_content和match_parent的话, 则要接着解析weight属性了,分为两种情况,wrap_content与match_parent！另外还要看 LinearLayout的orientation是水平还是竖直,这个决定哪个方向等比例划分。</p>
+<p><strong>3.为LinearLayout设置分割线</strong><br>很多界面开发中都会设置一些下划线,或者分割线,从而使得界面更加整洁美观,比如下面的酷狗 音乐的注册页面:<br><img src="http://paklkx8q7.bkt.clouddn.com/91165417.jpg" alt="github"></p>
+<p>对于这种线,我们通常的做法有两种 ①直接在布局中添加一个view,这个view的作用仅仅是显示出一条线,代码也很简单:</p>
+<p><code>&lt;View</code><br>    <code>android:layout_width=&quot;match_parent&quot;</code><br>    <code>android:layout_height=&quot;1px&quot;</code><br>    <code>android:background=&quot;#000000&quot; /&gt;</code></p>
+<p>这个是水平方向上的黑线,当然你也可以改成其他颜色,或者使用图片<br><img src="http://paklkx8q7.bkt.clouddn.com/20682772.jpg" alt="github"></p>
+<p>②第二种则是使用LinearLayout的一个divider属性,直接为LinearLayout设置分割线 这里就需要你自己准备一张线的图片了 1)android:divider设置作为分割线的图片 2)android:showDividers设置分割线的位置,none(无),beginning(开始),end(结束),middle(每两个组件间) 3)dividerPadding设置分割线的Padding</p>
+<p><strong>使用示例</strong>:<br><img src="http://paklkx8q7.bkt.clouddn.com/36880631.jpg" alt="github"></p>
+<p><strong>使用示例</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;   </span><br><span class="line">    android:id=&quot;@+id/LinearLayout1&quot;  </span><br><span class="line">    android:layout_width=&quot;match_parent&quot;  </span><br><span class="line">    android:layout_height=&quot;match_parent&quot;  </span><br><span class="line">    android:divider=&quot;@drawable/ktv_line_div&quot;  </span><br><span class="line">    android:orientation=&quot;vertical&quot;  </span><br><span class="line">    android:showDividers=&quot;middle&quot;  </span><br><span class="line">    android:dividerPadding=&quot;10dp&quot;  </span><br><span class="line">    tools:context=&quot;com.jay.example.linearlayoutdemo.MainActivity&quot; &gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;Button  </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;  </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;  </span><br><span class="line">        android:text=&quot;按钮1&quot; /&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;Button  </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;  </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;  </span><br><span class="line">        android:text=&quot;按钮2&quot; /&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;Button  </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;  </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;  </span><br><span class="line">        android:text=&quot;按钮3&quot; /&gt;  </span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>布局还是建议使用 RelativeLayout!</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/05/Android的线性布局LinearLayout/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java中IO的字符流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -883,144 +1022,6 @@ method2()throwsExcrption{   //声明异常
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/13/Java的UML类图/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的抽象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/Java中的抽象/">Java中的抽象</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Java中的抽象</strong><br>在java中用abstract关键字声明的类称为抽象类。 它可以有抽象和非抽象方法(带主体的方法)。<br>在学习java抽象类之前，先来了解java中的抽象。<br>抽象是隐藏实现细节并仅向用户显示功能的过程。<br>另一种方式，它只向用户显示重要的事情，并隐藏内部详细信息，例如：发送短信，只需输入文本并发送消息。您也不需要知道有关邮件传递的内部处理过程。<br>抽象可以让你专注于对象做什么(实现的功能)，而不是它如何做。<br><strong>抽象类的特点</strong>：<br>1、抽象方法一点在抽象类中。<br>2、抽象方法和抽象类都必须被abstract关键字修饰。<br>3、抽象类不可以用new创建对象，因为调用抽象方法没有意义。<br>4、抽象类中的方法要被使用，必须由子类复写起所有的抽象方法后，建立子类对象调用。<br>如果子类只覆盖了部分抽象方法，那么该子类还是一个抽象类<br><strong>在使用抽象类时需要注意几点</strong>：<br>1、抽象类不能被实例化，实例化的工作应该交由它的子类来完成，它只需要有一个引用即可。<br>2、抽象方法必须由子类来进行重写。<br>3、只要包含一个抽象方法的抽象类，该方法必须要定义成抽象类，不管是否还包含有其他方法。<br>4、抽象类中可以包含具体的方法，当然也可以不包含抽象方法。<br>5、子类中的抽象方法不能与父类的抽象方法同名。<br>6、abstract不能与final并列修饰同一个类。<br>7、abstract 不能与private、static、final或native并列修饰同一个方法。</p>
-<p><strong>Abstract类与abstract方法</strong><br>用关键字abstract修饰的类称为abstract类（抽象类）。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class A &#123;</span><br><span class="line"> …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用关键字abstract修饰的方法称为abstract方法（抽象方法），例如：<br><code>abstract int min(int x,int y);</code></p>
-<p>注意事项<br>1、和普通的类相比，abstract类可以有abstract方法，也可以有非abstract方法。<br>2、对于abstract类，我们只能声明，不能使用new运算符创建该类的对象。如果一个非抽象类是某个抽象类的子类，那么它必须重写父类的抽象的方法，给出方法体。<br>3、abstract类也可以没有abstract方法。<br>4、如果一个abstract类是abstract类的子类，它可以重写父类的abstract方法，也可以继承这个abstract方法。<br>5、对于abstract方法，只允许声明，不允许实现。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public abstract class A &#123;</span><br><span class="line">void eat()&#123;</span><br><span class="line">System.out.println(&quot;eat&quot;);    //非抽象类方法</span><br><span class="line">&#125;</span><br><span class="line">abstract int getMax();    //抽象类方法，没有方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>抽象类和抽象方法与多态紧密的结合</strong><br>定义一个父类Car<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Car &#123;</span><br><span class="line">     abstract void cautionSound();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>定义子类PoliceCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class PoliceCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>定义子类FireCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class FireCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;😆...🌺...😜&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>主类Demo25<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo25 &#123; </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Car car = new PoliceCar();</span><br><span class="line"> 		car.cautionSound();</span><br><span class="line">		car = new FireCar();</span><br><span class="line">		car.cautionSound();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>运行的结果</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~</span><br><span class="line">😆...🌺...😜</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/09/Java中的抽象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/Java中的继承/">Java中的继承</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/09/Java中的继承/" class="archive-article-date">
-  	<time datetime="2018-06-09T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>为什么要继承<br>说到面向对象的特点，就不得不提继承，他使代码拥有了其他非面向对象所没有的一种独特性—可复用性。<br>Java不支持多继承，单继承使JAVA的继承关系很简单，一个类只能有一个父类，易于管理程序，同时一个类可以实现多个接口，从而克服单继承的缺点。<br>当你先创建了一个类之后，再创建一个新类，即使他和你之前的类有相似的功能，你还是需要重新编写此类。然而通过继承，你也许可以不这么做。<br>合成：在新类里创建原有的对象称为合成。这种方式可以重复利用现有的代码而不更改它的形式。</p>
-<p>父类的编写<br>在父类里，填写的属性和方法应该都是泛化的，他不关心具体的子类有特殊性，他只关心只要是我这个类，这个大类可以做什么。比如交通工具定义一个父类类，他不关心具体的子类车有几个轮胎，飞机是怎么飞的，他只关心可以这个类可以移动，可以产生位移。<br>关于父类的权限，为了封装，一般将成员变量赋值为private，但是方法，一般修饰为public。这样做的目的是因为，假如一个与父类不在同一个包的类，想要继承父类，就会变得简单，当然这只是一般情况。<br>java的默认继承机制<br>无论你是否给一个类设计父类，实际上，即使你没有设计父类，他都会有一个父类，那就是Object，想一想在你创建一个类的时候，是不是有这一栏。<br>这就是java的单根继承结构。在java里每个类都只能有一个父类，而且是必须有。而一个类可以被多个类继承。实际上这是利大于弊的。</p>
-<p>继承确定了一种关系<br>在继承关系里，被继承的类被称为父类，而继承的类就被称为子类。子类继承了父类所有的属性（尽管private成员被隐藏起来，并且不可访问）和方法，不仅如此，子类还可以根据自己的独特性，扩展属性和方法。<br>子类复制了父类的接口，所以所有可以发送给父类对象的消息同时也可以发送给子类对象。子类与父类具有相同的类型。<br>继承后的子类与父类<br>子类对象可以被当做父类对象来使用<br>子类对象不仅可以被子类的变量管理(指向内存)，还可以被父类变量管理。(多态)<br>继承的语法<br>关键字extends表明新类派生于一个已经存在的类。已存在的类称为父类或基类，新类称为子类或派生类。例如:<br><code>class SubA extends ParenA {}</code><br>类SubA继承了ParenA，ParenA类称为父类或基类，SubA类称为子类或派生类。<br>以下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class ParenA1 &#123;</span><br><span class="line">    public void tsetParentMethod1()&#123;</span><br><span class="line">        System.out.println(&quot;我是父类的方法&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class SubA1 extends ParenA&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        ParenA1 parenA1 = new ParenA();</span><br><span class="line">        parenA1.tsetParentMethod();</span><br><span class="line"></span><br><span class="line">        SubA1 subA1 = new SubA();</span><br><span class="line">        subA1.tsetParentMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>子类的执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是父类的方法</span><br><span class="line">我是父类的方法</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/09/Java中的继承/">展开全文 >></a>
         </p>
       
 

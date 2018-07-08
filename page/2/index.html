@@ -156,6 +156,144 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中的抽象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/09/Java中的抽象/">Java中的抽象</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/09/Java中的抽象/" class="archive-article-date">
+  	<time datetime="2018-06-09T13:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Java中的抽象</strong><br>在java中用abstract关键字声明的类称为抽象类。 它可以有抽象和非抽象方法(带主体的方法)。<br>在学习java抽象类之前，先来了解java中的抽象。<br>抽象是隐藏实现细节并仅向用户显示功能的过程。<br>另一种方式，它只向用户显示重要的事情，并隐藏内部详细信息，例如：发送短信，只需输入文本并发送消息。您也不需要知道有关邮件传递的内部处理过程。<br>抽象可以让你专注于对象做什么(实现的功能)，而不是它如何做。<br><strong>抽象类的特点</strong>：<br>1、抽象方法一点在抽象类中。<br>2、抽象方法和抽象类都必须被abstract关键字修饰。<br>3、抽象类不可以用new创建对象，因为调用抽象方法没有意义。<br>4、抽象类中的方法要被使用，必须由子类复写起所有的抽象方法后，建立子类对象调用。<br>如果子类只覆盖了部分抽象方法，那么该子类还是一个抽象类<br><strong>在使用抽象类时需要注意几点</strong>：<br>1、抽象类不能被实例化，实例化的工作应该交由它的子类来完成，它只需要有一个引用即可。<br>2、抽象方法必须由子类来进行重写。<br>3、只要包含一个抽象方法的抽象类，该方法必须要定义成抽象类，不管是否还包含有其他方法。<br>4、抽象类中可以包含具体的方法，当然也可以不包含抽象方法。<br>5、子类中的抽象方法不能与父类的抽象方法同名。<br>6、abstract不能与final并列修饰同一个类。<br>7、abstract 不能与private、static、final或native并列修饰同一个方法。</p>
+<p><strong>Abstract类与abstract方法</strong><br>用关键字abstract修饰的类称为abstract类（抽象类）。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class A &#123;</span><br><span class="line"> …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用关键字abstract修饰的方法称为abstract方法（抽象方法），例如：<br><code>abstract int min(int x,int y);</code></p>
+<p>注意事项<br>1、和普通的类相比，abstract类可以有abstract方法，也可以有非abstract方法。<br>2、对于abstract类，我们只能声明，不能使用new运算符创建该类的对象。如果一个非抽象类是某个抽象类的子类，那么它必须重写父类的抽象的方法，给出方法体。<br>3、abstract类也可以没有abstract方法。<br>4、如果一个abstract类是abstract类的子类，它可以重写父类的abstract方法，也可以继承这个abstract方法。<br>5、对于abstract方法，只允许声明，不允许实现。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public abstract class A &#123;</span><br><span class="line">void eat()&#123;</span><br><span class="line">System.out.println(&quot;eat&quot;);    //非抽象类方法</span><br><span class="line">&#125;</span><br><span class="line">abstract int getMax();    //抽象类方法，没有方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>抽象类和抽象方法与多态紧密的结合</strong><br>定义一个父类Car<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Car &#123;</span><br><span class="line">     abstract void cautionSound();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>定义子类PoliceCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class PoliceCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>定义子类FireCar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class FireCar extends Car&#123;</span><br><span class="line">@Override</span><br><span class="line">void cautionSound() &#123;</span><br><span class="line">     System.out.println(&quot;😆...🌺...😜&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>主类Demo25<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo25 &#123; </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Car car = new PoliceCar();</span><br><span class="line"> 		car.cautionSound();</span><br><span class="line">		car = new FireCar();</span><br><span class="line">		car.cautionSound();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>运行的结果</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O(∩_∩)O哈哈~...O(∩_∩)O哈哈~...O(∩_∩)O哈哈~</span><br><span class="line">😆...🌺...😜</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/09/Java中的抽象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java中的继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/09/Java中的继承/">Java中的继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/09/Java中的继承/" class="archive-article-date">
+  	<time datetime="2018-06-09T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>为什么要继承<br>说到面向对象的特点，就不得不提继承，他使代码拥有了其他非面向对象所没有的一种独特性—可复用性。<br>Java不支持多继承，单继承使JAVA的继承关系很简单，一个类只能有一个父类，易于管理程序，同时一个类可以实现多个接口，从而克服单继承的缺点。<br>当你先创建了一个类之后，再创建一个新类，即使他和你之前的类有相似的功能，你还是需要重新编写此类。然而通过继承，你也许可以不这么做。<br>合成：在新类里创建原有的对象称为合成。这种方式可以重复利用现有的代码而不更改它的形式。</p>
+<p>父类的编写<br>在父类里，填写的属性和方法应该都是泛化的，他不关心具体的子类有特殊性，他只关心只要是我这个类，这个大类可以做什么。比如交通工具定义一个父类类，他不关心具体的子类车有几个轮胎，飞机是怎么飞的，他只关心可以这个类可以移动，可以产生位移。<br>关于父类的权限，为了封装，一般将成员变量赋值为private，但是方法，一般修饰为public。这样做的目的是因为，假如一个与父类不在同一个包的类，想要继承父类，就会变得简单，当然这只是一般情况。<br>java的默认继承机制<br>无论你是否给一个类设计父类，实际上，即使你没有设计父类，他都会有一个父类，那就是Object，想一想在你创建一个类的时候，是不是有这一栏。<br>这就是java的单根继承结构。在java里每个类都只能有一个父类，而且是必须有。而一个类可以被多个类继承。实际上这是利大于弊的。</p>
+<p>继承确定了一种关系<br>在继承关系里，被继承的类被称为父类，而继承的类就被称为子类。子类继承了父类所有的属性（尽管private成员被隐藏起来，并且不可访问）和方法，不仅如此，子类还可以根据自己的独特性，扩展属性和方法。<br>子类复制了父类的接口，所以所有可以发送给父类对象的消息同时也可以发送给子类对象。子类与父类具有相同的类型。<br>继承后的子类与父类<br>子类对象可以被当做父类对象来使用<br>子类对象不仅可以被子类的变量管理(指向内存)，还可以被父类变量管理。(多态)<br>继承的语法<br>关键字extends表明新类派生于一个已经存在的类。已存在的类称为父类或基类，新类称为子类或派生类。例如:<br><code>class SubA extends ParenA {}</code><br>类SubA继承了ParenA，ParenA类称为父类或基类，SubA类称为子类或派生类。<br>以下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class ParenA1 &#123;</span><br><span class="line">    public void tsetParentMethod1()&#123;</span><br><span class="line">        System.out.println(&quot;我是父类的方法&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package io.github.tplxmx96.abstest;</span><br><span class="line"></span><br><span class="line">public class SubA1 extends ParenA&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        ParenA1 parenA1 = new ParenA();</span><br><span class="line">        parenA1.tsetParentMethod();</span><br><span class="line"></span><br><span class="line">        SubA1 subA1 = new SubA();</span><br><span class="line">        subA1.tsetParentMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>子类的执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是父类的方法</span><br><span class="line">我是父类的方法</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/09/Java中的继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java的对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -750,160 +888,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/22/Java中的数组/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java基本数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/20/Java基本数据类型/">Java基本数据类型</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/20/Java基本数据类型/" class="archive-article-date">
-  	<time datetime="2018-05-20T12:28:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Java-基本数据类型"><a href="#Java-基本数据类型" class="headerlink" title="Java 基本数据类型"></a>Java 基本数据类型</h3><p>变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间。</p>
-<p>内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。</p>
-<p><code>CODE：</code>MEMORY：<br>int x = 7;                X      Y<br>int y = 10;                7     10</p>
-<p>因此，通过定义不同类型的变量，可以在内存中储存整数、小数或者字符。</p>
-<p>Java 的两大数据类型:</p>
-<p>内置数据类型</p>
-<h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2><h3 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h3><p>Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。</p>
-<p><strong>byte</strong>：</p>
-<p>-byte 数据类型是8位、有符号的，以二进制补码表示的整数；<br>-最小值是 -128（-2^7）；<br>-最大值是 127（2^7-1）；<br>-默认值是 0；<br>-byte 类型用在大型数组中节约空间，主要代替整数，因为 byte 变量占用的空间只有 int 类型的四分之一；<br>-例子：byte a = 100，byte b = -50。</p>
-<p><strong>short</strong>：</p>
-<p>-short 数据类型是 16 位、有符号的以二进制补码表示的整数<br>-最小值是 -32768（-2^15）；<br>-最大值是 32767（2^15 - 1）；<br>-Short 数据类型也可以像 byte 那样节省空间。一个short变量是int型变量所占空间的二分之一；<br>-默认值是 0；<br>-例子：short s = 1000，short r = -20000。</p>
-<p><strong>int</strong>：</p>
-<p>-int 数据类型是32位、有符号的以二进制补码表示的整数；<br>-最小值是 -2,147,483,648（-2^31）；<br>-最大值是 2,147,483,647（2^31 - 1）；<br>-一般地整型变量默认为 int 类型；<br>-默认值是 0 ；<br>-例子：int a = 100000, int b = -200000。</p>
-<p><strong>long：</strong></p>
-<p>-long 数据类型是 64 位、有符号的以二进制补码表示的整数；<br>-最小值是 -9,223,372,036,854,775,808（-2^63）；<br>-最大值是 9,223,372,036,854,775,807（2^63 -1）；<br>-这种类型主要使用在需要比较大整数的系统上；<br>-默认值是 0L；<br>-例子： long a = 100000L，Long b = -200000L。<br>-“L”理论上不分大小写，但是若写成”l”容易与数字”1”混淆，不容易分辩。所以最好大写。</p>
-<p><strong>float</strong>：</p>
-<p>-float 数据类型是单精度、32位、符合IEEE 754标准的浮点数；<br>-float 在储存大型浮点数组的时候可节省内存空间；<br>-默认值是 0.0f；<br>-浮点数不能用来表示精确的值，如货币；<br>-例子：float f1 = 234.5f。</p>
-<p><strong>double</strong>：</p>
-<p>-double 数据类型是双精度、64 位、符合IEEE 754标准的浮点数；<br>-浮点数的默认类型为double类型；<br>-double类型同样不能表示精确的值，如货币；<br>-默认值是 0.0d；<br>-例子：double d1 = 123.4。</p>
-<p><strong>boolean</strong>：</p>
-<p>-boolean数据类型表示一位的信息；<br>-只有两个取值：true 和 false；<br>-这种类型只作为一种标志来记录 true/false 情况；<br>-默认值是 false；<br>-例子：boolean one = true。</p>
-<p><strong>char</strong>：</p>
-<p>-char类型是一个单一的 16 位 Unicode 字符；<br>-最小值是 \u0000（即为0）；<br>-最大值是 \uffff（即为65,535）；<br>-char 数据类型可以储存任何字符；<br>-例子：char letter = ‘A’;。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>对于数值类型的基本类型的取值范围，我们无需强制去记忆，因为它们的值都已经以常量的形式定义在对应的包装类中了。请看下面的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">//实例</span><br><span class="line">public class PrimitiveTypeTest &#123;  </span><br><span class="line">   public static void main(String[] args) &#123;  </span><br><span class="line">        // byte  </span><br><span class="line">        System.out.println(&quot;基本类型：byte 二进制位数：&quot; + Byte.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Byte&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Byte.MIN_VALUE=&quot; + Byte.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Byte.MAX_VALUE=&quot; + Byte.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // short  </span><br><span class="line">        System.out.println(&quot;基本类型：short 二进制位数：&quot; + Short.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Short&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Short.MIN_VALUE=&quot; + Short.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Short.MAX_VALUE=&quot; + Short.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // int  </span><br><span class="line">        System.out.println(&quot;基本类型：int 二进制位数：&quot; + Integer.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Integer&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Integer.MIN_VALUE=&quot; + Integer.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Integer.MAX_VALUE=&quot; + Integer.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // long  </span><br><span class="line">        System.out.println(&quot;基本类型：long 二进制位数：&quot; + Long.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Long&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Long.MIN_VALUE=&quot; + Long.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Long.MAX_VALUE=&quot; + Long.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // float  </span><br><span class="line">        System.out.println(&quot;基本类型：float 二进制位数：&quot; + Float.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Float&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Float.MIN_VALUE=&quot; + Float.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Float.MAX_VALUE=&quot; + Float.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // double  </span><br><span class="line">        System.out.println(&quot;基本类型：double 二进制位数：&quot; + Double.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Double&quot;);  </span><br><span class="line">        System.out.println(&quot;最小值：Double.MIN_VALUE=&quot; + Double.MIN_VALUE);  </span><br><span class="line">        System.out.println(&quot;最大值：Double.MAX_VALUE=&quot; + Double.MAX_VALUE);  </span><br><span class="line">        System.out.println();  </span><br><span class="line">  </span><br><span class="line">        // char  </span><br><span class="line">        System.out.println(&quot;基本类型：char 二进制位数：&quot; + Character.SIZE);  </span><br><span class="line">        System.out.println(&quot;包装类：java.lang.Character&quot;);  </span><br><span class="line">        // 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台  </span><br><span class="line">        System.out.println(&quot;最小值：Character.MIN_VALUE=&quot;  </span><br><span class="line">                + (int) Character.MIN_VALUE);  </span><br><span class="line">        // 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台  </span><br><span class="line">        System.out.println(&quot;最大值：Character.MAX_VALUE=&quot;  </span><br><span class="line">                + (int) Character.MAX_VALUE);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>输出结果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">基本类型：byte 二进制位数：8</span><br><span class="line">包装类：java.lang.Byte</span><br><span class="line">最小值：Byte.MIN_VALUE=-128</span><br><span class="line">最大值：Byte.MAX_VALUE=127</span><br><span class="line"></span><br><span class="line">基本类型：short 二进制位数：16</span><br><span class="line">包装类：java.lang.Short</span><br><span class="line">最小值：Short.MIN_VALUE=-32768</span><br><span class="line">最大值：Short.MAX_VALUE=32767</span><br><span class="line"></span><br><span class="line">基本类型：int 二进制位数：32</span><br><span class="line">包装类：java.lang.Integer</span><br><span class="line">最小值：Integer.MIN_VALUE=-2147483648</span><br><span class="line">最大值：Integer.MAX_VALUE=2147483647</span><br><span class="line"></span><br><span class="line">基本类型：long 二进制位数：64</span><br><span class="line">包装类：java.lang.Long</span><br><span class="line">最小值：Long.MIN_VALUE=-9223372036854775808</span><br><span class="line">最大值：Long.MAX_VALUE=9223372036854775807</span><br><span class="line"></span><br><span class="line">基本类型：float 二进制位数：32</span><br><span class="line">包装类：java.lang.Float</span><br><span class="line">最小值：Float.MIN_VALUE=1.4E-45</span><br><span class="line">最大值：Float.MAX_VALUE=3.4028235E38</span><br><span class="line"></span><br><span class="line">基本类型：double 二进制位数：64</span><br><span class="line">包装类：java.lang.Double</span><br><span class="line">最小值：Double.MIN_VALUE=4.9E-324</span><br><span class="line">最大值：Double.MAX_VALUE=1.7976931348623157E308</span><br><span class="line"></span><br><span class="line">基本类型：char 二进制位数：16</span><br><span class="line">包装类：java.lang.Character</span><br><span class="line">最小值：Character.MIN_VALUE=0</span><br><span class="line">最大值：Character.MAX_VALUE=65535</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/20/Java基本数据类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java基础学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/Java基础学习/">Java基础学习</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/19/Java基础学习/" class="archive-article-date">
-  	<time datetime="2018-05-19T13:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java的历史"><a href="#Java的历史" class="headerlink" title="Java的历史"></a>Java的历史</h2><p>自己了解的心得</p>
-<h2 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h2><p>Java是一种计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级Web应用开发和移动应用开发。</p>
-<h2 id="下面是我对Java历史了解的"><a href="#下面是我对Java历史了解的" class="headerlink" title="下面是我对Java历史了解的"></a>下面是我对Java历史了解的</h2><p><strong>简化版</strong>:<br>J2SE1.0 a2(Java 2plat form)                      1995年 05 月 23 日.<br>J2SE1.2                                              1998年 12 月 04 日.<br>J2SE1.3                                           2000年 05 月 08 日.<br>J2SE1.4                                           2002年 02 月 13 日.<br>J2SE5.0                                           2004年 09 月 29 日.<br>Java SE 6.0(Java plst form stand ard Edit ion6)  2006年 12 月 11 日.<br>Java SE 7.0                                      2011年 07 月 28 日.<br>Java SE 8.O                                      2014年 03 月 18 日.</p>
-<p><strong>详细化</strong>:<br>1991年1月：一个名为“Green Project”的项目启动。该项旨在为家用电器提供支持，使这些电器智能化并且能够彼此交互。而且这些家电可以由远程客户端控制。Bill Joy、James Gosling、Mike Sheradin和Patrick Naughton是该项目的核心成员。<br>1991年2月：James Gosling是该计划的软件负责人和架构师。他最初的目标是为“绿色计划”找到一个适合的语言来运行。他选择了C++，并对有需要的地方进行了扩展。但是这些功能不能满足计划的需要，因此建立一门新的语言成为当务之急。他开始夜以继日地忙于新语言的开发，并将其命名为“Oak”，因为他办公室窗外有一棵橡树。<br>1991年4月：SPARC工作站10的架构师 Ed Fran k加入到绿色计划中，并领导硬件开发工作。该计划的目的是开发一个硬件原型，展示“绿色计划”的功能。该计划命名为star-seven(<em>7)。</em>7计划的成员有Craig Forrest、Al Frazier、Ed Frank、James Gosling、Patrick Naughton、Joe Parlang、JonPayn、 MikeSheridan和Chris Warth。<br>1991年6月：James Gosling开发了Oak的解释器。<br>1992年3月：由于Oak已被用作另一种已存在的编程语言名称，因此必须选一个新的名字——它就是Java，灵感来源于咖啡。<br>1992年9月：Star-seven(<em>7)带GUI的工作原型完成了，并向大家展示了其功能。与此同时绿计划也建立了一套新的语言、一个操作系统、一个硬件平台和一套接口。下面是如</em>7原型的PDA样机，并由James Gosling亲自演示它。我推荐你完整观看整个视频，感受这来自1991-1992年的神奇。<br>1992年11月：月“Green Project”计划被转化成了“FirstPerson有限公司”，并作为一个独立实体合并到Sun的子公司。<br>1993年2月：FirstPerson试图从时代华纳获得一个电视机顶盒交互系统的一揽子订单。在那时，由于绿色计划不是很成功，随即失去了时代华纳的订单。于是开发的重心从家庭消费电子产品转到了电视盒机顶盒的相关平台上。<br>1993年9月：Arthur Van Hoff加入了开发组，他的工作是交互平台上的应用开发。<br>1994年6月：实际上电视交互市场并没有给FirstPerson公司带来收益，最终它倒闭了。员工都合并到Sun公司。Liveoak计划启动了，它的目标是使用Oak语言设计出一个操作系统。<br>1994年7月：Patrick Naughton设计了一个Web浏览器，该浏览器内部使用Java。Liveoak计划进行了调整，使得Oak语言支持互联网。<br>1994年9月：Naughton和Jonatha Payne开始从事名为HotJava的以Java语言为基础的网页浏览器项目，该项目获得了管理层的广泛认可。<br>1994年10月：由Van Hoff编写的Java编译器用于Java语言，之前的编译器由James Gosling使用C语言编写。<br>1995年5月：在SunWorld大会，Sun公司正式介绍了Java和HotJava。<br>1995年6月：一次重大突破——Netscape在它的浏览器中支持Java。<br>1995年9月：由Sun组织的第一次Java开发者大会在纽约召开。<br>1995年10月：Oracle在其将发布的WWW网页系统中包含了一个兼容的Java浏览器。<br>1995年12月：更广泛行业接受的信号，Microsoft在其IE浏览器中支持Java。<br>1996年1月：JDK1.O版本发布。<br>1997年2月：JDK1.1版本发布。主要特点是JDBC、RMI、内部类。<br>1998年12月：JDK1.2版本发布。<br>代号Playground。该版本通常被称为Java2版本，是见证重大转变的最流行版本。主要特点是集合框架、JIT编译器、策略工具、Java基础类、Java二维类库和JDBC改进。<br>2000年5月：JDK1.3版本发布，代号Kestrel。<br>2002年2月：J2SE1.4版本发布，代号Merlin。主要特点是XML处理、Java打印、支持日志、JDBC 3.0、断言和正则表达式处理。<br>2004年9月：J2SE5.0发布，代号Tiger。主要特点是支持泛型、自动装箱、注释处理、Instrumentation。<br>2006年11月：Java宣布将会公开源码，引起了广泛争议。由于设计的证书违背了通常的源码开放条款。或许我们可以称其为半公开。<br>2006年12月：Java SE 6版本发布，代号Mustang。主要特点是支持脚本语言、JDBC4.0、Java编译API并整合了Web服务。<br>2010年1月：Oracle收购Sun公司及其产品。现在Java由Oracle控制。<br>2010年10月：Steve Jobs声称，苹果将来不再支持Java。<br>2011年7月：Java SE 7.0版本发布，代号Dolphin。这个版本距上次发布有5年之久，并且只有这个版本花费了这么久。主要特点是支持动态语言、Java nio包、多重异常处理、try with resourece功能和诸多小的增强。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/19/Java基础学习/">展开全文 >></a>
         </p>
       
 
