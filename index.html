@@ -156,6 +156,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android的启动Activity模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/07/Android的启动Activity模式/">Android的Activity启动模式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/07/Android的启动Activity模式/" class="archive-article-date">
+  	<time datetime="2018-08-07T12:08:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Activity的启动模式"><a href="#Activity的启动模式" class="headerlink" title="Activity的启动模式"></a>Activity的启动模式</h2><p>Activity有四种启动模式，分别为standard，singleTop，singleTask，singleInstance。如果要使用这四种启动模式，<br>必须在manifest文件中<activity>标签中的launchMode属性中配置，如：<br><code>&lt;activity android:launchMode=&quot;standard&quot;&gt;</code></activity></p>
+<p><strong>启动模式有什么作用</strong><br>可以更好的根据用户需求在Back Stack中管理Activity提高用户体验。<br>Task就是用户为了执行特定工作而与之交互的Activity的集合。<br>Back Stack是组成Task的Activity会根据被打开的顺序被存放在一个栈(回退栈)中。</p>
+<p><strong>Activity的启动模式说明:</strong><br>standard - 默认模式也是标准模式<br>这个模式是默认的启动模式，即标准模式，在不指定启动模式的前提下，系统默认使用该模式启动Activity，每次启动Activity都会重写创建一个新的实例，不管这个实例存不存在，这种模式下，谁启动了该模式的Activity，该Activity就属于它的Activity的任务栈中，这个Activity它的onCreate(),onStart(),onResume()方法都会被调用。</p>
+<p>singleTop - 栈顶复用模式<br>这个模式下，如果新的Activity已经位于栈顶，那么这个Activity不好被重写创建，推送它的onNewIntent方法会被调用，通过此方法的参数我们可以除当前请求的信息，如果栈不存在该Activity的实例，则情况与Standard模式相同，需要注意的是这个Activity它的onCreate(),onStart()方法不会被调用，因为它被没有发生改变。</p>
+<p>singleTask - 栈内复用模式<br>这个模式十分复杂，有各式各样的组合。在这个模式下，如果栈中存在这个Activity的实例就会复会Activity，不管它是否位于栈顶，复用时，会将它上面的Activity全部出栈，并且会回调该实例的onNewIntent方法，其实这个过程还存在一个任务栈的匹配，因为这个模式启动时，会在自己需要的任务栈中寻找实例，这个任务栈就是通过taskAffinity实现指定。如果这个任务栈不存在则会创建这个任务栈。</p>
+<p>singleInstance - 全局唯一模式<br>该模式具备singleTask模式的所有特性外，与它的区别就是这个模式下的Activity会单独占用一个Task栈，具有全局唯一性，即整个系统中就这么一个实例，由于栈内复用的特性，后续的请求均不会创建新的Activity实例，除非这个特殊的任务栈被销毁，以SingleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activity时，已经存在一个实例，那么会把它所在的任务调度到前台，重用这个实例。</p>
+<p>Standard - 标准模式 默认模式 Activity会根据启动顺序压入Bask Stack<br><img src="http://paklkx8q7.bkt.clouddn.com/Standard.png" alt="github"></p>
+<p>singleTop - 栈顶唯一<br><img src="http://paklkx8q7.bkt.clouddn.com/singleTop.png" alt="github"></p>
+<p>singleTask - 栈内唯一<br><img src="http://paklkx8q7.bkt.clouddn.com/singleTask.png" alt="github"></p>
+<p>singleInstance - 全局唯一<br><img src="http://paklkx8q7.bkt.clouddn.com/singleInstance.png" alt="github"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 演示Activity的启动模式</span><br><span class="line"> */</span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.test_activity);</span><br><span class="line">        //加入了一个关闭Activity</span><br><span class="line">        findViewById(R.id.btn03).setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                finish();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public void onClick(View view)&#123;</span><br><span class="line">        Intent intent = null;</span><br><span class="line">        switch (view.getId())&#123;</span><br><span class="line">            case R.id.btn01:</span><br><span class="line">                intent = new Intent(MainActivity.this,OtherActivity.class);</span><br><span class="line">                break;</span><br><span class="line">            case R.id.btn02:</span><br><span class="line">                intent = new Intent(MainActivity.this,OtherActivity.class);</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class OtherActivity extends AppCompatActivity&#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_other);</span><br><span class="line">    &#125;</span><br><span class="line">    public void click(View view)&#123;</span><br><span class="line">        Intent intent = null;</span><br><span class="line">        switch (view.getId())&#123;</span><br><span class="line">            case R.id.button01:</span><br><span class="line">                intent = new Intent(OtherActivity.this,MainActivity.class);</span><br><span class="line">                break;</span><br><span class="line">            case R.id.button02:</span><br><span class="line">                intent = new Intent(OtherActivity.this,MainActivity.class);</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/07/Android的启动Activity模式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android的intent意图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1002,83 +1075,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/22/Java的进程与线程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/Java的异常/">Java的异常</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/19/Java的异常/" class="archive-article-date">
-  	<time datetime="2018-06-19T14:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 Java 中，所有的异常都有一个共同的祖先 Throwable（可抛出）。Throwable 指定代码中可用异常传播机制通过 Java 应用程序传输的任何问题的共性。<br>Throwable 有两个重要的子类：Exception（异常）和 Error（错误），二者都是 Java 异常处理的重要子类，各自都包含大量子类。<br>①.Exception（异常）是应用程序中可能的可预测、可恢复问题。一般大多数异常表示中度到轻度的问题。异常一般是在特定环境下产生的，通常出现在代码的特定方法和操作中。在 EchoInput 类中，当试图调用 readLine 方法时，可能出现 IOException 异常。<br>Exception 类有一个重要的子类 RuntimeException。RuntimeException 类及其子类表示“JVM 常用操作”引发的错误。例如，若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常（NullPointerException、ArithmeticException）和   ArrayIndexOutOfBoundException。<br>②.Error（错误）表示运行应用程序中较严重问题。大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。例如，当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。<br>Java中的异常分为两大类：<br>1.Checked Exception（非Runtime Exception）<br>2.Unchecked Exception（Runtime Exception）<br>运行时异常<br>RuntimeException类是Exception类的子类，它叫做运行时异常，Java中的所有运行时异常都会直接或者间接地继承自RuntimeException类。<br>Java中凡是继承自Exception，而不继承自RuntimeException类的异常都是非运行时异常。<br>一个try后面可以跟多个catch，但不管多少个，最多只会有一个catch块被执行。</p>
-<p>对于非运行时异常（checked exception），必须要对其进行处理，否则无法通过编译。<br>处理方式有两种：<br>1.使用try..catch..finally进行捕获；<br>2.在产生异常的方法声明后面写上throws 某一个Exception类型，如throws Exception，将异常抛出到外面一层去。<br>对于运行时异常（runtime exception），可以对其进行处理，也可以不处理。推荐不对运行时异常进行处理。</p>
-<p>在 Java 应用程序中，异常处理机制为：抛出异常，捕捉异常。<br>抛出异常：当一个方法出现错误引发异常时，方法创建异常对象并交付运行时系统，异常对象中包含了异常类型和异常出现时的程序状态等异常信息。运行时系统负责寻找处置异常的代码并执行。<br>捕获异常：在方法抛出异常之后，运行时系统将转为寻找合适的异常处理器（exception handler）。潜在的异常处理器是异常发生时依次存留在调用栈中的方法的集合。当异常处理器所能处理的异常类型与方法抛出的异常类型相符时，即为合适 的异常处理器。运行时系统从发生异常的方法开始，依次回查调用栈中的方法，直至找到含有合适异常处理器的方法并执行。当运行时系统遍历调用栈而未找到合适 的异常处理器，则运行时系统终止。同时，意味着Java程序的终止。</p>
-<p><code>try - catch - finally</code><br>确保无论是否发生异常，finally块中的代码总能被执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class ExceptionDemo&#123;</span><br><span class="line">   public static void dirision(int num1,int num2)&#123;</span><br><span class="line">      int result = lnteger.MIN_VALUE</span><br><span class="line">   try&#123;</span><br><span class="line">       System.out.println(&quot;进行除法计算&quot;);</span><br><span class="line">       result = num1 / num2;</span><br><span class="line">       System.out.println(&quot;result = &quot; + result);</span><br><span class="line">    &#125;catch(lnputMismathEception e)&#123;</span><br><span class="line">       e.printStackTeacel();</span><br><span class="line">    &#125;finally</span><br><span class="line">       System.out.println(&quot;除法计算结算&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>多重catch块<br>try块中的代码可能会引发多种类型的异常。<br>当引发异常时，会按catch的顺序进行匹配异常类型,并执行第一个匹配的catch语句。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static void division(String strName1, String strName2)&#123;</span><br><span class="line">	 int result = lngager.MIN_VALU;</span><br><span class="line">    try&#123;</span><br><span class="line">	nt num1 = lnteger.porselnt(ntlstr(StrName));</span><br><span class="line">    ..................</span><br><span class="line">    &#125;catch(InputMismatch(strName))&#123;</span><br><span class="line">	 e.printstackTrace();</span><br><span class="line">    &#125;catch(ArithmeticException e)&#123;</span><br><span class="line">	 e.printstackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JDk7后的简化写法(multi-catch fratue)</span><br><span class="line">catch(Exception1 | Exception2 | Exception3 | ...ex)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>声明、抛出、捕获异常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">method1()&#123; </span><br><span class="line">	try&#123;</span><br><span class="line">	调用method2()；</span><br><span class="line">   &#125;catch(Excrptio ex)&#123;</span><br><span class="line">   //异常处理</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<pre><code>注意
-异常处理的话就从方法的调用链的时候
-method2()throwsExcrption{   //声明异常
-    if(存在自定义错误){
-    throws new.Exception() //抛出异常
-   }
-} 
-</code></pre><p>声明异常<br>每个方法都必须声明它可能抛出的必检异常的类型，这称为声明异常。<br>不要求显示声明Error和RuntimeException(免检异常)，其他异常必须在方法显示声明。<br><code>method()throws Exception1,Exception2,Exception3...   //声明异常</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/19/Java的异常/">展开全文 >></a>
         </p>
       
 

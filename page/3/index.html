@@ -156,6 +156,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中的HashSet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
+  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java中的HashSet"><a href="#Java中的HashSet" class="headerlink" title="Java中的HashSet"></a>Java中的HashSet</h2><p><strong>什么是HashSet</strong></p>
+<p>HashSet 是一个没有重复元素的集合。<br>它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。<br>HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用 Collections.synchronizedSet 方法来“包装” set。<br>集合.也叫容器类，它的功能就相当于容器。<br>Java的集合（容器），它就是用来“装对象的”。<br>容器.应该有哪些方法供你使用？</p>
+<ul>
+<li>把对象丢进容器中.</li>
+<li>把指定的东西”读取”出来，该东西依然在容器里面.</li>
+<li>把指定的”东西”从容器中删除.</li>
+<li>“挨个”把每个东西数一次.（遍历）</li>
+<li>把容器”倒空”.</li>
+<li>把A容器中东西，全部倒入B容器中.<blockquote>
+<p>集合 + 集合</p>
+</blockquote>
+</li>
+<li>拿A容器包含的东西，减去B容器中包含的东西.<blockquote>
+<p>集合 - 集合</p>
+</blockquote>
+</li>
+</ul>
+<p>Set集合，就是Collection。它们的行为完全相似<br>遍历Set集合，有两种办法：</p>
+<blockquote>
+<ol>
+<li>用迭代器</li>
+<li>用foreach循环</li>
+</ol>
+</blockquote>
+<p><strong>HashSet的存储机制</strong><br>底层用一个数字存元素–而且这个数组的长度永远是2的N次方。<br>HashSet的构造器:HashSet（int底层数组的长度，float loadFactor）。</p>
+<ul>
+<li>如果传入数组长度不是2的N次方，HashSet会自动将它扩展到2的N次方。<br>HashSet int initialapacity。</li>
+<li>initialapacity.控制底层数组的长度，默认为16.</li>
+<li>loadFactor.默认为0.75。<br>当HashSet感觉到底层快满的时候，再创建一个底层数组是原来的2倍。<br>再次创建一个长度为原有的数组长度2倍的数组，原有的数组就变成了垃圾–并且要把原有数组的元素复制到新的数组中。–专业说法叫”rehash（重hash）。”<br>当load ctor为0.75时，70%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为0.1时，10%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为1时，100%的桶已经满时，HashSet会分配新的数组。</li>
+</ul>
+<p>loadFactory越小，越耗内存;loadFactory越大，性能越低。<br>loadFactor越大，代表当数组很满时才去”重Hash”</p>
+<p><strong>存储机制机制</strong>:<br>(1)当元素加进来时，HashSet会调用该对象的hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果要加入的位置是空的，直接放入即可。<br>(4)如果要加入的位置已经有元素，此处就会形成”链表”</p>
+<p>**HashSet取元素的机制：<br>(1)当要取一个元素时，HashSet会调用该对象的Hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果该位置恰好是要找到元素，直接取出即可。<br>(4)然后该位置有链表，HashSet要;”挨个”搜索链表里的元素。<br>最理想的情况下，HashSet的性能几乎可以数组匹敌存取的性能非常高。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/29/Java中的HashSet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java的HashMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -156,6 +156,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java的异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/19/Java的异常/">Java的异常</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/19/Java的异常/" class="archive-article-date">
+  	<time datetime="2018-06-19T14:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 Java 中，所有的异常都有一个共同的祖先 Throwable（可抛出）。Throwable 指定代码中可用异常传播机制通过 Java 应用程序传输的任何问题的共性。<br>Throwable 有两个重要的子类：Exception（异常）和 Error（错误），二者都是 Java 异常处理的重要子类，各自都包含大量子类。<br>①.Exception（异常）是应用程序中可能的可预测、可恢复问题。一般大多数异常表示中度到轻度的问题。异常一般是在特定环境下产生的，通常出现在代码的特定方法和操作中。在 EchoInput 类中，当试图调用 readLine 方法时，可能出现 IOException 异常。<br>Exception 类有一个重要的子类 RuntimeException。RuntimeException 类及其子类表示“JVM 常用操作”引发的错误。例如，若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常（NullPointerException、ArithmeticException）和   ArrayIndexOutOfBoundException。<br>②.Error（错误）表示运行应用程序中较严重问题。大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。例如，当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。<br>Java中的异常分为两大类：<br>1.Checked Exception（非Runtime Exception）<br>2.Unchecked Exception（Runtime Exception）<br>运行时异常<br>RuntimeException类是Exception类的子类，它叫做运行时异常，Java中的所有运行时异常都会直接或者间接地继承自RuntimeException类。<br>Java中凡是继承自Exception，而不继承自RuntimeException类的异常都是非运行时异常。<br>一个try后面可以跟多个catch，但不管多少个，最多只会有一个catch块被执行。</p>
+<p>对于非运行时异常（checked exception），必须要对其进行处理，否则无法通过编译。<br>处理方式有两种：<br>1.使用try..catch..finally进行捕获；<br>2.在产生异常的方法声明后面写上throws 某一个Exception类型，如throws Exception，将异常抛出到外面一层去。<br>对于运行时异常（runtime exception），可以对其进行处理，也可以不处理。推荐不对运行时异常进行处理。</p>
+<p>在 Java 应用程序中，异常处理机制为：抛出异常，捕捉异常。<br>抛出异常：当一个方法出现错误引发异常时，方法创建异常对象并交付运行时系统，异常对象中包含了异常类型和异常出现时的程序状态等异常信息。运行时系统负责寻找处置异常的代码并执行。<br>捕获异常：在方法抛出异常之后，运行时系统将转为寻找合适的异常处理器（exception handler）。潜在的异常处理器是异常发生时依次存留在调用栈中的方法的集合。当异常处理器所能处理的异常类型与方法抛出的异常类型相符时，即为合适 的异常处理器。运行时系统从发生异常的方法开始，依次回查调用栈中的方法，直至找到含有合适异常处理器的方法并执行。当运行时系统遍历调用栈而未找到合适 的异常处理器，则运行时系统终止。同时，意味着Java程序的终止。</p>
+<p><code>try - catch - finally</code><br>确保无论是否发生异常，finally块中的代码总能被执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class ExceptionDemo&#123;</span><br><span class="line">   public static void dirision(int num1,int num2)&#123;</span><br><span class="line">      int result = lnteger.MIN_VALUE</span><br><span class="line">   try&#123;</span><br><span class="line">       System.out.println(&quot;进行除法计算&quot;);</span><br><span class="line">       result = num1 / num2;</span><br><span class="line">       System.out.println(&quot;result = &quot; + result);</span><br><span class="line">    &#125;catch(lnputMismathEception e)&#123;</span><br><span class="line">       e.printStackTeacel();</span><br><span class="line">    &#125;finally</span><br><span class="line">       System.out.println(&quot;除法计算结算&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多重catch块<br>try块中的代码可能会引发多种类型的异常。<br>当引发异常时，会按catch的顺序进行匹配异常类型,并执行第一个匹配的catch语句。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static void division(String strName1, String strName2)&#123;</span><br><span class="line">	 int result = lngager.MIN_VALU;</span><br><span class="line">    try&#123;</span><br><span class="line">	nt num1 = lnteger.porselnt(ntlstr(StrName));</span><br><span class="line">    ..................</span><br><span class="line">    &#125;catch(InputMismatch(strName))&#123;</span><br><span class="line">	 e.printstackTrace();</span><br><span class="line">    &#125;catch(ArithmeticException e)&#123;</span><br><span class="line">	 e.printstackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JDk7后的简化写法(multi-catch fratue)</span><br><span class="line">catch(Exception1 | Exception2 | Exception3 | ...ex)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>声明、抛出、捕获异常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">method1()&#123; </span><br><span class="line">	try&#123;</span><br><span class="line">	调用method2()；</span><br><span class="line">   &#125;catch(Excrptio ex)&#123;</span><br><span class="line">   //异常处理</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>注意
+异常处理的话就从方法的调用链的时候
+method2()throwsExcrption{   //声明异常
+    if(存在自定义错误){
+    throws new.Exception() //抛出异常
+   }
+} 
+</code></pre><p>声明异常<br>每个方法都必须声明它可能抛出的必检异常的类型，这称为声明异常。<br>不要求显示声明Error和RuntimeException(免检异常)，其他异常必须在方法显示声明。<br><code>method()throws Exception1,Exception2,Exception3...   //声明异常</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/19/Java的异常/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java的接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -764,101 +841,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/31/Java中的List/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的HashSet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/Java中的HashSet/">Java中的HashSet</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/29/Java中的HashSet/" class="archive-article-date">
-  	<time datetime="2018-05-29T15:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java中的HashSet"><a href="#Java中的HashSet" class="headerlink" title="Java中的HashSet"></a>Java中的HashSet</h2><p><strong>什么是HashSet</strong></p>
-<p>HashSet 是一个没有重复元素的集合。<br>它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。<br>HashSet是非同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用 Collections.synchronizedSet 方法来“包装” set。<br>集合.也叫容器类，它的功能就相当于容器。<br>Java的集合（容器），它就是用来“装对象的”。<br>容器.应该有哪些方法供你使用？</p>
-<ul>
-<li>把对象丢进容器中.</li>
-<li>把指定的东西”读取”出来，该东西依然在容器里面.</li>
-<li>把指定的”东西”从容器中删除.</li>
-<li>“挨个”把每个东西数一次.（遍历）</li>
-<li>把容器”倒空”.</li>
-<li>把A容器中东西，全部倒入B容器中.<blockquote>
-<p>集合 + 集合</p>
-</blockquote>
-</li>
-<li>拿A容器包含的东西，减去B容器中包含的东西.<blockquote>
-<p>集合 - 集合</p>
-</blockquote>
-</li>
-</ul>
-<p>Set集合，就是Collection。它们的行为完全相似<br>遍历Set集合，有两种办法：</p>
-<blockquote>
-<ol>
-<li>用迭代器</li>
-<li>用foreach循环</li>
-</ol>
-</blockquote>
-<p><strong>HashSet的存储机制</strong><br>底层用一个数字存元素–而且这个数组的长度永远是2的N次方。<br>HashSet的构造器:HashSet（int底层数组的长度，float loadFactor）。</p>
-<ul>
-<li>如果传入数组长度不是2的N次方，HashSet会自动将它扩展到2的N次方。<br>HashSet int initialapacity。</li>
-<li>initialapacity.控制底层数组的长度，默认为16.</li>
-<li>loadFactor.默认为0.75。<br>当HashSet感觉到底层快满的时候，再创建一个底层数组是原来的2倍。<br>再次创建一个长度为原有的数组长度2倍的数组，原有的数组就变成了垃圾–并且要把原有数组的元素复制到新的数组中。–专业说法叫”rehash（重hash）。”<br>当load ctor为0.75时，70%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为0.1时，10%的桶已经满时，HashSet会分配新的数组。<br>当load ctor为1时，100%的桶已经满时，HashSet会分配新的数组。</li>
-</ul>
-<p>loadFactory越小，越耗内存;loadFactory越大，性能越低。<br>loadFactor越大，代表当数组很满时才去”重Hash”</p>
-<p><strong>存储机制机制</strong>:<br>(1)当元素加进来时，HashSet会调用该对象的hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果要加入的位置是空的，直接放入即可。<br>(4)如果要加入的位置已经有元素，此处就会形成”链表”</p>
-<p>**HashSet取元素的机制：<br>(1)当要取一个元素时，HashSet会调用该对象的Hashlode()方法，得到一个int值。<br>(2)根据hashlode()返回的int值，计算出它在HashSet的存储位置.(数组中索引)。<br>(3)如果该位置恰好是要找到元素，直接取出即可。<br>(4)然后该位置有链表，HashSet要;”挨个”搜索链表里的元素。<br>最理想的情况下，HashSet的性能几乎可以数组匹敌存取的性能非常高。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/29/Java中的HashSet/">展开全文 >></a>
         </p>
       
 
