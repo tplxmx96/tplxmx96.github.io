@@ -156,6 +156,155 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java的接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/16/Java的接口/">Java的接口</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/16/Java的接口/" class="archive-article-date">
+  	<time datetime="2018-06-16T12:22:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>Java不支持多继承性，即一个类只能有一个父类单继承使得Java简单，易于管理和维护。<br>为了克服Java单继承的缺点，Java使用了接口。<br>接口是一种与类相似的结构，只包含常量和抽象方法。<br>目的是指明相关或不相关类的多个对象的共同行为(功能)。</p>
+<p><strong>接口的声明</strong><br>使用关键字interface来定义一个接口，接口的定义和类的定义很相似，分为接口的声明和实现。<br>1、接口声明<br>   接口通过使用关键字interface来声明,格式： interface 接口的名字<br>2、接口体<br>   接口体中包含常量定义和方法定义两部分</p>
+<p>接口的使用<br>接口由类去实现以便使用接口中的方法。<br>一个类可以实现多个接口，类通过使用关键字 声明自己实现一个或多个接。如果实现多个接口，用逗号隔开接口名。</p>
+<p><strong>注意</strong><br>1、在Java中，接口被看做是一种特殊的类，与抽象类相似，不能使用new操作符直接创建接口的实例。<br>2、接口必须由其他类实现，实现类不能实现的方法，可以继续标识为abstract。<br>3、接口中所有的数据域都是public static final，所有方法都是public abstract，默认情况可以省略关键字。</p>
+<p><strong>接口与抽象类的比较</strong><br>类中可以定义成员变量，接口中不允许存在成员变量。<br>接口中所有方法都需要实现类去实现(Java8前)。<br>接口可以被多继承。<br>使设计和实现完全分离。<br>能够更自然的使用多态。<br>可以更容易搭建程序框架。<br>可以更容易更换实现</p>
+<p><strong>注意</strong><br>在jdk1.7以前都是抽象类中可以有抽象方法，接口是特殊的抽象类，因为接口中的所有方法都必须是抽象的，不能有方法实现，而到了Java8，我们发现在接口中也可以有方法的实现。</p>
+<p>以下来一个实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 打印机类 - 使用标准的墨盒和纸张进行打印</span><br><span class="line"> */</span><br><span class="line">public class Printer &#123;</span><br><span class="line">    private IInkBox inkbox = null;  //打印机中的墨盒</span><br><span class="line">    private IPaper paper = null;    //打印机的纸张</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 打印机的打印方法 - 使用墨盒和纸张</span><br><span class="line">     * @paper content 传递给打印机打印的字符串内容</span><br><span class="line">     */</span><br><span class="line">    public void print(String content)&#123;</span><br><span class="line">        if (null == inkbox || null == paper)&#123;</span><br><span class="line">            System.out.println(&quot;墨盒和纸张出现错误，请安装正确后重试！&quot;);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        //打印过程</span><br><span class="line">        String color = inkbox.getColor();</span><br><span class="line">        String type = paper.getSize();</span><br><span class="line">        System.out.println(&quot;以下文字是&quot; + color + &quot;颜色的！&quot;);</span><br><span class="line">        System.out.println(&quot;使用纸张：&quot; + type);</span><br><span class="line">        System.out.println(&quot;打印内容：&quot; + content);</span><br><span class="line">    &#125;</span><br><span class="line">    public IInkBox getInkbox() &#123;</span><br><span class="line">        return inkbox;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setInkbox(IInkBox inkbox) &#123;</span><br><span class="line">        this.inkbox = inkbox;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public IPaper getPaper() &#123;</span><br><span class="line">        return paper;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPaper(IPaper paper) &#123;</span><br><span class="line">        this.paper = paper;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 墨盒接口 - 定义一个通用方法 - 获得墨盒的颜色</span><br><span class="line"> */</span><br><span class="line">public interface IInkBox &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 获得墨盒的颜色</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public String getColor();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 纸张接口 - 定义获得纸张尺寸的标准方法</span><br><span class="line"> */</span><br><span class="line">public interface IPaper &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 获得纸张的尺寸</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    String getSize();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class ColorInkBoxImpl implements IInkBox &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String getColor() &#123;</span><br><span class="line">        return &quot;红色&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class A4PaperImpl implements IPaper &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String getSize() &#123;</span><br><span class="line">        return &quot;A4&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class B5PaperImpl implements IPaper &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String getSize() &#123;</span><br><span class="line">        return &quot;B5&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class PrinterTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Printer printer = new Printer();</span><br><span class="line">        //为打印机安装纸张和墨盒</span><br><span class="line">        printer.setInkbox(new ColorInkBoxImpl());</span><br><span class="line">        printer.setPaper(new B5PaperImpl());</span><br><span class="line">        printer.print(&quot;测试内容&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得出的结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以下文字是红色颜色的！</span><br><span class="line">使用纸张：B5</span><br><span class="line">打印内容：测试内容</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/16/Java的接口/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java的多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/14/Java的多态/">Java的多态</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/14/Java的多态/" class="archive-article-date">
+  	<time datetime="2018-06-14T15:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p><strong>多态</strong>： 指允许不同类的对象对同一消息做出不同的行为，即同一消息可以根据对象类型的不同而采取多种不同的行为方式， 实现多态的技术被称为动态绑定，指的是在执行期间，判断所引用对象的实际类型，让该对象根据自己的 实际类型 调用其相应的方法，</p>
+<p><strong>多态的存在有三个前提</strong>:<br>1.要有继承关系<br>2.子类要重写父类的方法<br>3.父类引用指向子类对,</p>
+<p><strong>多态的实现方式</strong>：<br>第一： 接口实现<br>第二： 对继承自父类的方法进行重写<br>第三： 同一个类中的方法重载</p>
+<p><strong>java在使用多态时注意的几点</strong>：<br>对继承自父类的方法进行重写<br>Java的这种机制遵循一个原则：当父类对象引用子类对象时，被引用子类对象的类型而不是引用的父类类型决定了调用谁的成员方法，但是这个被调用的方法必须是在父类中定义过的，也就是说被子类覆盖的方法。<br>在同一个类中重载实现，这里要再强调一下重载和重写的区别。<br>重载：是在一个类中，两个方法的方法名相同，但是参数的个数和参数的类型不同，注意的是返回值的类型不作为是否重载的一个判断条件<br>重写：是子类重写了父类中定义的方法，两个方法的方法名一致，参数个数和类型一致，返回值类型一致，意味着完全一样。<br><strong>接口实现</strong><br>接口内只有方法声明，没有方法实现，接口不能被实例化，接口内的成员函数默认都是抽象成员函数，接口内的变量都为 Static final 类型的，<br>一旦一个类实现了这个接口，这个接口内的所有方法都必须要实现，即实现类中要重写该接口中的所定义的全部方法，否则程序报错，不被允许。<br>再介绍一下抽象类和接口的不同： 内部至少含有一个抽象方法的类，abstract修饰，其成员变量的类型没有限制，也可以存在非抽象方法，但是继承自抽象类的子类，其同样也必须实现其抽象方法。</p>
+<p><strong>以下实例</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 演员父类</span><br><span class="line"> */</span><br><span class="line">public abstract class Actor &#123;//当一个类是抽象类的时候，就不能使用new来实例化了！--抽象类是一个天生的父类</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public Actor()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    public Actor(String name)&#123;</span><br><span class="line">        setName(name);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 演员的表演方法</span><br><span class="line">     */</span><br><span class="line">    public void performs()&#123;</span><br><span class="line">        System.out.println(&quot;演员&quot; + name + &quot;正在表演精彩的节目&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 歌唱演员</span><br><span class="line"> */</span><br><span class="line">public class Singer extends Actor &#123;</span><br><span class="line">    public Singer() &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line">    public Singer(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void performs() &#123;</span><br><span class="line">        System.out.println(&quot;歌唱演员&quot; + getName() + &quot;正在表演歌唱节目《在这桃花盛开的地方》&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 舞蹈演员</span><br><span class="line"> */</span><br><span class="line">public class Dancer extends Actor &#123;</span><br><span class="line">    public Dancer() &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Dancer(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void performs() &#123;</span><br><span class="line">        System.out.println(&quot;舞蹈演员&quot; + getName() + &quot;正在展现她那婀娜多姿的舞蹈&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 导演类 -- 相当于我们项目中的核心业务类</span><br><span class="line"> * 主要功能：让演员就位，开始表演</span><br><span class="line"> */</span><br><span class="line">public class Director &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 导演的&quot;Action&quot;方法，让演员就位开始表演节目</span><br><span class="line">     * @param actor</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    public void action(Actor actor)&#123;</span><br><span class="line">        actor.performs();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class ChunWanTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Director 张艺谋 = new Director();</span><br><span class="line">        Singer 宋祖英 = new Singer(&quot;宋祖英&quot;);</span><br><span class="line">        Dancer 杨丽萍 = new Dancer(&quot;杨丽萍&quot;);</span><br><span class="line">        张艺谋.action(宋祖英);</span><br><span class="line">        张艺谋.action(杨丽萍);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到的结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">歌唱演员宋祖英正在表演歌唱节目《在这桃花盛开的地方》</span><br><span class="line">舞蹈演员杨丽萍正在展现她那婀娜多姿的舞蹈</span><br></pre></td></tr></table></figure></p>
+<p><strong>子类调用父类的方法</strong>：<br>使用super关键字.<br>可以调用父类的公有属性和方法⎜。<br>可以调用父类的protected属性和方法。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/14/Java的多态/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java的UML类图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -710,156 +859,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/29/Java中的HashSet/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的HashMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/Java的HashMap/">Java的HashMap</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/29/Java的HashMap/" class="archive-article-date">
-  	<time datetime="2018-05-29T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java中Hash"><a href="#Java中Hash" class="headerlink" title="Java中Hash"></a>Java中Hash</h2><p><strong>什么是Hash</strong>?<br>它是将一个任意长度的二进制值通过一个映射关系转换成一个固定长度的二进制值。<br>1.任意长度的二进制。<br>2.映射关系（哈希算放 - 就相当于一个大学里面的学号的一个映射规则）。<br>3.固定的二进制值（哈希值 - 相当于我们的大学里面的学号）。</p>
-<p><strong>映射规则（哈希算法）</strong>：<br>任意长度=进制值value======&gt;固定长度=进制值key。<br>学号映射规则：2013年入学计算机学院代号38，第87个入学的。<br>张三-2013-20-计算机学院-男-172======&gt;20133887。<br>学号映射规则：2014年材料学院代号45，第23个入学材料学院。<br>李四-2014-19-材料学院-女-162======&gt;20144520。<br>哈希映射技术是一种就元素映射到数组的非常简单的技术。由于哈希映射采用的是数组结果，那么必然存在一中用于确定任意键访问数组的索引机制，该机制能够提供一个小于数组大小的整数，我们将该机制称之为哈希函数。在 Java 中我们不必为寻找这样的整数而大伤脑筋，因为每个对象都必定存在一个返回整数值的 hashCode 方法，而我们需要做的就是将其转换为整数，然后再将该值除以数组大小取余即可。</p>
-<p>Hash:通过一个key一个输出，通过一个哈希函数，来找到数组中与这个key唯一映射的value。</p>
-<p>Map以按键/数值对的形式存储数据，这里要特别说明（ Map.Entry，是Map的内部类，它用来描述Map中的键/值对）。 Map是一个接口，我们平时多用它的实现类HashMap。<br>HashMap 是一个散列表，它存储的内容是键值对(key-value)映射。<br>HashMap里面实现一个静态内部类Entry，其重要的属性有 key , value, next，从属性key,value我们就能很明显的看出来Entry就是HashMap键值对实现的一个基础bean，我们上面说到HashMap的基础就是一个线性数组，这个数组就是Entry[]，Map里面的内容都保存在Entry[]里面。<br>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。<br>HashMap是通过”拉链法”实现的哈希表。它包括几个重要的成员变量：table, size, threshold, loadFactor, modCount。<br>HashMap 的实例有两个参数影响其性能：“初始容量” 和 “加载因子”。容量 是哈希表中桶的数量，初始容量 只是哈希表在创建时的容量。加载因子 是哈希表在其容量自动增加之前可以达到多满的一种尺度。当哈希表中的条目数超出了加载因子与当前容量的乘积时，则要对该哈希表进行 rehash 操作（即重建内部数据结构），从而哈希表将具有大约两倍的桶数。size是HashMap的大小，它是HashMap保存的键值对的数量。<br>threshold是HashMap的阈值，用于判断是否需要调整HashMap的容量。<br>threshold的值=”容量*加载因子”，当HashMap中存储数据的数量达到threshold时，就需要将HashMap的容量加倍，loadFactor就是加载因子，modCount是用来实现fail-fast机制的。</p>
-<p><strong>用例如下</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public class HashMap &#123;</span><br><span class="line">      public static void main(String[] args)&#123;</span><br><span class="line">          Map&lt;String,String&gt; house = new HashMap&lt;String,String&gt;();</span><br><span class="line">          house.put(&quot;1&quot;,&quot;柜子&quot;);</span><br><span class="line">          house.put(&quot;2&quot;,&quot;床&quot;);</span><br><span class="line">          house.put(&quot;3&quot;,&quot;箱子&quot;);</span><br><span class="line">          house.put(&quot;4&quot;,&quot;鞋子&quot;);</span><br><span class="line">          house.put(&quot;5&quot;,&quot;电脑&quot;);</span><br><span class="line">          house.put(&quot;6&quot;,&quot;桌子&quot;);</span><br><span class="line">          house.put(&quot;7&quot;,&quot;灯&quot;);</span><br><span class="line">          house.put(&quot;8&quot;,&quot;被子&quot;);</span><br><span class="line"></span><br><span class="line">          //第一种：普遍使用，二次取值</span><br><span class="line">          System.out.println(&quot;通过Map.KeySet遍历key和value：&quot;);</span><br><span class="line">          for (String key : house.keySet())&#123;</span><br><span class="line">              System.out.println(&quot;key=&quot; + key + &quot; znd value=&quot; + house.get(key));</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          //第二种</span><br><span class="line">          System.out.println(&quot;通过Map.entrySet使用iterator遍历key和value：&quot;);  </span><br><span class="line">  		  Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = map.entrySet().iterator();  </span><br><span class="line">  		  while (it.hasNext()) &#123;  </span><br><span class="line">   				Map.Entry&lt;String, String&gt; entry = it.next();  </span><br><span class="line">      			System.out.println(&quot;key= &quot; + entry.getKey() + &quot; and value= &quot; + entry.getValue());  </span><br><span class="line">      		&#125;</span><br><span class="line">      	  //第三种：推荐，尤其是容量大时  </span><br><span class="line">  		  System.out.println(&quot;通过Map.entrySet遍历key和value&quot;);  </span><br><span class="line">  	      for (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;  </span><br><span class="line">      			System.out.println(&quot;key= &quot; + entry.getKey() + &quot; and value= &quot; + entry.getValue());  </span><br><span class="line">      		&#125; </span><br><span class="line">      	  //第四种  </span><br><span class="line">  	  	  System.out.println(&quot;通过Map.values()遍历所有的value，但不能遍历key&quot;);  </span><br><span class="line">  		  for (String v : map.values()) &#123;  </span><br><span class="line">   		  System.out.println(&quot;value= &quot; + v);  </span><br><span class="line">   		&#125;  </span><br><span class="line">   	&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>以上第一、二、三种得出的是</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">通过Map.KeySet遍历key和value：</span><br><span class="line">//&quot;通过Map.entrySet使用iterator遍历key和value：&quot;</span><br><span class="line">//&quot;通过Map.entrySet遍历key和value&quot;</span><br><span class="line">key=1 znd value=柜子</span><br><span class="line">key=2 znd value=床</span><br><span class="line">key=3 znd value=箱子</span><br><span class="line">key=4 znd value=鞋子</span><br><span class="line">key=5 znd value=电脑</span><br><span class="line">key=6 znd value=桌子</span><br><span class="line">key=7 znd value=灯</span><br><span class="line">key=8 znd value=被子</span><br></pre></td></tr></table></figure></p>
-<p><strong>第四种得出的是</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">通过Map.values()遍历所有的value，但不能遍历key</span><br><span class="line">value=柜子</span><br><span class="line">value=床</span><br><span class="line">value=箱子</span><br><span class="line">value=鞋子</span><br><span class="line">value=电脑</span><br><span class="line">value=桌子</span><br><span class="line">value=灯</span><br><span class="line">value=被子</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/29/Java的HashMap/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的基础排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/23/Java的基础排序/">Java的基础排序</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/23/Java的基础排序/" class="archive-article-date">
-  	<time datetime="2018-05-23T14:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-冒泡排序"><a href="#一-冒泡排序" class="headerlink" title="(一)冒泡排序"></a>(一)冒泡排序</h2><p><strong>基本思想</strong>：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。</p>
-<p><strong>冒泡排序算法的运作如下</strong>：</p>
-<p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<p>// 实例：</p>
-<blockquote>
-<p>初始状态：66, 36, 50, 89, 20, 55, 99, 100<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;66, 36, 50, 89, 20, 55, 99, 100&#125;;</span><br><span class="line">        int temp = 0;</span><br><span class="line">        for (int i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; arr.length - 1 - i; j++) &#123;</span><br><span class="line">                if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">                    temp = arr[j];</span><br><span class="line">                    arr[j] = arr[j + 1];</span><br><span class="line">                    arr[j + 1] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            (System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>以上实例输出结果为：<br> <code>20 , 36 , 50 , 55 , 66 , 89 , 99 , 100</code></p>
-<p><code>(System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</code> 中使用了三目运算符.</p>
-<blockquote>
-<p>三目运算符的要求： 条件? 成立值 : 不成立值。</p>
-</blockquote>
-<blockquote>
-<p>初始状态:123, 55, 20, 66, 30, 120, 145, 60<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class bubbleSort &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr = &#123;123,55,20,66,30,120,145,60&#125;;</span><br><span class="line">            int temp = 0;</span><br><span class="line">            for (int i =  arr.length - 1;i &gt; 0; i--) &#123;</span><br><span class="line">                for (int j = 0 ; j &lt; i ; j++) &#123;</span><br><span class="line">                    if (arr[j] &lt; arr[j + 1]) &#123;</span><br><span class="line">                        temp = arr[j];</span><br><span class="line">                        arr[j] = arr[j + 1];</span><br><span class="line">                        arr[j + 1] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                System.out.print(arr[i] + (i == arr.length - 1 ? &quot; &quot; : &quot; , &quot;));</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>以上实例输出结果为：<br><code>145 , 123 , 120 , 66 , 60 , 55 , 30 , 20</code></p>
-<p><strong>给出一个测试代码</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    int[] arr = &#123;1,1,2,0,9,3,12,7,8,3,4,65,22&#125;;</span><br><span class="line"></span><br><span class="line">    BubbleSort.bubbleSort1(arr, arr.length);</span><br><span class="line"></span><br><span class="line">    for(int i:arr)&#123;</span><br><span class="line">        System.out.print(i+&quot;,&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>运行结果</strong>:<br><code>0,1,1,2,3,3,4,7,8,9,12,22,65,</code></p>
-<p><strong>冒泡排序</strong><br>内循环：<br>-1：是为了避免角标越界。<br>-j;为了让外循环增加一次，内循环参数与比较的元素个数递减。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/23/Java的基础排序/">展开全文 >></a>
         </p>
       
 
