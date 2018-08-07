@@ -8,17 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Android的Intent传值 | talxmx96</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Intent是什么？Intent组件虽然不是四大组件，但却是连接四大组件的桥梁。Activity、Service和BroadcastReceiver之间是通过Intent进行通信的，而另外一个组件ContentRrovider本身就是一种通信机制，不需要通过Intent。 Intent有什么作用1、用来激活启动其他应用程序组件。 2、作为传递数据和事件的桥梁。  Intent的七大属性  组件名称">
+  <meta name="description" content="Intent是什么？Intent组件虽然不是四大组件，但却是连接四大组件的桥梁。Activity、Service和BroadcastReceiver之间是通过Intent进行通信的，而另外一个组件ContentRrovider本身就是一种通信机制，不需要通过Intent。  Intent有什么作用 1、用来激活启动其他应用程序组件。 2、作为传递数据和事件的桥梁。  Intent的七大属性 123">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的Intent传值">
 <meta property="og:url" content="http://yoursite.com/2018/08/06/Android的intent意图/index.html">
 <meta property="og:site_name" content="talxmx96">
-<meta property="og:description" content="Intent是什么？Intent组件虽然不是四大组件，但却是连接四大组件的桥梁。Activity、Service和BroadcastReceiver之间是通过Intent进行通信的，而另外一个组件ContentRrovider本身就是一种通信机制，不需要通过Intent。 Intent有什么作用1、用来激活启动其他应用程序组件。 2、作为传递数据和事件的桥梁。  Intent的七大属性  组件名称">
+<meta property="og:description" content="Intent是什么？Intent组件虽然不是四大组件，但却是连接四大组件的桥梁。Activity、Service和BroadcastReceiver之间是通过Intent进行通信的，而另外一个组件ContentRrovider本身就是一种通信机制，不需要通过Intent。  Intent有什么作用 1、用来激活启动其他应用程序组件。 2、作为传递数据和事件的桥梁。  Intent的七大属性 123">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-06T14:29:26.000Z">
+<meta property="og:image" content="http://paklkx8q7.bkt.clouddn.com/Intent.png">
+<meta property="og:updated_time" content="2018-08-07T06:50:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的Intent传值">
-<meta name="twitter:description" content="Intent是什么？Intent组件虽然不是四大组件，但却是连接四大组件的桥梁。Activity、Service和BroadcastReceiver之间是通过Intent进行通信的，而另外一个组件ContentRrovider本身就是一种通信机制，不需要通过Intent。 Intent有什么作用1、用来激活启动其他应用程序组件。 2、作为传递数据和事件的桥梁。  Intent的七大属性  组件名称">
+<meta name="twitter:description" content="Intent是什么？Intent组件虽然不是四大组件，但却是连接四大组件的桥梁。Activity、Service和BroadcastReceiver之间是通过Intent进行通信的，而另外一个组件ContentRrovider本身就是一种通信机制，不需要通过Intent。  Intent有什么作用 1、用来激活启动其他应用程序组件。 2、作为传递数据和事件的桥梁。  Intent的七大属性 123">
+<meta name="twitter:image" content="http://paklkx8q7.bkt.clouddn.com/Intent.png">
   
     <link rel="alternative" href="/atom.xml" title="talxmx96" type="application/atom+xml">
   
@@ -179,12 +181,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Intent是什么？"><a href="#Intent是什么？" class="headerlink" title="Intent是什么？"></a>Intent是什么？</h2><p>Intent组件虽然不是四大组件，但却是连接四大组件的桥梁。<br>Activity、Service和BroadcastReceiver之间是通过Intent进行通信的，而另外一个组件ContentRrovider本身就是一种通信机制，不需要通过Intent。</p>
-<p>Intent有什么作用<br>1、用来激活启动其他应用程序组件。</p>
+<p><strong> Intent有什么作用 </strong><br>1、用来激活启动其他应用程序组件。</p>
 <p>2、作为传递数据和事件的桥梁。</p>
-<p><strong> Intent的七大属性 </strong></p>
-<p><code>组件名称   目标名称的全类名
-ComponentName  --------&gt; setComponent()  setClass()  setClassName()
-                         getComponent()</code></p>
+<p><strong> Intent的七大属性 </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ComponentName  --------&gt;  组件名称   目标名称的全类名</span><br><span class="line">			   setComponent()  setClass()  setClassName()</span><br><span class="line">			   getComponent()</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Action  --------&gt; 普通的字符串</span><br><span class="line">		  表示Intent将要仔细动作的描述</span><br><span class="line">		  setAction()  getAction()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Data  --------&gt; 用于向Activity属性提供操作的数据</span><br><span class="line">		URI对象Scheme://host:port/path</span><br><span class="line">		协议头、主机、端口、路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Type  --------&gt; 指定Data所指定的Uri对应的MIME类型</span><br><span class="line">		不指定会根据数据自动推导</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Category  --------&gt; 字符串  为Activity提供额外的附件类别信息</span><br><span class="line">			 可以多个Category</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Extra  --------&gt; 用于多个Activity之间的数据交换</span><br><span class="line">		 通过键值对进行数据存储</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Flags  --------&gt; 标记组件如何启动</span><br><span class="line">		以及启动后如何对待等</span><br><span class="line">		FLAG_ACTIVITY_SINGLE_TOP</span><br><span class="line">		FLAG_ACTIVITY_CLEAR_TOP</span><br></pre></td></tr></table></figure>
+<p><strong> 什么是隐式Intent？</strong><br>显式Intent:<br>    直接指定目标组件的ComponentName<br>隐式Intent:<br>    没有明确指定组件名的Intent为隐式意图</p>
+<p><strong> 隐式Intent的使用场景 </strong><br>显式Intent:<br>    适合启动同一个应用中其他组件<br>隐式Intent:<br>    适合启动设备中不同应用中的组件</p>
+<p><strong> 隐式Intent如果使用 </strong><br>IntentFilter描述了一个组件愿意接收什么样的Intent对象<br>告诉Activity可以响应什么类型的Intent</p>
+<p>检查Action<br>-Intent对象只能命名一个单一的Action,一个IntentFilter可以列出多个Action<br>-过滤器必须包含一个<actiom>,否则它将阻止所有的Intent通过<br>检查Category<br>-Intent对象包含的Category都能在IntentFilter中找到<br>-隐式Intent加上一个默认的  android.intent.category.LAUNCHER”<br>检查Data<br>-Scheme://host:port/path<br>-Intent中的URI和IntentFilter中URI比较时，只比较IntentFilter中实际定义的部分属性</actiom></p>
+<p><img src="http://paklkx8q7.bkt.clouddn.com/Intent.png" alt="github"></p>
 
       
 
