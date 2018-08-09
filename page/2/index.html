@@ -156,6 +156,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java的进程与线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/Java的进程与线程/">Java的进程与线程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/Java的进程与线程/" class="archive-article-date">
+  	<time datetime="2018-06-22T14:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="进程-Processes-与线程-Threads"><a href="#进程-Processes-与线程-Threads" class="headerlink" title="进程(Processes)与线程(Threads)"></a>进程(Processes)与线程(Threads)</h2><p>Java是为数不多的多线程编程的支持语言，也就是说在同一个时间段内，Java可以启动更多的工作程序来完成同一功能操作，这样可以达到更高的处理性能。</p>
+<p><strong>进程</strong>：是一次完整的控制单元。例如：启动一个程序，那么一定要分配CPU资源，要向内存之中加载数据，而后再进行一系列的处理操作。而最早的DOS系统就是单进程的操作处理。<br>但是在传统的DOS系统之中会出现一个问题，一旦电脑出现病毒了就死机了，因为在单进程的操作系统之中，同一时间段内只允许一个进程执行，如果说现在病毒占用着此程序，那么其它的程序将无法执行。后来发展到了Winfows时代，电脑里面即使出现了病毒，那么也可以正常使用了，除了慢点。<br>但是最初的时候电脑的CPU只有一块，所以如果要运行多个程序，那么就需要对CPU进行轮流抢占。但是每一个进程的启动，必然要花费大量的资源，所以入门慢慢的发现，如果使用多进程的处理。并不能够带来更快的处理效果，而后人们继续在单个进程的基础上面又，继续划分了线程的概念。也就是说每一个进程里面还可以运行多个线程，进程执行时一定会牵扯到CPU或内存资源的分配，所以线程如果要运行在进程之中，那么就把空间的分配低速操作就可以屏蔽了，所以线程的处理要比进程要快，但是线程无法摆脱离进程存在。<br>操作系统是以进程为单位控制的，而且一个进程，为了表达更高的处理操作，所以划分为多个线程，同时工作。</p>
+<p><strong>线程</strong>：就是进程中的一个独立的控制单元。<br>线程在控制着进程的执行。<br>一个进程中至少执行一个线程。<br>Java JVM 启动的时候会有一个进程Java.tet。<br>该进程中至少有一个线程负责Java的程序的执行。而且这个线程运行的代码存在于main方法中，该线程称之为主线程。<br>扩展：其实更细节的说明JVM，JVM启动不止一个线程，还有负责垃圾回收机制的线程。</p>
+<p><strong>线程的串行</strong><br>一个线程中任务的执行是串行。<br>如果要在一个线程中执行多个任务，你们只能一个一个地按顺序执行这些任务。</p>
+<p><strong>进程和线程的比较</strong><br>1、线程是CPU调用(执行任务)的最小单位。<br>2、进程是CPU分配资源和调度的单位。<br>3、一个程序可以对应多个进程，一个进程中可以有多个线程，但至少要有一个线程。<br>4、同一个进程内的线程共享进程的资源。</p>
+<p>定义和启动一个线程<br>Java 中有两种方式创建 Thread 的实例：</p>
+<blockquote>
+<p>提供 Runnable 对象。Runnable 接口定义了一个方法 run ,用来包含线程要执行的代码。如 HelloRunnable 所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class HelloRunnable implements Runnable &#123;</span><br><span class="line">    /* (non-Javadoc)</span><br><span class="line">     * @see java.lang.Runnable#run()</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new Thread(new HelloRunnable())).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>继承 Thread。Thread 类本身是实现 Runnable，虽然它的 run 方法啥都没干。HelloThread 示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class HelloThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new HelloThread()).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>请注意,这两个例子调用 start 来启动线程。<br>第一种方式,它使用 Runnable 对象,在实际应用中更普遍,因为 Runnable 对象可以继承 Thread 以外的类。第二种方式，在简单的应用程序更容易使用,但受限于你的任务类必须是一个 Thread 的后代。本书推荐使用第一种方法,将 Runnable 任务从 Thread 对象分离来执行任务。这不仅更灵活,而且它适用于高级线程管理 API。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/Java的进程与线程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java的异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -771,76 +846,6 @@ method2()throwsExcrption{   //声明异常
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/03/Java的方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的List" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/Java中的List/">Java中的List</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/31/Java中的List/" class="archive-article-date">
-  	<time datetime="2018-05-31T15:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p><strong>什么是List？</strong><br>(1)List 是一个接口，它继承于Collection的接口。它代表着有序的队列。<br>(2)AbstractList 是一个抽象类，它继承于AbstractCollection。AbstractList实现List接口中除size()、get(int location)之外的函数。<br>(3)AbstractSequentialList 是一个抽象类，它继承于AbstractList。AbstractSequentialList 实现了“链表中，根据index索引值操作链表的全部函数”。<br>(4) ArrayList, LinkedList, Vector, Stack是List的4个实现类。<br>ArrayList 是一个数组队列，相当于动态数组。它由数组实现，随机访问效率高，随机插入、随机删除效率低。<br>　　LinkedList 是一个双向链表。它也可以被当作堆栈、队列或双端队列进行操作。LinkedList随机访问效率低，但随机插入、随机删除效率低。<br>　　Vector 是矢量队列，和ArrayList一样，它也是一个动态数组，由数组实现。但是ArrayList是非线程安全的，而Vector是线程安全的。<br>　　Stack 是栈，它继承于Vector。它的特性是：先进后出(FILO, First In Last Out)。<br>如果涉及到“栈”、“队列”、“链表”等操作，应该考虑用List，具体的选择哪个List，根据下面的标准来取舍。<br>(1) 对于需要快速插入，删除元素，应该使用LinkedList。<br>(2) 对于需要快速随机访问元素，应该使用ArrayList。<br>(3) 对于“单线程环境” 或者 “多线程环境，但List仅仅只会被单个线程操作”，此时应该使用非同步的类(如ArrayList)。<br>       对于“多线程环境，且List可能同时被多个线程操作”，此时，应该使用同步的类(如Vector)。</p>
-<p><strong>实例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class ListTest &#123;</span><br><span class="line">    private static List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;String&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        list.add(&quot;AAA&quot;);</span><br><span class="line">        list.add(&quot;WWW&quot;);</span><br><span class="line">        list.add(&quot;DNF&quot;);</span><br><span class="line">        list.add(&quot;DDD&quot;);</span><br><span class="line">        list.add(&quot;FFF&quot;);</span><br><span class="line">        for (String s : list) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; list.size(); i++) &#123;</span><br><span class="line">            System.out.println(list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上两种for循环方式得出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">AAA</span><br><span class="line">WWW</span><br><span class="line">DNF</span><br><span class="line">DDD</span><br><span class="line">FFF</span><br><span class="line">--------------</span><br><span class="line">AAA</span><br><span class="line">WWW</span><br><span class="line">DNF</span><br><span class="line">DDD</span><br><span class="line">FFF</span><br></pre></td></tr></table></figure></p>
-<p>Java中可变数组的原理就是不断的创建新的数组，将原数组加到新的数组中,下文对Java List用法做了详解。</p>
-<blockquote>
-<p>List:元素是有序的(怎么存的就怎么取出来，顺序不会乱)，元素可以重复（角标1上有个3，角标2上也可以有个3）因为该集合体系有索引。<br>ArrayList：底层的数据结构使用的是数组结构（数组长度是可变的百分之五十延长）（特点是查询很快，但增删较慢）线程不同步。<br>LinkedList：底层的数据结构是链表结构（特点是查询较慢，增删较快）。<br>Vector：底层是数组数据结构 线程同步（数组长度是可变的百分之百延长）（无论查询还是增删都很慢，被ArrayList替代了）。</p>
-</blockquote>
-<p><strong>建议</strong>:<br>如果遍历List集合元素，对于ArrayList、Vector集合，应该使用随机访问的方法(get)来遍历集合元素，这样性能更好；<br>对于LinkedList集合，则应该使用迭代器Iterator来遍历集合元素。<br>如果要经常执行插入、删除操作来改变包含大量数据的List集合的大小，可考虑使用Linkedlist集合</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/31/Java中的List/">展开全文 >></a>
         </p>
       
 

@@ -156,6 +156,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android的Handdler、Looper和Thread" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/09/Android的Handdler、Looper和Thread/">Android的Handdler、Looper和Thread</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/09/Android的Handdler、Looper和Thread/" class="archive-article-date">
+  	<time datetime="2018-08-09T11:22:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Handler、Looper和Thread"><a href="#Handler、Looper和Thread" class="headerlink" title="Handler、Looper和Thread"></a>Handler、Looper和Thread</h2><p>Handler是一个消息分发对象。Handler是Android给我们提供用来更新UI的一套机制，也是一套消息处理机制，我们可以发消息，也可以通过它处理消息。<br>在多线程的应用场景中，将工作线程中需更新UI的操作信息 传递到 UI主线程，从而实现 工作线程对UI的更新处理，最终实现异步消息的处理。<br>使用Handler的目的就是为了解决多线程并发的问题。</p>
+<p>线程（Thread）、循环器（Looper）、处理者（Handler）之间的对应关系如下：<br>1个线程（Thread）只能绑定 1个循环器（Looper），但可以有多个处理者（Handler）<br>1个循环器（Looper） 可绑定多个处理者（Handler）<br>1个处理者（Handler） 只能绑定1个1个循环器（Looper）</p>
+<p>什么叫异步消息处理线程<br>异步消息处理线程启动后会进入一个无限的循环体之中，每循环一次，从其内部的消息队列中取出一个消息，然后回调相应的消息处理函数，执行完成一个消息后则继续循环。若消息队列为空，线程则会阻塞等待。</p>
+<p>四要素：<br>接收消息的“消息队列”  – MessageQueue<br>阻塞式地从消息队列中接收消息并进行处理的“线程”  – Thread + Looper<br>可发送的“消息的格式”  – Message<br>“消息发送函数”  – Handler的post好sendMessage</p>
+<p>Handler的使用方式，因发送消息到消息列表的方式不同而不同<br>共分为2种：使用Handler.sendMessage(),使用Handler.post()。</p>
+<p>下面是Handler一些常用方法：<br>void  handleMessage(Message msg):处理消息的方法，该方法通常会被重写。<br>final boolean hasMessages(int what):检测消息队列中是否包含what属性为指定值的消息。<br>Message obtainMessage():获取消息的方法，此函数有多个重载方法。<br>sendEmptyMessage(int what):发送空消息。<br>final boolean sendEmptyMessageDelayed(int what , long delayMillis):指定多少毫秒后发送空消息。<br>final boolean sendMessage(Message msg):立即发送消息。<br>final boolean sendMessageDelayed(Message msg ,long delayMillis):指定多少毫秒后发送消息。<br>final boolean post(Runnable r):执行runnable操作。<br>final boolean postAtTime(Runnable r, long upTimeMillis):在指定时间执行runnable操作。<br>final boolean postDelayed(Runnable r, long delayMillis):指定多少毫秒后执行runnable操作。</p>
+<p>Looper的本身是一个死循环，不断地从MessageQueue中提取Message或者Runnable。而Handler可以看做是一个Looper的暴露接口，向外部暴露一些事件，并暴露sendMessage()和post()函数。</p>
+<p>下面简单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public class HandlerActivity extends AppCompatActivity &#123;</span><br><span class="line">    private Button button;</span><br><span class="line">    private TextView textView;</span><br><span class="line">    private Handler handler = new Handler()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void handleMessage(Message msg) &#123;</span><br><span class="line">        super.handleMessage(msg);</span><br><span class="line">        textView.setText(msg.obj.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState)&#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.handler_looper);</span><br><span class="line">        button = findViewById(R.id.button1);</span><br><span class="line">        textView = findViewById(R.id.textView1);</span><br><span class="line">        button.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                new Thread(new MyThread()).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public class MyThread implements Runnable&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                Thread.sleep(3000);</span><br><span class="line">            &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            Message message = new Message();</span><br><span class="line">            message.obj = &quot;hello world &quot;;</span><br><span class="line">            handler.sendMessage(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实例得出:<br><img src="http://paklkx8q7.bkt.clouddn.com/Handler.jpg" alt="github"><br>点击按钮后<br><img src="http://paklkx8q7.bkt.clouddn.com/Handler1.jpg" alt="github"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/09/Android的Handdler、Looper和Thread/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android的启动Activity模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1000,81 +1071,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/24/Java的文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java的进程与线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/Java的进程与线程/">Java的进程与线程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/Java的进程与线程/" class="archive-article-date">
-  	<time datetime="2018-06-22T14:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="进程-Processes-与线程-Threads"><a href="#进程-Processes-与线程-Threads" class="headerlink" title="进程(Processes)与线程(Threads)"></a>进程(Processes)与线程(Threads)</h2><p>Java是为数不多的多线程编程的支持语言，也就是说在同一个时间段内，Java可以启动更多的工作程序来完成同一功能操作，这样可以达到更高的处理性能。</p>
-<p><strong>进程</strong>：是一次完整的控制单元。例如：启动一个程序，那么一定要分配CPU资源，要向内存之中加载数据，而后再进行一系列的处理操作。而最早的DOS系统就是单进程的操作处理。<br>但是在传统的DOS系统之中会出现一个问题，一旦电脑出现病毒了就死机了，因为在单进程的操作系统之中，同一时间段内只允许一个进程执行，如果说现在病毒占用着此程序，那么其它的程序将无法执行。后来发展到了Winfows时代，电脑里面即使出现了病毒，那么也可以正常使用了，除了慢点。<br>但是最初的时候电脑的CPU只有一块，所以如果要运行多个程序，那么就需要对CPU进行轮流抢占。但是每一个进程的启动，必然要花费大量的资源，所以入门慢慢的发现，如果使用多进程的处理。并不能够带来更快的处理效果，而后人们继续在单个进程的基础上面又，继续划分了线程的概念。也就是说每一个进程里面还可以运行多个线程，进程执行时一定会牵扯到CPU或内存资源的分配，所以线程如果要运行在进程之中，那么就把空间的分配低速操作就可以屏蔽了，所以线程的处理要比进程要快，但是线程无法摆脱离进程存在。<br>操作系统是以进程为单位控制的，而且一个进程，为了表达更高的处理操作，所以划分为多个线程，同时工作。</p>
-<p><strong>线程</strong>：就是进程中的一个独立的控制单元。<br>线程在控制着进程的执行。<br>一个进程中至少执行一个线程。<br>Java JVM 启动的时候会有一个进程Java.tet。<br>该进程中至少有一个线程负责Java的程序的执行。而且这个线程运行的代码存在于main方法中，该线程称之为主线程。<br>扩展：其实更细节的说明JVM，JVM启动不止一个线程，还有负责垃圾回收机制的线程。</p>
-<p><strong>线程的串行</strong><br>一个线程中任务的执行是串行。<br>如果要在一个线程中执行多个任务，你们只能一个一个地按顺序执行这些任务。</p>
-<p><strong>进程和线程的比较</strong><br>1、线程是CPU调用(执行任务)的最小单位。<br>2、进程是CPU分配资源和调度的单位。<br>3、一个程序可以对应多个进程，一个进程中可以有多个线程，但至少要有一个线程。<br>4、同一个进程内的线程共享进程的资源。</p>
-<p>定义和启动一个线程<br>Java 中有两种方式创建 Thread 的实例：</p>
-<blockquote>
-<p>提供 Runnable 对象。Runnable 接口定义了一个方法 run ,用来包含线程要执行的代码。如 HelloRunnable 所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class HelloRunnable implements Runnable &#123;</span><br><span class="line">    /* (non-Javadoc)</span><br><span class="line">     * @see java.lang.Runnable#run()</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new Thread(new HelloRunnable())).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>继承 Thread。Thread 类本身是实现 Runnable，虽然它的 run 方法啥都没干。HelloThread 示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class HelloThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Hello from a thread!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * @param args</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        (new HelloThread()).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>请注意,这两个例子调用 start 来启动线程。<br>第一种方式,它使用 Runnable 对象,在实际应用中更普遍,因为 Runnable 对象可以继承 Thread 以外的类。第二种方式，在简单的应用程序更容易使用,但受限于你的任务类必须是一个 Thread 的后代。本书推荐使用第一种方法,将 Runnable 任务从 Thread 对象分离来执行任务。这不仅更灵活,而且它适用于高级线程管理 API。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/Java的进程与线程/">展开全文 >></a>
         </p>
       
 
